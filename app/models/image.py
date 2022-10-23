@@ -9,4 +9,4 @@ class Image(db.Model):
   imageUrl = db.Column(db.String, nullable=False)
   userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
-  comments = db.relationship("Image", back_populates='image', cascade='all, delete')
+  comments = db.relationship("Comment", back_populates='image', cascade='all, delete')

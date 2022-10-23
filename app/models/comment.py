@@ -8,4 +8,4 @@ class Comment(db.Model):
   userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
   imageId = db.Column(db.Integer, db.ForeignKey("images.id"), nullable=False)
 
-  image = db.relationship("Comment", back_populates='comments')
+  image = db.relationship("Image", back_populates='comments')
