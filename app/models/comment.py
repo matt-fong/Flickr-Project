@@ -9,3 +9,11 @@ class Comment(db.Model):
   imageId = db.Column(db.Integer, db.ForeignKey("images.id"), nullable=False)
 
   image = db.relationship("Image", back_populates='comments')
+
+  def to_dict(self):
+    return {
+      "id" : self.id,
+      "body" : self.body,
+      "userId" : self.userId,
+      "imageId" : self.imageId,
+    }

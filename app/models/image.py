@@ -10,3 +10,12 @@ class Image(db.Model):
   userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
   comments = db.relationship("Comment", back_populates='image', cascade='all, delete')
+
+  def to_dict(self):
+    return {
+      "id" : self.id,
+      "title" : self.title,
+      "description" : self.description,
+      "imageUrl" : self.imageUrl,
+      "userId" : self.userId,
+    }
