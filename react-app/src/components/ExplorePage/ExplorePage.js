@@ -8,14 +8,24 @@ const ExplorePage = () => {
 
   const dispatch = useDispatch();
 
+  const images = useSelector(state => state.images)
+  console.log('this is explore page images', images)
+  const imagesArr = Object.values(images)
+
   useEffect(() => {
     dispatch(getAllImagesThunk())
-  })
+  }, [])
 
 
   return (
     <div>
-      EXPLORE PAGE
+      {imagesArr.map((image) => {
+        return (
+          <div>
+            <img src={image.imageUrl} alt={image.title} />
+          </div>
+        )
+      })}
     </div>
   )
 }
