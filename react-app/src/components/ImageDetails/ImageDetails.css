@@ -11,3 +11,8 @@
   height: 667px;
   object-fit: cover;
 }
+
+
+.image-detail-bottom {
+  height: 500px;
+}

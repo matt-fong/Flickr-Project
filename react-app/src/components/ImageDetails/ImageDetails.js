@@ -33,7 +33,9 @@ const ImageDetails = () => {
         </div>
       </div>
 
-      <div className='image-detail-bottom'></div>
+      <div className='image-detail-bottom'>
+        
+      </div>
 
       <div onClick={() => handleDelete(imageId.imageId)}>
         DELETE BUTTON
