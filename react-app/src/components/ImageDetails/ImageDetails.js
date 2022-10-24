@@ -7,21 +7,24 @@ import './ImageDetails.css'
 
 const ImageDetails = () => {
 
+  const history = useHistory()
   const dispatch = useDispatch();
+
   const images = useSelector(state => state.images)
 
   const imageId = useParams();
 
   const currentImage = images[imageId.imageId]
 
+  const handleDelete = (imageId) => {
+    dispatch(deleteImageThunk(imageId)).then(() => history.push(`/explore`))
+  }
+
   useEffect(() => {
     dispatch(getAllImagesThunk())
   }, [])
 
   return (
-    // <div onClick={() => dispatch(deleteImageThunk(4))}>
-    //   DELETE BUTTON
-    // </div>
     <div className='image-detail-container'>
 
       <div className='image-detail-top'>
@@ -31,6 +34,10 @@ const ImageDetails = () => {
       </div>
 
       <div className='image-detail-bottom'></div>
+
+      <div onClick={() => handleDelete(imageId.imageId)}>
+        DELETE BUTTON
+      </div>
 
     </div>
   )
