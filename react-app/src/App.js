@@ -57,7 +57,7 @@ function App() {
         <Route path='/testingedit'>
           <UpdateImage />
         </Route>
-        <Route path='/imagedetails'>
+        <Route path='/image/:imageId'>
           <ImageDetails />
         </Route>
       </Switch>

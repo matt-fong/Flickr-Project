@@ -1,0 +1,36 @@
+.explorepage-container {
+  display:flex;
+  justify-content: center;
+}
+
+.explorepage-inner-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.explorepage-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 1200px;
+  max-width: 1280;
+  width: 100%;
+}
+
+.image-container {
+  width: auto;
+}
+
+.image-container:hover {
+  transform: scale(1.1);
+  transition: all .3s ease-in-out;
+}
+
+.image {
+  max-height: 327px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
