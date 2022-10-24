@@ -1,0 +1,13 @@
+.image-detail-top {
+  display: flex;
+  justify-content: center;
+  height: 767px;
+  background: #212124;
+  align-items: center;
+}
+
+.image-detail-image {
+  width: 1000px;
+  height: 667px;
+  object-fit: cover;
+}
