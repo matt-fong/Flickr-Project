@@ -6,6 +6,7 @@
 * Frontend: React/Redux/JS/HTML/CSS
 * DB: SQLAlchemy
 * Hosted on Heroku
+* [Live Site](https://discov-r.herokuapp.com/)
 
 ## How to run Discovr Locally:
 
