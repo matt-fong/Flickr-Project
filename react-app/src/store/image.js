@@ -1,28 +1,31 @@
+// Actions
 const GET_ALL_IMAGES= 'images/GET_ALL_IMAGES'
-const CREATE_ALL_IMAGES= 'images/CREATE_ALL_IMAGES'
-const UPDATE_ALL_IMAGES= 'images/UPDATE_ALL_IMAGES'
-const DELETE_ALL_IMAGES= 'images/DELETE_ALL_IMAGES'
+const CREATE_IMAGE= 'images/CREATE_IMAGE'
+const UPDATE_IMAGE= 'images/UPDATE_IMAGE'
+const DELETE_IMAGE= 'images/DELETE_IMAGE'
 
+// Action Creators
 export const getAllImagesAC = (images) => ({
   type: GET_ALL_IMAGES,
   payload: images,
 })
 
 export const createImageAC = (image) => ({
-  type: CREATE_ALL_IMAGES,
+  type: CREATE_IMAGE,
   payload: image,
 })
 
 export const updateImageAC = (image) => ({
-  type: UPDATE_ALL_IMAGES,
+  type: UPDATE_IMAGE,
   payload: image,
 })
 
 export const deleteImageAC = (imageId) => ({
-  type: DELETE_ALL_IMAGES,
+  type: DELETE_IMAGE,
   payload: imageId,
 })
 
+// Thunks
 export const getAllImagesThunk = () => async (dispatch) => {
   const res = await fetch('/api/images/');
   if (res.ok) {
@@ -70,6 +73,7 @@ export const deleteImageThunk = (imageId) => async (dispatch) => {
   }
 }
 
+// Reducer
 
 const initialState = {}
 const imageReducer = (state = initialState, action) => {
@@ -82,13 +86,13 @@ const imageReducer = (state = initialState, action) => {
           console.log('this is action', action)
           console.log('this is new state', newState)
           return newState
-        case CREATE_ALL_IMAGES:
+        case CREATE_IMAGE:
           newState[action.payload.id] = action.payload
           return newState
-        case UPDATE_ALL_IMAGES:
+        case UPDATE_IMAGE:
           newState[action.payload.id] = action.payload
           return newState
-        case DELETE_ALL_IMAGES:
+        case DELETE_IMAGE:
           delete newState[action.payload]
           return newState
         default:
@@ -97,4 +101,4 @@ const imageReducer = (state = initialState, action) => {
 }
 
 
-export default imageReducer
+export default imageReducer;
