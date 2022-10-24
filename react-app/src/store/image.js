@@ -59,6 +59,17 @@ export const updateImageThunk = (image, imageId) => async (dispatch) => {
   }
 }
 
+export const deleteImageThunk = (imageId) => async (dispatch) => {
+  const res = await fetch(`/api/images/${imageId}`, {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'},
+  })
+  if (res.ok) {
+      dispatch(deleteImageAC(imageId))
+      return res
+  }
+}
+
 
 const initialState = {}
 const imageReducer = (state = initialState, action) => {

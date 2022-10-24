@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import ExplorePage from './components/ExplorePage/ExplorePage';
 import CreateImage from './components/Images/CreateImage';
 import UpdateImage from './components/Images/EditImage';
+import ImageDetails from './components/ImageDetails/ImageDetails';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -54,6 +55,9 @@ function App() {
         </Route>
         <Route path='/testingedit'>
           <UpdateImage />
+        </Route>
+        <Route path='/imagedetails'>
+          <ImageDetails />
         </Route>
       </Switch>
     </BrowserRouter>

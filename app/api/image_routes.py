@@ -45,3 +45,11 @@ def edit_image(image_id):
 
     db.session.commit()
     return jsonify(imageData.to_dict()), 200
+
+@image_routes.route('/<int:image_id>', methods=['DELETE'])
+@login_required
+def delete_image(image_id):
+  image = Image.query.get(image_id)
+  db.session.delete(image)
+  db.session.commit()
+  return {'message': 'Review deleted'}
