@@ -28,4 +28,20 @@ def create_image():
 
     db.session.add(image)
     db.session.commit()
-    return image.to_dict(), 200
+    return jsonify(image.to_dict()), 200
+
+@image_routes.route('/<int:image_id>', methods=['PUT'])
+@login_required
+def edit_image(image_id):
+  form = ImageForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+
+  if form.validate_on_submit():
+    imageData = Image.query.get(image_id)
+    imageData.title = form.data['title']
+    imageData.description = form.data['description']
+    imageData.imageUrl = form.data['imageUrl']
+    imageData.userId = form.data['userId']
+
+    db.session.commit()
+    return jsonify(imageData.to_dict()), 200

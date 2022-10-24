@@ -46,6 +46,19 @@ export const createImageThunk = (image) => async (dispatch) => {
   }
 }
 
+export const updateImageThunk = (image, imageId) => async (dispatch) => {
+  const res = await fetch(`/api/images/${imageId}`, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(image)
+  })
+  if (res.ok) {
+      const image = await res.json()
+      dispatch(updateImageAC(image))
+      return res
+  }
+}
+
 
 const initialState = {}
 const imageReducer = (state = initialState, action) => {

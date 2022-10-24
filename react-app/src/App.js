@@ -10,6 +10,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import ExplorePage from './components/ExplorePage/ExplorePage';
 import CreateImage from './components/Images/CreateImage';
+import UpdateImage from './components/Images/EditImage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -48,8 +49,11 @@ function App() {
         <Route path='/explore'>
           <ExplorePage />
         </Route>
-        <Route path='/testing'>
+        <Route path='/testingcreate'>
           <CreateImage />
+        </Route>
+        <Route path='/testingedit'>
+          <UpdateImage />
         </Route>
       </Switch>
     </BrowserRouter>
