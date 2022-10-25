@@ -3,6 +3,12 @@ import { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { deleteImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
+
+import { getAllCommentsThunk } from '../../store/comment';
+import { createCommentThunk } from '../../store/comment';
+import { updateCommentThunk } from '../../store/comment';
+import { deleteCommentThunk } from '../../store/comment';
+
 import './ImageDetails.css'
 
 const ImageDetails = () => {
@@ -11,6 +17,7 @@ const ImageDetails = () => {
   const dispatch = useDispatch();
 
   const images = useSelector(state => state.images)
+  const user = useSelector(state => state.session.user)
 
   const imageId = useParams();
 
@@ -20,8 +27,20 @@ const ImageDetails = () => {
     dispatch(deleteImageThunk(imageId)).then(() => history.push(`/explore`))
   }
 
+  const handleCreateComment = () => {
+
+    const data = {
+      body: 'TESTING CREATE COMMENT',
+      userId: user.id,
+      imageId: imageId.imageId,
+    }
+
+    return dispatch(createCommentThunk(data))
+  }
+
   useEffect(() => {
     dispatch(getAllImagesThunk())
+    dispatch(getAllCommentsThunk())
   }, [])
 
   return (
@@ -34,12 +53,17 @@ const ImageDetails = () => {
       </div>
 
       <div className='image-detail-bottom'>
-        
+
+        <div onClick={() => handleDelete(imageId.imageId)}>
+          DELETE BUTTON
+        </div>
+
+        <div onClick={() => handleCreateComment()}>
+          CREATE COMMENT TEST
+        </div>
+
       </div>
 
-      <div onClick={() => handleDelete(imageId.imageId)}>
-        DELETE BUTTON
-      </div>
 
     </div>
   )

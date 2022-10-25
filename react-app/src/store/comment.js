@@ -44,6 +44,7 @@ export const createCommentThunk = (comment) => async (dispatch) => {
   })
   if (res.ok) {
     const comment = await res.json()
+    console.log("THIS IS COMMENT", comment)
     dispatch(createCommentAC(comment))
     return res
   }

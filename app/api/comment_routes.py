@@ -19,7 +19,7 @@ def create_comment():
   if form.validate_on_submit():
 
     comment = Comment(
-      comment=form.data['comment'],
+      body=form.data['body'],
       userId=form.data['userId'],
       imageId=form.data['imageId']
     )
@@ -50,5 +50,3 @@ def delete_comment(comment_id):
   db.session.delete(comment)
   db.session.commit()
   return {'message': 'Review deleted'}
-
-
