@@ -67,8 +67,11 @@ const ImageDetails = () => {
         </div>
 
         <div>
+          <i class="image-detail-update-button fa-solid fa-pen-to-square fa-2xl"
+            onClick={() => history.push(`/image/${imageId.imageId}/edit`)}></i>
+
           <i class="image-detail-delete-button fa-solid fa-trash fa-2xl"
-           onClick={() => handleDelete(imageId.imageId)}></i>
+            onClick={() => handleDelete(imageId.imageId)}></i>
         </div>
 
 
@@ -77,23 +80,20 @@ const ImageDetails = () => {
 
       <div className='image-detail-bottom'>
 
-        <div onClick={() => history.push(`/image/${imageId.imageId}/edit`)}>
-          UPDATE IMAGE BUTTON
+        <div className='image-detail-comment-card-container'>
+          {filteredComments.map((comment) => (
+            <div key={comment.id}>
+              <CommentCard comment={comment}/>
+              </div>
+          ))}
+        </div>
+
+        <div>
+          <CreateComment imageId={imageId?.imageId}/>
         </div>
 
       </div>
 
-      <div className='image-detail-comment-card-container'>
-        {filteredComments.map((comment) => (
-          <div key={comment.id}>
-            <CommentCard comment={comment}/>
-            </div>
-        ))}
-      </div>
-
-      <div>
-        <CreateComment imageId={imageId?.imageId}/>
-      </div>
 
     </div>
   )

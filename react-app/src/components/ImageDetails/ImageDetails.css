@@ -32,6 +32,16 @@
   height: 100px;
 }
 
+.image-detail-update-button {
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 24px;
+  margin-right: 60px;
+}
+
 .image-detail-delete-button {
   cursor: pointer;
   color: white;
@@ -39,6 +49,7 @@
   right: 0;
   bottom: 0;
   margin-bottom: 24px;
+  margin-right: 12px;
 }
 
 .image-detail-comment-card-container {
