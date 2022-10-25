@@ -1,8 +1,11 @@
 .comment-card-container {
+  display: flex;
   width: 482px;
   height: 51px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-top: 5px;
+  padding: 5px 0 5px;
+  box-sizing: border-box;
 }
 
 .comment-card-pic {
@@ -11,8 +14,18 @@
   margin-left: 10px;
 }
 
+.comment-card-right-container {
+  padding-left: 20px;
+  padding-right: 17px;
+  width: 440px;
+  box-sizing: border-box;
+}
+
 .comment-card-name {
-  font-size: 14px
+  font-size: 14px;
+  font-weight: 600;
+  /* margin-top: 2px; */
+  margin-bottom: 2px
 }
 
 .comment-card-body {
