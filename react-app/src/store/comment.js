@@ -86,9 +86,11 @@ export const deleteCommentThunk = (commentId) => async (dispatch) => {
       headers: {'Content-Type': 'application/json'},
   })
   if (res.ok) {
+      console.log('THIS IS RES FROM DELETE THUNK', res)
       dispatch(deleteCommentAC(commentId))
       return res
   }
+  console.log('THIS IS RES FROM DELETE THUNK', res)
 }
 
 // Reducer

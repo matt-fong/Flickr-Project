@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import './CommentCard.css'
 import { updateCommentThunk } from '../../store/comment';
+import { deleteCommentThunk } from '../../store/comment';
 
 
 const CommentCard = ({ comment }) => {
@@ -45,20 +46,24 @@ const CommentCard = ({ comment }) => {
       <img className='comment-card-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg'></img>
       <div className='comment-card-right-container'>
         <div className='comment-card-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div>
-        <button onClick={() => setEditing(true)}>edit button</button>
+
         {editing ?
-        <form>
-          <textarea
-            className='comment-card-body'
-            type='text'
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
-          <button className='comment-card-button' onClick={handleUpdateComment}>Update Comment</button>
-        </form>
-        :
-        <div className='comment-card-body'>{comment?.body}</div>
-        }
+          <form>
+            <textarea
+              className='comment-card-body'
+              type='text'
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+            />
+            <button className='comment-card-button' onClick={handleUpdateComment}>Update Comment</button>
+          </form>
+          :
+          <div>
+            <div className='comment-card-body'>{comment?.body}</div>
+            <button onClick={() => setEditing(true)}>edit button</button>
+            <button onClick={() => dispatch(deleteCommentThunk(comment?.id))}>Delete Comment</button>
+          </div>
+          }
         {/* <div onClick={() => handleUpdateComment()}>UPDATE COMMENT</div> */}
       </div>
     </div>
