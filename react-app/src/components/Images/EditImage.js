@@ -44,7 +44,7 @@ const UpdateImage = () => {
       userId: user.id
     }
 
-    return dispatch(updateImageThunk(data, imageId.imageId))
+    return dispatch(updateImageThunk(data, imageId.imageId)).then(() => history.push(`/image/${imageId.imageId}`))
 
   }
 
