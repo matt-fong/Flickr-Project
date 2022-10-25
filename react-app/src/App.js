@@ -44,7 +44,7 @@ function App() {
         <Route path='/explore'>
           <ExplorePage />
         </Route>
-        <Route path='/testingcreate'>
+        <Route path='/photo/upload'>
           <CreateImage />
         </Route>
         <Route path='/testingedit'>

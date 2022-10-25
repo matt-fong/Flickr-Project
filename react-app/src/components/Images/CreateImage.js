@@ -31,7 +31,7 @@ const CreateImage = () => {
       userId: user.id
     }
 
-    return dispatch(createImageThunk(data))
+    return dispatch(createImageThunk(data)).then(() => history.push(`/explore`))
 
   }
 
