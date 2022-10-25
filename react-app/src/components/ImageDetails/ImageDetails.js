@@ -69,6 +69,7 @@ const ImageDetails = () => {
 
         <div onClick={() => handleDelete(imageId.imageId)}>
           DELETE BUTTON
+          <i class="fa-solid fa-trash"></i>
         </div>
 
         <div onClick={() => handleCreateComment()}>
@@ -81,7 +82,7 @@ const ImageDetails = () => {
 
       </div>
 
-      <div>
+      <div className='image-detail-comment-card-container'>
         {filteredComments.map((comment) => (
           <div key={comment.id}>
             <CommentCard comment={comment}/>

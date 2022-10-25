@@ -20,5 +20,9 @@
 }
 
 .image-detail-bottom {
-  height: 500px;
+  height: 100px;
+}
+
+.image-detail-comment-card-container {
+  margin-bottom: 100px;
 }
