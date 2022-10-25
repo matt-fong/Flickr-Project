@@ -13,6 +13,7 @@ import { createCommentThunk } from '../../store/comment';
 import './ImageDetails.css'
 import CommentCard from '../CommentCard/CommentCard';
 import { getAllUsersThunk } from '../../store/user';
+import CreateComment from '../Comments/CreateComment';
 
 const ImageDetails = () => {
 
@@ -67,17 +68,21 @@ const ImageDetails = () => {
 
       <div className='image-detail-bottom'>
 
-        <div onClick={() => handleDelete(imageId.imageId)}>
+        <div>
           DELETE BUTTON
-          <i class="fa-solid fa-trash"></i>
+          <i className="image-detail-delete-button fa-solid fa-trash" onClick={() => handleDelete(imageId.imageId)}></i>
         </div>
 
-        <div onClick={() => handleCreateComment()}>
+        {/* <div onClick={() => handleCreateComment()}>
           CREATE COMMENT TEST
-        </div>
+        </div> */}
 
         <div onClick={() => history.push(`/image/${imageId.imageId}/edit`)}>
           UPDATE IMAGE TEST
+        </div>
+
+        <div>
+          <CreateComment imageId={imageId?.imageId}/>
         </div>
 
       </div>

@@ -1,0 +1,30 @@
+.create-comment-container {
+  display: flex;
+  width: 482px;
+  height: 97px;
+  /* border: 1px solid black; */
+  margin-top: 15px;
+}
+
+.create-comment-pic {
+  height: 32px;
+  width: 32px;
+  margin-left: 10px;
+}
+
+.create-comment-right-container {
+  width: 421px;
+  position: relative;
+  margin-left: 19px;
+}
+
+.create-comment-name {
+  font-size: 14px;
+  font-weight: 600;
+  /* margin-top: 2px; */
+  margin-bottom: 2px
+}
+
+.create-comment-body {
+  font-size: 14px;
+}

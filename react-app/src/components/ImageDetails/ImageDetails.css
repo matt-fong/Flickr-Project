@@ -23,6 +23,10 @@
   height: 100px;
 }
 
+.image-detail-delete-button {
+  cursor: pointer;
+}
+
 .image-detail-comment-card-container {
   margin-bottom: 100px;
 }

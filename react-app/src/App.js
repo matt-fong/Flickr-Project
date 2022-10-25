@@ -12,6 +12,7 @@ import UpdateImage from './components/Images/EditImage';
 import ImageDetails from './components/ImageDetails/ImageDetails';
 import HomePage from './components/HomePage/HomePage';
 import CommentCard from './components/CommentCard/CommentCard';
+import CreateComment from './components/Comments/CreateComment';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -55,6 +56,9 @@ function App() {
         </Route>
         <Route path='/commentcard'>
           <CommentCard />
+        </Route>
+        <Route path='/createcomment'>
+          <CreateComment />
         </Route>
       </Switch>
     </BrowserRouter>
