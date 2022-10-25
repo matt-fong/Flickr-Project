@@ -60,29 +60,25 @@ const ImageDetails = () => {
     <div className='image-detail-container'>
 
       <div className='image-detail-top'>
-        <div>
+
+        <div className='image-detail-image-container'>
           <img className='image-detail-image' src={currentImage?.imageUrl}></img>
-          <div className='image-detail-title'>{currentImage?.title}</div>
+          {/* <div className='image-detail-title'>{currentImage?.title}</div> */}
         </div>
+
+        <div>
+          <i class="image-detail-delete-button fa-solid fa-trash fa-2xl"
+           onClick={() => handleDelete(imageId.imageId)}></i>
+        </div>
+
+
+
       </div>
 
       <div className='image-detail-bottom'>
 
-        <div>
-          DELETE BUTTON
-          <i className="image-detail-delete-button fa-solid fa-trash" onClick={() => handleDelete(imageId.imageId)}></i>
-        </div>
-
-        {/* <div onClick={() => handleCreateComment()}>
-          CREATE COMMENT TEST
-        </div> */}
-
         <div onClick={() => history.push(`/image/${imageId.imageId}/edit`)}>
-          UPDATE IMAGE TEST
-        </div>
-
-        <div>
-          <CreateComment imageId={imageId?.imageId}/>
+          UPDATE IMAGE BUTTON
         </div>
 
       </div>
@@ -95,6 +91,9 @@ const ImageDetails = () => {
         ))}
       </div>
 
+      <div>
+        <CreateComment imageId={imageId?.imageId}/>
+      </div>
 
     </div>
   )

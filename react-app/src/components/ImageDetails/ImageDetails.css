@@ -3,13 +3,22 @@
   justify-content: center;
   height: 767px;
   background: #212124;
-  align-items: center;
+  /* align-items: center; */
+  width: 100%;
+  flex-direction: column;
+  position: relative;
 }
 
+.image-detail-image-container {
+  display: flex;
+  justify-content: center;
+}
 
 .image-detail-image {
-  width: 1000px;
-  height: 667px;
+  max-width: 1000px;
+  max-height: 667px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -25,6 +34,11 @@
 
 .image-detail-delete-button {
   cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 24px;
 }
 
 .image-detail-comment-card-container {
