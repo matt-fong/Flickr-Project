@@ -1,0 +1,20 @@
+.comment-card-container {
+  width: 482px;
+  height: 51px;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.comment-card-pic {
+  height: 32px;
+  width: 32px;
+  margin-left: 10px;
+}
+
+.comment-card-name {
+  font-size: 14px
+}
+
+.comment-card-body {
+  font-size: 14px;
+}

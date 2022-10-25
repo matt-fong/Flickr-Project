@@ -5,14 +5,13 @@ import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
 import { authenticate } from './store/session';
 import ExplorePage from './components/ExplorePage/ExplorePage';
 import CreateImage from './components/Images/CreateImage';
 import UpdateImage from './components/Images/EditImage';
 import ImageDetails from './components/ImageDetails/ImageDetails';
 import HomePage from './components/HomePage/HomePage';
+import CommentCard from './components/CommentCard/CommentCard';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -53,6 +52,9 @@ function App() {
         </Route>
         <Route path='/image/:imageId'>
           <ImageDetails />
+        </Route>
+        <Route path='/commentcard'>
+          <CommentCard />
         </Route>
       </Switch>
     </BrowserRouter>
