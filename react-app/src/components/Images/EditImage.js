@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
 import { updateImageThunk } from '../../store/image';
+import { getAllImagesThunk } from '../../store/image';
 
 
 const UpdateImage = () => {
@@ -10,19 +11,26 @@ const UpdateImage = () => {
   const history = useHistory();
   const imageId = useParams();
 
+  // console.log('THIS IS IMAGEID EDIT IMAGE', imageId)
+
   const images = useSelector(state => state.images)
   const user = useSelector(state => (state.session.user))
 
-  const currentImage = images[imageId.id]
 
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [imageUrl, setImageUrl] = useState('')
+
+  const currentImage = images[imageId.imageId]
+
+  console.log('THIS IS CURRENT IMAGE', currentImage)
+
+  const [title, setTitle] = useState(currentImage?.title)
+  const [description, setDescription] = useState(currentImage?.description)
+  const [imageUrl, setImageUrl] = useState(currentImage?.imageUrl)
 
   const [errors, setErrors] = useState([])
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
+    dispatch(getAllImagesThunk())
   }, [])
 
 
@@ -36,7 +44,7 @@ const UpdateImage = () => {
       userId: user.id
     }
 
-    return dispatch(updateImageThunk(data, 4))
+    return dispatch(updateImageThunk(data, imageId.imageId))
 
   }
 
@@ -49,6 +57,7 @@ const UpdateImage = () => {
           <input
             type="text"
             placeholder="Title"
+            value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
           />
@@ -59,6 +68,7 @@ const UpdateImage = () => {
           <input
             type="text"
             placeholder='Description'
+            value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
           />
@@ -69,6 +79,7 @@ const UpdateImage = () => {
           <input
             type="text"
             placeholder='ImageUrl'
+            value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             required
           />
