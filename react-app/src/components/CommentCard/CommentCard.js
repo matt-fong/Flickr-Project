@@ -23,8 +23,8 @@ const CommentCard = ({ comment }) => {
     <div className='comment-card-container'>
       <img className='comment-card-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg'></img>
       <div className='comment-card-right-container'>
-        <div className='comment-card-name'>Matt Fong</div>
-        <div className='comment-card-body'>Awesome picture dude!</div>
+        <div className='comment-card-name'>User's Name</div>
+        <div className='comment-card-body'>{comment?.body}</div>
       </div>
     </div>
   );
