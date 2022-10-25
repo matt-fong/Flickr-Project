@@ -10,6 +10,14 @@ def get_comments():
   comments = Comment.query.all()
   return {'comments': [comment.to_dict() for comment in comments]}
 
+@comment_routes.route('/<int:id>')
+def get_comments_id(id):
+  comments = Comment.query.filter(Comment.imageId == id).all()
+  print('THIS IS IMAGE COMMENTS', comments)
+  if comments == None:
+    return {'message': 'No comments found'}
+  return {'comments': [comment.to_dict() for comment in comments]}
+
 @comment_routes.route('/create_comment', methods=['POST'])
 @login_required
 def create_comment():
