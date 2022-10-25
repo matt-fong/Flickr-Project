@@ -8,12 +8,13 @@ comment_routes = Blueprint('comments', __name__)
 @comment_routes.route('/')
 def get_comments():
   comments = Comment.query.all()
+
   return {'comments': [comment.to_dict() for comment in comments]}
 
 @comment_routes.route('/<int:id>')
 def get_comments_id(id):
   comments = Comment.query.filter(Comment.imageId == id).all()
-  print('THIS IS IMAGE COMMENTS', comments)
+
   if comments == None:
     return {'message': 'No comments found'}
   return {'comments': [comment.to_dict() for comment in comments]}
@@ -43,6 +44,7 @@ def edit_comment(comment_id):
   form['csrf_token'].data = request.cookies['csrf_token']
 
   if form.validate_on_submit():
+
     commentData = Comment.query.get(comment_id)
     commentData.body = form.data['body']
     commentData.userId = form.data['userId']
@@ -50,11 +52,14 @@ def edit_comment(comment_id):
 
     db.session.commit()
     return jsonify(commentData.to_dict()), 200
+  else:
+    return {'errors': form.errors}
 
 @comment_routes.route('/<int:comment_id>', methods=['DELETE'])
 @login_required
 def delete_comment(comment_id):
   comment = Comment.query.get(comment_id)
+
   db.session.delete(comment)
   db.session.commit()
   return {'message': 'Review deleted'}

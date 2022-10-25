@@ -74,6 +74,7 @@ export const updateCommentThunk = (comment, commentId) => async (dispatch) => {
   })
   if (res.ok) {
       const comment = await res.json()
+      console.log('THIS IS COMMENT FROM THUNK', comment)
       dispatch(updateCommentAC(comment))
       return res
   }
