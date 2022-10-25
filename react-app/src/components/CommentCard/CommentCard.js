@@ -14,7 +14,7 @@ const CommentCard = ({ comment }) => {
   const user = useSelector((state) => state.session.user)
   const users = useSelector((state) => state.users)
 
-  const currentUser = users[user.id]
+  const currentUser = users[comment?.userId]
 
   const { imageId } = useParams()
 
@@ -49,10 +49,14 @@ const CommentCard = ({ comment }) => {
           <div className='comment-card-first-last-name'>
             {`${currentUser?.first_name} ${currentUser?.last_name}`}
           </div>
-          <div className='comment-card-icons'>
+
+          { user?.id === comment?.userId && (
+            <div className='comment-card-icons'>
             <i className="comment-card-edit-button fa-solid fa-pen-to-square" onClick={() => setEditing(true)}></i>
             <i className="comment-card-delete-button fa-solid fa-trash" onClick={() => dispatch(deleteCommentThunk(comment?.id))}></i>
           </div>
+          )}
+          
         </div>
 
         {editing ?
