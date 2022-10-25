@@ -43,6 +43,9 @@ const NavBar = () => {
           Upload Photo
         </NavLink>
       </div>
+      <div>
+        <LogoutButton />
+      </div>
     </div>
   );
 }
