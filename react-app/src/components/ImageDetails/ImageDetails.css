@@ -6,12 +6,18 @@
   align-items: center;
 }
 
+
 .image-detail-image {
   width: 1000px;
   height: 667px;
   object-fit: cover;
 }
 
+.image-detail-title {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
 
 .image-detail-bottom {
   height: 500px;

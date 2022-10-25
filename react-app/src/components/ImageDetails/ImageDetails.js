@@ -61,6 +61,7 @@ const ImageDetails = () => {
       <div className='image-detail-top'>
         <div>
           <img className='image-detail-image' src={currentImage?.imageUrl}></img>
+          <div className='image-detail-title'>{currentImage?.title}</div>
         </div>
       </div>
 
@@ -72,6 +73,10 @@ const ImageDetails = () => {
 
         <div onClick={() => handleCreateComment()}>
           CREATE COMMENT TEST
+        </div>
+
+        <div onClick={() => history.push(`/image/${imageId.imageId}/edit`)}>
+          UPDATE IMAGE TEST
         </div>
 
       </div>

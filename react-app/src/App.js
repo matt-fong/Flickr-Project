@@ -47,7 +47,7 @@ function App() {
         <Route path='/photo/upload'>
           <CreateImage />
         </Route>
-        <Route path='/testingedit'>
+        <Route path='/image/:imageId/edit'>
           <UpdateImage />
         </Route>
         <Route path='/image/:imageId'>
