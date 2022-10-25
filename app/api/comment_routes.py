@@ -36,7 +36,7 @@ def edit_comment(comment_id):
 
   if form.validate_on_submit():
     commentData = Comment.query.get(comment_id)
-    commentData.comment = form.data['comment']
+    commentData.body = form.data['body']
     commentData.userId = form.data['userId']
     commentData.imageId = form.data['imageId']
 
