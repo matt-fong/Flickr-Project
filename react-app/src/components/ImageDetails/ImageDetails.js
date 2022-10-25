@@ -12,6 +12,7 @@ import { createCommentThunk } from '../../store/comment';
 
 import './ImageDetails.css'
 import CommentCard from '../CommentCard/CommentCard';
+import { getAllUsersThunk } from '../../store/user';
 
 const ImageDetails = () => {
 
@@ -22,6 +23,7 @@ const ImageDetails = () => {
   const images = useSelector(state => state.images)
   const user = useSelector(state => state.session.user)
   const comments = useSelector(state => state.comments)
+  const users = useSelector(state => state.users)
 
   const currentImage = images[imageId.imageId]
 
@@ -48,6 +50,7 @@ const ImageDetails = () => {
   useEffect(() => {
     dispatch(getAllImagesThunk())
     dispatch(getAllCommentsThunk())
+    dispatch(getAllUsersThunk())
     // dispatch(getImageCommentsThunk(imageId.imageId)).then(() => setIsLoaded(true))
   }, [])
 
