@@ -45,7 +45,15 @@ const CommentCard = ({ comment }) => {
     <div className='comment-card-container'>
       <img className='comment-card-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg'></img>
       <div className='comment-card-right-container'>
-        <div className='comment-card-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div>
+        <div className='comment-card-name-container'>
+          <div className='comment-card-first-last-name'>
+            {`${currentUser?.first_name} ${currentUser?.last_name}`}
+          </div>
+          <div className='comment-card-icons'>
+            <i className="comment-card-edit-button fa-solid fa-pen-to-square" onClick={() => setEditing(true)}></i>
+            <i className="comment-card-delete-button fa-solid fa-trash" onClick={() => dispatch(deleteCommentThunk(comment?.id))}></i>
+          </div>
+        </div>
 
         {editing ?
           <form>
@@ -60,11 +68,9 @@ const CommentCard = ({ comment }) => {
           :
           <div>
             <div className='comment-card-body'>{comment?.body}</div>
-            <button onClick={() => setEditing(true)}>edit button</button>
-            <button onClick={() => dispatch(deleteCommentThunk(comment?.id))}>Delete Comment</button>
           </div>
           }
-        {/* <div onClick={() => handleUpdateComment()}>UPDATE COMMENT</div> */}
+
       </div>
     </div>
   );

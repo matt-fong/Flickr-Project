@@ -1,7 +1,7 @@
 .comment-card-container {
   display: flex;
   width: 482px;
-  height: 51px;
+  /* height: 51px; */
   /* border: 1px solid black; */
   margin-top: 5px;
   padding: 5px 0 5px;
@@ -21,11 +21,21 @@
   box-sizing: border-box;
 }
 
-.comment-card-name {
+.comment-card-name-container {
+  display: flex;
   font-size: 14px;
   font-weight: 600;
   /* margin-top: 2px; */
   margin-bottom: 2px
+}
+
+.comment-card-icons {
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.comment-card-delete-button {
+  margin-left: 8px;
 }
 
 .comment-card-body {
