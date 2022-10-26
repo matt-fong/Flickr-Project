@@ -1,5 +1,6 @@
 import { useHistory, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
+import logo from './discovrlogo.jpg';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -16,9 +17,10 @@ const HomePage = () => {
       <div className="homepage-navbar">
 
         <div className="homepage-navbar-left">
-          <div onClick={() => history.push(`/`)} exact={true}>
+          {/* <div onClick={() => history.push(`/`)} exact={true}>
             Home
-          </div>
+          </div> */}
+          <img className='homepage-logo' src={logo}></img>
         </div>
 
         <div className="homepage-navbar-right">
