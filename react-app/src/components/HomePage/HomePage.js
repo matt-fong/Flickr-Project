@@ -9,7 +9,7 @@ const HomePage = () => {
 
   const user = useSelector(state => (state.session.user))
 
-
+//
 
   return (
     <div className='homepage-container'>
