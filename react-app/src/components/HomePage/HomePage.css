@@ -1,6 +1,6 @@
 .homepage-container {
   position: relative;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
 }
 
@@ -138,4 +138,29 @@
   max-width: 200px;
   width: 100%;
   border-radius: 3px;
+}
+
+.homepage-footer-container {
+  height: 56px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.homepage-footer {
+  display: flex;
+  justify-content: space-between;
+  /* width: 95%; */
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.homepage-footer a {
+  color: hsla(0,0%,100%,.6);
+  text-decoration: none !important;
 }
