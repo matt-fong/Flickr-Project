@@ -61,6 +61,7 @@ const HomePage = () => {
         <div className="homepage-footer">
           <a href='https://github.com/matt-fong' target="_blank">Github</a>
           <a href='https://www.linkedin.com/in/matthewfongny/' target="_blank">LinkedIn</a>
+          <a href="mailto:matthewfong12@gmail.com">Email</a>
         </div>
       </div>
 
