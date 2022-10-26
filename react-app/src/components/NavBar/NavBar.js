@@ -8,11 +8,15 @@ const NavBar = () => {
     <div className='navbar-container'>
 
       <div className='navbar-left'>
-        <div>
-          <NavLink to='/' exact={true}>
-            Home
-          </NavLink>
-        </div>
+
+        <NavLink to='/' exact={true}>
+          Home
+        </NavLink>
+
+        <NavLink to='/explore' exact={true}>
+          Explore
+        </NavLink>
+
 
       </div>
 

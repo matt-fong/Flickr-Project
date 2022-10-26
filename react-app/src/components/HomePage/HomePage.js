@@ -46,13 +46,15 @@ const HomePage = () => {
         <div className="homepage-middle-text">
           <div className="homepage-text-header">Find your inspiration.</div>
           <div className="homepage-text-body">Join the Discovr community, home to tens of billions of photos and 2 million groups.</div>
-          <div className='homepage-signup-button' onClick={() => history.push(`/sign-up`)}>Start for free</div>
+          {!user && (
+            <div className='homepage-signup-button' onClick={() => history.push(`/sign-up`)}>Start for free</div>
+          )}
+          {user && (
+            <div className='homepage-signup-button' onClick={() => history.push(`/explore`)}>Explore</div>
+          )}
         </div>
 
 
-        {/* {user && (
-          <div className='homepage-signup-button' onClick={() => history.push(`/explore`)}>Explore</div>
-        )} */}
 
       </div>
 
