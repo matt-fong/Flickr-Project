@@ -1,22 +1,31 @@
 .image-detail-top {
   display: flex;
   justify-content: center;
-  height: 767px;
+  /* height: 767px; */
+  /* height: 100%; */
   background: #212124;
   /* align-items: center; */
-  width: 100%;
+  /* width: 100%; */
+  height: 70vh;
   flex-direction: column;
   position: relative;
+  /* padding: 50px 40px 50px 0; */
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .image-detail-image-container {
   display: flex;
   justify-content: center;
+  /* height: 100%; */
+  /* width: 100%; */
 }
 
 .image-detail-image {
   max-width: 1000px;
-  max-height: 667px;
+  max-height: 1000px;
   height: 100%;
   width: 100%;
   object-fit: cover;
