@@ -19,6 +19,35 @@
   margin-left: 24px;
 }
 
+.homepage-navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.homepage-navbar-dot-container {
+  display: flex;
+  width: 35px;
+}
+
+.homepage-navbar-bluedot {
+  color: #0063E0;
+  font-size: 50px;
+}
+
+.homepage-navbar-pinkdot {
+  position: absolute;
+  color: #FF0088;
+  font-size: 50px;
+  left: 37px;
+}
+
+.homepage-navbar-discovr {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+}
+
 .homepage-logo {
   width: 132px;
   height: 32px;
