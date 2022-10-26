@@ -1,0 +1,12 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
