@@ -26,11 +26,7 @@ const NavBar = () => {
             Upload Photo
           </NavLink>
         </div>
-        <div>
-          <NavLink to='/login' exact={true}>
-            Login
-          </NavLink>
-        </div>
+
         <div>
           <LogoutButton />
         </div>

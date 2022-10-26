@@ -27,6 +27,9 @@ const ImageDetails = () => {
   const users = useSelector(state => state.users)
 
   const currentImage = images[imageId.imageId]
+  const imageOwner = users[currentImage?.userId]
+
+  console.log('this is image owner', imageOwner)
 
   const commentsArr = Object.values(comments)
   const filteredComments = commentsArr.filter(comment => comment.imageId === Number(imageId.imageId))
@@ -35,17 +38,6 @@ const ImageDetails = () => {
 
   const handleDelete = (imageId) => {
     dispatch(deleteImageThunk(imageId)).then(() => history.push(`/explore`))
-  }
-
-  const handleCreateComment = () => {
-
-    const data = {
-      body: 'TESTING CREATE COMMENT',
-      userId: user.id,
-      imageId: imageId.imageId,
-    }
-
-    return dispatch(createCommentThunk(data))
   }
 
   useEffect(() => {
@@ -82,16 +74,33 @@ const ImageDetails = () => {
 
       <div className='image-detail-bottom'>
 
-        <div className='image-detail-comment-card-container'>
-          {filteredComments.map((comment) => (
-            <div key={comment.id}>
-              <CommentCard comment={comment}/>
-              </div>
-          ))}
-        </div>
+        <div className='image-detail-inner-bottom'>
 
-        <div>
-          <CreateComment imageId={imageId?.imageId}/>
+          <div className='image-detail-user-card'>
+
+            <div className='image-detail-user-card-pic-container'>
+              <img className='image-detail-user-card-pic' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png'></img>
+            </div>
+
+            <div className='image-detail-user-card-right'>
+              <div className='image-detail-user-card-name'>{`${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
+              <div className='image-detail-user-card-detail'>{currentImage?.title}</div>
+            </div>
+
+          </div>
+
+          <div className='image-detail-comment-card-container'>
+            {filteredComments.map((comment) => (
+              <div key={comment.id}>
+                <CommentCard comment={comment}/>
+                </div>
+            ))}
+          </div>
+
+          <div>
+            <CreateComment imageId={imageId?.imageId}/>
+          </div>
+
         </div>
 
       </div>
