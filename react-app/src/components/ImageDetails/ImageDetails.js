@@ -76,30 +76,39 @@ const ImageDetails = () => {
 
         <div className='image-detail-inner-bottom'>
 
-          <div className='image-detail-user-card'>
+          <div className='image-detail-bottom-left'>
+            <div className='image-detail-user-card'>
 
-            <div className='image-detail-user-card-pic-container'>
-              <img className='image-detail-user-card-pic' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png'></img>
+              <div className='image-detail-user-card-pic-container'>
+                <img className='image-detail-user-card-pic' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png'></img>
+              </div>
+
+              <div className='image-detail-user-card-right'>
+                <div className='image-detail-user-card-name'>{`${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
+                <div className='image-detail-user-card-title'>{currentImage?.title}</div>
+                <div className='image-detail-user-card-description'>{currentImage?.description}</div>
+              </div>
+
             </div>
 
-            <div className='image-detail-user-card-right'>
-              <div className='image-detail-user-card-name'>{`${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
-              <div className='image-detail-user-card-detail'>{currentImage?.title}</div>
+
+            <div className='image-detail-comment-card-container'>
+            <div className='image-detail-comment-header'>{`Comments (${filteredComments?.length})`}</div>
+              {filteredComments.map((comment) => (
+                <div key={comment.id}>
+                  <CommentCard comment={comment}/>
+                  </div>
+              ))}
+            </div>
+
+            <div>
+              <CreateComment imageId={imageId?.imageId}/>
             </div>
 
           </div>
 
-          <div className='image-detail-comment-card-container'>
-            {filteredComments.map((comment) => (
-              <div key={comment.id}>
-                <CommentCard comment={comment}/>
-                </div>
-            ))}
-          </div>
+          <div className='image-detail-bottom-right'></div>
 
-          <div>
-            <CreateComment imageId={imageId?.imageId}/>
-          </div>
 
         </div>
 

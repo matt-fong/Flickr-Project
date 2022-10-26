@@ -63,16 +63,31 @@
   padding-bottom: 12px;
 }
 
-.image-detail-user-card-detail {
+.image-detail-user-card-title {
   /* margin-top: 12px; */
   /* width: 450px; */
   word-wrap: break-word;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.image-detail-user-card-description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .image-detail-comment-card-container {
   padding-top: 24px;
   border-top: 1px solid #cfd6d9;
   width: 500px;
+}
+
+.image-detail-comment-header {
+  margin-bottom: 24px;
+  font-weight: 600;
 }
 
 .image-detail-update-button {
