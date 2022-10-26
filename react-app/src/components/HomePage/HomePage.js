@@ -40,7 +40,8 @@ const HomePage = () => {
 
       <div className="homepage-bottom-container">
 
-        <img className='homepage-image' src='https://wallpaperaccess.com/full/1369012.jpg'></img>
+        {/* <img className='homepage-image' src='https://wallpaperaccess.com/full/1369012.jpg'></img> */}
+        <img className='homepage-image' src='https://www.pixel4k.com/wp-content/uploads/2018/09/night-city-city-lights-metropolis-night-4k_1538067561.jpg'></img>
 
         <div className="homepage-middle-text">
           <div className="homepage-text-header">Find your inspiration.</div>
