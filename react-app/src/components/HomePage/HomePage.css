@@ -1,5 +1,47 @@
 .homepage-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.homepage-navbar {
+  width: 100%;
+  height: 64px;
+  background: rgba(0,0,0,.25);
+  /* background-color: white; */
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homepage-navbar-left {
+  margin-left: 24px;
+}
+
+.homepage-navbar-right {
+  margin-right: 24px;
+  display: flex;
+  /* justify-content: space-between; */
+  /* width: 150px; */
+  align-items: center;
+}
+
+.homepage-navbar-login {
+  cursor: pointer;
+  color: white;
+  margin-left: 23px;
+}
+
+.homepage-navbar-signup {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  transition: color .15s ease-in-out;
+  padding-left: 20px;
+  padding-right: 20px;
+  line-height: 32px;
+  margin-left: 23px;
 }
 
 .homepage-image {
@@ -9,7 +51,6 @@
   height: 900px;
   object-fit: cover;
 }
-
 
 .homepage-signup-button {
   position: absolute;

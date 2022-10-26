@@ -31,33 +31,41 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route path='/login' exact={true}>
+          <NavBar />
           <LoginForm />
         </Route>
         <Route path='/sign-up' exact={true}>
+          <NavBar />
           <SignUpForm />
         </Route>
         <Route path='/' exact={true} >
           <HomePage />
         </Route>
-        <Route path='/explore'>
+        <Route path='/explore' exact={true}>
+          <NavBar />
           <ExplorePage />
         </Route>
-        <Route path='/photo/upload'>
+        <Route path='/photo/upload' exact={true}>
+          <NavBar />
           <CreateImage />
         </Route>
-        <Route path='/image/:imageId/edit'>
+        <Route path='/image/:imageId/edit' exact={true}>
+          <NavBar />
           <UpdateImage />
         </Route>
-        <Route path='/image/:imageId'>
+        <Route path='/image/:imageId' exact={true}>
+          <NavBar />
           <ImageDetails />
         </Route>
-        <Route path='/commentcard'>
+        <Route path='/commentcard' exact={true}>
+          <NavBar />
           <CommentCard />
         </Route>
-        <Route path='/createcomment'>
+        <Route path='/createcomment' exact={true}>
+          <NavBar />
           <CreateComment />
         </Route>
       </Switch>
