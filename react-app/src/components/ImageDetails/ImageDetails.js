@@ -3,12 +3,9 @@ import { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { deleteImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
-
 import { getAllCommentsThunk } from '../../store/comment';
 import { getImageCommentsThunk } from '../../store/comment';
-import { createCommentThunk } from '../../store/comment';
-// import { updateCommentThunk } from '../../store/comment';
-// import { deleteCommentThunk } from '../../store/comment';
+
 
 import './ImageDetails.css'
 import CommentCard from '../CommentCard/CommentCard';

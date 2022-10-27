@@ -18,9 +18,6 @@ const CommentCard = ({ comment }) => {
 
   const { imageId } = useParams()
 
-  // console.log('THIS IS IMAGE ID', imageId)
-  // console.log('THIS IS COMMENT', comment)
-
   const [body, setBody] = useState(comment?.body);
   const [editing, setEditing] = useState(false);
   const [errors, setErrors] = useState([]);
