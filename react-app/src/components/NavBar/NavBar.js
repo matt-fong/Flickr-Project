@@ -1,36 +1,46 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from '../Auth/LogoutButton';
 import './NavBar.css';
 
 const NavBar = () => {
+  const history = useHistory();
+
   return (
     <div className='navbar-container'>
 
-      <div className='navbar-left'>
+      <div className='navbar-inner-container'>
 
-        <NavLink to='/' exact={true}>
-          Home
-        </NavLink>
+        <div className='navbar-left'>
 
-        <NavLink to='/explore' exact={true}>
-          Explore
-        </NavLink>
+          <div className='navbar-logo' onClick={() => history.push(`/`)} exact={true}>
+            <div className="navbar-dot-container">
+              <div className="navbar-bluedot">•</div>
+              <div className="navbar-pinkdot">•</div>
+            </div>
+            <div className="navbar-discovr">discovr</div>
+          </div>
 
+          <div className='navbar-explore' onClick={() => history.push(`/explore`)}>
+            Explore
+          </div>
+
+        </div>
+
+        <div className='navbar-right'>
+          <div>
+            <div className='navbar-upload-photo' onClick={() => history.push(`/photo/upload`)}>
+              Upload Photo
+            </div>
+          </div>
+
+          <div>
+            <LogoutButton />
+          </div>
+        </div>
 
       </div>
 
-      <div className='navbar-right'>
-        <div>
-          <NavLink to='/photo/upload' exact={true}>
-            Upload Photo
-          </NavLink>
-        </div>
-
-        <div>
-          <LogoutButton />
-        </div>
-      </div>
 
     </div>
   );
