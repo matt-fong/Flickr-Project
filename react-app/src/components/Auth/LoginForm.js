@@ -10,11 +10,11 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password)).then(history.push('/explore'));
+    const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
     }
@@ -28,9 +28,9 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  // if (user) {
-  //   return <Redirect to='/' />;
-  // }
+  if (user) {
+    return <Redirect to='/explore' />;
+  }
 
   return (
     <>
