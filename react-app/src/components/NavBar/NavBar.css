@@ -18,7 +18,7 @@
 
 .navbar-left {
   display: flex;
-  width: 250px;
+  width: 256.05px;
   justify-content: space-between;
   align-items: center;
 }
@@ -63,12 +63,17 @@
 
 .navbar-right {
   display: flex;
-  width: 200px;
+  width: 213.59px;
   justify-content: space-between;
   align-items: center;
 }
 
 .navbar-upload-photo {
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-logout {
   color: white;
   cursor: pointer;
 }

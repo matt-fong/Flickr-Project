@@ -1,10 +1,12 @@
 import React from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
-import LogoutButton from '../Auth/LogoutButton';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logout } from '../../store/session';
 import './NavBar.css';
 
 const NavBar = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   return (
     <div className='navbar-container'>
@@ -34,8 +36,8 @@ const NavBar = () => {
             </div>
           </div>
 
-          <div>
-            <LogoutButton />
+          <div className='navbar-logout' onClick={() => dispatch(logout()).then(history.push('/'))}>
+            Logout
           </div>
         </div>
 
