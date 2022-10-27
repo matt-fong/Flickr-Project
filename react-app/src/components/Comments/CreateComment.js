@@ -18,9 +18,6 @@ const CreateComment = ({ imageId }) => {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
 
-
-  console.log('THIS IS IMAGE ID', imageId)
-
   useEffect((e) => {
 
   }, [])

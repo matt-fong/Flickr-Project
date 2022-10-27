@@ -36,7 +36,6 @@ export const getAllCommentsThunk = () => async (dispatch) => {
   const res = await fetch('/api/comments/');
   if (res.ok) {
     const comments = await res.json()
-    // console.log('this is comments', comments.comments)
     dispatch(getAllCommentsAC(comments.comments))
     return comments
   }
@@ -46,7 +45,6 @@ export const getImageCommentsThunk = (imageId) => async (dispatch) => {
   const res = await fetch(`/api/comments/${imageId}`);
   if (res.ok) {
     const comments = await res.json()
-    // console.log('this is comments from one image thunk', comments.comments)
     dispatch(getImageCommentsAC(comments.comments))
     return comments
   }
@@ -60,7 +58,6 @@ export const createCommentThunk = (comment) => async (dispatch) => {
   })
   if (res.ok) {
     const comment = await res.json()
-    // console.log("THIS IS COMMENT", comment)
     dispatch(createCommentAC(comment))
     return res
   }
@@ -74,7 +71,6 @@ export const updateCommentThunk = (comment, commentId) => async (dispatch) => {
   })
   if (res.ok) {
       const comment = await res.json()
-      console.log('THIS IS COMMENT FROM THUNK', comment)
       dispatch(updateCommentAC(comment))
       return res
   }
@@ -86,15 +82,12 @@ export const deleteCommentThunk = (commentId) => async (dispatch) => {
       headers: {'Content-Type': 'application/json'},
   })
   if (res.ok) {
-      console.log('THIS IS RES FROM DELETE THUNK', res)
       dispatch(deleteCommentAC(commentId))
       return res
   }
-  console.log('THIS IS RES FROM DELETE THUNK', res)
 }
 
 // Reducer
-
 const initialState = {}
 const commentReducer = (state = initialState, action) => {
     let newState = {...state}
@@ -103,15 +96,11 @@ const commentReducer = (state = initialState, action) => {
         action.payload.forEach((comment) => {
             newState[comment.id] = comment
         })
-        // console.log('this is action', action)
-        // console.log('this is new state', newState)
         return newState
       case GET_IMAGE_COMMENTS:
         action.payload.forEach((comment) => {
             newState[comment.id] = comment
         })
-        // console.log('this is action image comments', action)
-        // console.log('this is new state image comments', newState)
         return newState
       case CREATE_COMMENT:
         newState[action.payload.id] = action.payload

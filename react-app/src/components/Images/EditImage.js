@@ -11,8 +11,6 @@ const UpdateImage = () => {
   const history = useHistory();
   const imageId = useParams();
 
-  // console.log('THIS IS IMAGEID EDIT IMAGE', imageId)
-
   const images = useSelector(state => state.images)
   const user = useSelector(state => (state.session.user))
 

@@ -30,7 +30,6 @@ export const getAllImagesThunk = () => async (dispatch) => {
   const res = await fetch('/api/images/');
   if (res.ok) {
     const images = await res.json()
-    // console.log('this is images', images.images)
     dispatch(getAllImagesAC(images.images))
     return images
   }
@@ -74,7 +73,6 @@ export const deleteImageThunk = (imageId) => async (dispatch) => {
 }
 
 // Reducer
-
 const initialState = {}
 const imageReducer = (state = initialState, action) => {
     let newState = {...state}
@@ -83,8 +81,6 @@ const imageReducer = (state = initialState, action) => {
           action.payload.forEach((image) => {
               newState[image.id] = image
           })
-          // console.log('this is action', action)
-          // console.log('this is new state', newState)
           return newState
         case CREATE_IMAGE:
           newState[action.payload.id] = action.payload

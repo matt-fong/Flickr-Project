@@ -26,12 +26,8 @@ const ImageDetails = () => {
   const currentImage = images[imageId.imageId]
   const imageOwner = users[currentImage?.userId]
 
-  console.log('this is image owner', imageOwner)
-
   const commentsArr = Object.values(comments)
   const filteredComments = commentsArr.filter(comment => comment.imageId === Number(imageId.imageId))
-
-  // console.log("THESE ARE ALL THE FILTERED COMMENTS", filteredComments)
 
   const handleDelete = (imageId) => {
     dispatch(deleteImageThunk(imageId)).then(() => history.push(`/explore`))
