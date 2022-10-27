@@ -48,7 +48,7 @@ const CreateComment = ({ imageId }) => {
     <div className='create-comment-container'>
       <img className='create-comment-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg'></img>
       <div className='create-comment-right-container'>
-        <div className='create-comment-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div>
+        {/* <div className='create-comment-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div> */}
 
 
           <form>
@@ -61,7 +61,9 @@ const CreateComment = ({ imageId }) => {
 
           </form>
 
-          <button className='create-comment-button' onClick={handleCreateComment}>Create Comment</button>
+          <div className='create-comment-button-container'>
+            <button className='create-comment-button' onClick={handleCreateComment}>Comment</button>
+          </div>
 
         {/* <div onClick={() => handleUpdateComment()}>UPDATE COMMENT</div> */}
       </div>

@@ -4,6 +4,7 @@
   height: 97px;
   /* border: 1px solid black; */
   margin-top: 15px;
+  margin-bottom: 100px;
 }
 
 .create-comment-pic {
@@ -27,4 +28,23 @@
 
 .create-comment-body {
   font-size: 14px;
+  width: 421px;
+  height: 92px;
+  box-sizing: border-box;
+}
+
+.create-comment-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.create-comment-button {
+  padding: 6.5px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 32px;
+  color: white;
+  background-color: rgb(0, 145, 220);
+  border: none;
+  border-radius: 3px;
 }

@@ -35,7 +35,11 @@
 }
 
 .comment-card-delete-button {
-  margin-left: 8px;
+  border: none;
+}
+
+.comment-card-edit-body {
+  /* height: 100px; */
 }
 
 .comment-card-body {

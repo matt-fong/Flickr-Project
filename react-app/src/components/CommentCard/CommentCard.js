@@ -56,13 +56,13 @@ const CommentCard = ({ comment }) => {
             <i className="comment-card-delete-button fa-solid fa-trash" onClick={() => dispatch(deleteCommentThunk(comment?.id))}></i>
           </div>
           )}
-          
+
         </div>
 
         {editing ?
           <form>
             <textarea
-              className='comment-card-body'
+              className='comment-card-edit-body'
               type='text'
               value={body}
               onChange={(e) => setBody(e.target.value)}
