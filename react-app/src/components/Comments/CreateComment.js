@@ -1,8 +1,7 @@
-import { NavLink, useHistory, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import './CreateComment.css'
-import { updateCommentThunk } from '../../store/comment';
 import { createCommentThunk } from '../../store/comment';
 
 
@@ -19,13 +18,8 @@ const CreateComment = ({ imageId }) => {
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
 
-  // const { imageId } = useParams()
 
   console.log('THIS IS IMAGE ID', imageId)
-
-  // console.log('THIS IS IMAGE ID', imageId)
-  // console.log('THIS IS COMMENT', comment)
-
 
   useEffect((e) => {
 
@@ -83,7 +77,6 @@ const CreateComment = ({ imageId }) => {
           <button className='create-comment-button' onClick={handleCreateComment}>Comment</button>
         </div>
 
-        {/* <div onClick={() => handleUpdateComment()}>UPDATE COMMENT</div> */}
       </div>
     </div>
   );

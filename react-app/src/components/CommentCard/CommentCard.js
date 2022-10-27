@@ -23,12 +23,14 @@ const CommentCard = ({ comment }) => {
 
   const [body, setBody] = useState(comment?.body);
   const [editing, setEditing] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   useEffect((e) => {
 
   }, [])
 
-  const handleUpdateComment = () => {
+  const handleUpdateComment = (e) => {
+    e.preventDefault();
 
     const data = {
       body: body,
@@ -36,9 +38,18 @@ const CommentCard = ({ comment }) => {
       imageId: imageId,
     }
 
-    setEditing(false);
+    let errors = [];
 
-    return dispatch(updateCommentThunk(data, comment?.id))
+    if (body.length < 1 || body.length > 255) {
+      errors.push('Comment must be between 1 and 255 characters.')
+    }
+
+    setErrors(errors)
+
+    if (body.length > 0 && body.length < 256) {
+      return dispatch(updateCommentThunk(data, comment?.id)).then(setEditing(false))
+    }
+
   }
 
   return (
@@ -67,7 +78,18 @@ const CommentCard = ({ comment }) => {
               value={body}
               onChange={(e) => setBody(e.target.value)}
             />
-            <button className='comment-card-button' onClick={handleUpdateComment}>Update Comment</button>
+
+            <div className='edit-comment-button-container'>
+
+              <div>
+                {errors.map((error) => (
+                  <div className='create-comment-error'>{error}</div>
+                ))}
+              </div>
+
+              <button className='comment-card-button' onClick={handleUpdateComment}>Comment</button>
+            </div>
+
           </form>
           :
           <div>

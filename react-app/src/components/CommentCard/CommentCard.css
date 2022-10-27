@@ -16,7 +16,7 @@
 
 .comment-card-right-container {
   padding-left: 20px;
-  padding-right: 17px;
+  /* padding-right: 17px; */
   width: 440px;
   box-sizing: border-box;
 }
@@ -40,7 +40,26 @@
 }
 
 .comment-card-edit-body {
-  /* height: 100px; */
+  font-size: 14px;
+  width: 421px;
+  height: 92px;
+  box-sizing: border-box;
+}
+
+.edit-comment-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-card-button {
+  padding: 6.5px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  height: 32px;
+  color: white;
+  background-color: rgb(0, 145, 220);
+  border: none;
+  border-radius: 3px;
 }
 
 .comment-card-body {
