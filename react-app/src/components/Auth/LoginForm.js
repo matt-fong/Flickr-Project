@@ -105,6 +105,17 @@ const LoginForm = () => {
                 <button className='login-button' type='submit'>Sign in</button>
               </div>
 
+              <div className='login-form-button-container'>
+                <button className="login-demo-button"
+                  type="submit"
+                  onClick={() => {
+                    setEmail("demo@aa.io");
+                    setPassword("password");
+                  }}>
+                  Demo User
+                </button>
+              </div>
+
               <div className='login-signup-container'>
                 <div className='login-signup-one'>Not a Discovr member?</div>
                 <div className='login-signup-two' onClick={() => history.push(`/sign-up`)}>Sign up here.</div>
