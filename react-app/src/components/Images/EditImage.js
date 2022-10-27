@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
 import { updateImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
-
+import { logout } from '../../store/session';
 
 const UpdateImage = () => {
   const dispatch = useDispatch();
@@ -16,11 +16,7 @@ const UpdateImage = () => {
   const images = useSelector(state => state.images)
   const user = useSelector(state => (state.session.user))
 
-
-
   const currentImage = images[imageId.imageId]
-
-  console.log('THIS IS CURRENT IMAGE', currentImage)
 
   const [title, setTitle] = useState(currentImage?.title)
   const [description, setDescription] = useState(currentImage?.description)
@@ -49,51 +45,98 @@ const UpdateImage = () => {
   }
 
   return (
-    <div >
-      <form onSubmit={handleSubmit} >
+    <>
+      <div className='create-image-container'>
 
-        <div>
-          <label>Title</label>
-          <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
+        <div className='create-image-navbar'>
+          <div className='create-image-navbar-inner-container'>
+
+            <div className='create-image-navbar-left'>
+              <div className='create-image-navbar-logo' onClick={() => history.push(`/`)} exact={true}>
+                <div className="create-image-navbar-dot-container">
+                  <div className="create-image-navbar-bluedot">•</div>
+                  <div className="create-image-navbar-pinkdot">•</div>
+                </div>
+                <div className="create-image-navbar-discovr">discovr</div>
+              </div>
+
+              <div className='create-image-navbar-explore' onClick={() => history.push(`/explore`)}>
+                Explore
+              </div>
+            </div>
+
+            <div className='create-image-navbar-right'>
+
+              <div className='create-image-navbar-logout' onClick={() => dispatch(logout()).then(history.push('/'))}>
+                Logout
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div>
-        <label>Description</label>
-          <input
-            type="text"
-            placeholder='Description'
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
+        <div className='create-image-form-container'>
+          <form className='create-image-form' onSubmit={handleSubmit} >
+
+            <div className='create-image-input-container'>
+              <div className='create-image-input-header'>Image URL</div>
+              <div>
+                <input
+                  className='create-image-input'
+                  type="text"
+                  placeholder='ImageUrl'
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className='create-image-input-container'>
+              <div className='create-image-input-header'>Title</div>
+              <div>
+                <input
+                  className='create-image-input'
+                  type="text"
+                  placeholder="Title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
+              </div>
+
+            </div>
+
+            <div className='create-image-input-container'>
+              <div className='create-image-input-header'>Description</div>
+              <div className='create-image-input-inner-container'>
+                <textarea
+                  className='create-image-input-description'
+                  type="text"
+                  placeholder='Description'
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className='create-image-button-container'>
+              <button className='create-image-button' name="submit" type="submit" >
+                Edit Photo
+              </button>
+            </div>
+
+          </form>
         </div>
 
-        <div>
-        <label>ImageUrl</label>
-          <input
-            type="text"
-            placeholder='ImageUrl'
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            required
-          />
-        </div>
+      </div>
 
-        <button name="submit" type="submit" >
-          Edit Image
-        </button>
-
-      </form>
-    </div>
+    </>
   )
 }
-
 
 
 export default UpdateImage;

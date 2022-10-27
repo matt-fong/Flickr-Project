@@ -53,7 +53,7 @@ function App() {
           <CreateImage />
         </Route>
         <Route path='/image/:imageId/edit' exact={true}>
-          <NavBar />
+          {/* <NavBar /> */}
           <UpdateImage />
         </Route>
         <Route path='/image/:imageId' exact={true}>
