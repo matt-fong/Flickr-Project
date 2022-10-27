@@ -38,8 +38,22 @@ const LoginForm = () => {
       <img className='login-background-image' src='https://identity.flickr.com/img/033120190455-by-Henry.26d9f56a.jpg'></img>
 
       <div className='login-form-container'>
+
         <div className='login-form-inner-container'>
+
           <form className='login-form' onSubmit={onLogin}>
+
+            <div className="login-form-dot-icon">
+              <div className="login-form-dot-container">
+                <div className="login-form-bluedot">•</div>
+                <div className="login-form-pinkdot">•</div>
+              </div>
+            </div>
+
+            <div className='login-form-login-container'>
+              <div className='login-form-login'>Log in to Discovr</div>
+
+            </div>
 
             {/* <div>
               {errors.map((error, ind) => (
@@ -48,32 +62,38 @@ const LoginForm = () => {
             </div> */}
 
             <div className='login-form-input-container'>
-              <label htmlFor='email'>Email</label>
+              {/* <label htmlFor='email'>Email</label> */}
               <input
                 className='login-input'
-                name='email'
                 type='text'
                 placeholder='Email'
                 value={email}
                 onChange={updateEmail}
+                required
               />
             </div>
 
             <div className='login-form-input-container'>
-              <label htmlFor='password'>Password</label>
+              {/* <label htmlFor='password'>Password</label> */}
               <input
                 className='login-input'
-                name='password'
                 type='password'
                 placeholder='Password'
                 value={password}
                 onChange={updatePassword}
+                required
               />
             </div>
 
             <div className='login-form-button-container'>
               <button className='login-button' type='submit'>Sign in</button>
             </div>
+
+            <div className='login-signup-container'>
+              <div className='login-signup-one'>Not a Discovr member?</div>
+              <div className='login-signup-two' onClick={() => history.push(`/sign-up`)}>Sign up here.</div>
+            </div>
+
           </form>
 
         </div>
