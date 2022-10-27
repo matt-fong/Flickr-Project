@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
 import { createImageThunk } from '../../store/image';
+import './CreateImage.css'
 
 const CreateImage = () => {
   const dispatch = useDispatch();
@@ -36,45 +37,70 @@ const CreateImage = () => {
   }
 
   return (
-    <div >
-      <form onSubmit={handleSubmit} >
+    <>
+      <div>
 
-        <div>
-          <label>Title</label>
-          <input
-            type="text"
-            placeholder="Title"
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
+        <div className='create-image-navbar'>
+          <div className='create-image-navbar-inner-container'>
+
+            <div className='create-image-navbar-logo' onClick={() => history.push(`/`)} exact={true}>
+              <div className="create-image-navbar-dot-container">
+                <div className="create-image-navbar-bluedot">•</div>
+                <div className="create-image-navbar-pinkdot">•</div>
+              </div>
+              <div className="create-image-navbar-discovr">discovr</div>
+            </div>
+
+          </div>
         </div>
 
-        <div>
-        <label>Description</label>
-          <input
-            type="text"
-            placeholder='Description'
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
+        <div className='testinggg'>
+          <form className='test1' onSubmit={handleSubmit} >
+
+            <div>Image URL</div>
+            <div>
+            {/* <label>ImageUrl</label> */}
+              <input
+                type="text"
+                placeholder='ImageUrl'
+                onChange={(e) => setImageUrl(e.target.value)}
+                required
+              />
+            </div>
+
+
+            <div>Title</div>
+            <div>
+              {/* <label>Title</label> */}
+              <input
+                type="text"
+                placeholder="Title"
+                onChange={(e) => setTitle(e.target.value)}
+                required
+              />
+            </div>
+
+            <div>Description</div>
+            <div>
+            {/* <label>Description</label> */}
+              <input
+                type="text"
+                placeholder='Description'
+                onChange={(e) => setDescription(e.target.value)}
+                required
+              />
+            </div>
+
+            <button name="submit" type="submit" >
+              Create Image
+            </button>
+
+          </form>
         </div>
 
-        <div>
-        <label>ImageUrl</label>
-          <input
-            type="text"
-            placeholder='ImageUrl'
-            onChange={(e) => setImageUrl(e.target.value)}
-            required
-          />
-        </div>
+      </div>
 
-        <button name="submit" type="submit" >
-          Create Image
-        </button>
-
-      </form>
-    </div>
+    </>
   )
 }
 

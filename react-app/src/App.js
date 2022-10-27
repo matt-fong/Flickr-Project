@@ -49,7 +49,7 @@ function App() {
           <ExplorePage />
         </Route>
         <Route path='/photo/upload' exact={true}>
-          <NavBar />
+          {/* <NavBar /> */}
           <CreateImage />
         </Route>
         <Route path='/image/:imageId/edit' exact={true}>
