@@ -20,7 +20,10 @@ const UpdateImage = () => {
   const [description, setDescription] = useState(currentImage?.description)
   const [imageUrl, setImageUrl] = useState(currentImage?.imageUrl)
 
-  const [errors, setErrors] = useState([])
+  const [imageUrlErrors, setImageUrlErrors] = useState([])
+  const [titleErrors, setTitleErrors] = useState([])
+  const [descriptionErrors, setDescriptionErrors] = useState([])
+
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -35,9 +38,36 @@ const UpdateImage = () => {
     }
   }, [currentImage])
 
+  useEffect(() => {
+    let imageUrlErrors = [];
+    let titleErrors = [];
+    let descriptionErrors = [];
+
+    if (!isImage(imageUrl)) {
+      imageUrlErrors.push('Image URL is required')
+    }
+
+    if (title.length < 1 || title.length > 100) {
+      titleErrors.push('Comment must be between 1 and 100 characters.')
+    }
+
+    if (description.length < 1 || description.length > 255) {
+      descriptionErrors.push('Description must be between 1 and 255 characters.')
+    }
+
+    setImageUrlErrors(imageUrlErrors);
+    setTitleErrors(titleErrors);
+    setDescriptionErrors(descriptionErrors);
+  }, [title, description, imageUrl])
+
+  function isImage(url) {
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url)
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setSubmitted(true)
 
     const data = {
       title: title,
@@ -46,7 +76,13 @@ const UpdateImage = () => {
       userId: user.id
     }
 
-    return dispatch(updateImageThunk(data, imageId.imageId)).then(() => history.push(`/image/${imageId.imageId}`))
+    if (isImage(imageUrl) &&
+      title.length > 0 && title.length < 101 &&
+      description.length > 0 && description.length < 256) {
+      return dispatch(updateImageThunk(data, imageId.imageId)).then(() => history.push(`/image/${imageId.imageId}`))
+    }
+
+    // return dispatch(updateImageThunk(data, imageId.imageId)).then(() => history.push(`/image/${imageId.imageId}`))
 
   }
 
@@ -87,6 +123,11 @@ const UpdateImage = () => {
           <form className='create-image-form' onSubmit={handleSubmit} >
 
             <div className='create-image-input-container'>
+              <div>
+                {submitted && imageUrlErrors.map((error) => (
+                  <div className='create-image-error'>{error}</div>
+                ))}
+              </div>
               <div className='create-image-input-header'>Image URL</div>
               <div>
                 <input
@@ -95,12 +136,17 @@ const UpdateImage = () => {
                   placeholder='ImageUrl'
                   value={imageUrl}
                   onChange={(e) => setImageUrl(e.target.value)}
-                  required
+                  // required
                 />
               </div>
             </div>
 
             <div className='create-image-input-container'>
+              <div>
+                {submitted && titleErrors.map((error) => (
+                  <div className='create-image-error'>{error}</div>
+                ))}
+              </div>
               <div className='create-image-input-header'>Title</div>
               <div>
                 <input
@@ -109,13 +155,18 @@ const UpdateImage = () => {
                   placeholder="Title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  required
+                  // required
                 />
               </div>
 
             </div>
 
             <div className='create-image-input-container'>
+              <div>
+                {submitted && descriptionErrors.map((error) => (
+                  <div className='create-image-error'>{error}</div>
+                ))}
+              </div>
               <div className='create-image-input-header'>Description</div>
               <div className='create-image-input-inner-container'>
                 <textarea
@@ -124,7 +175,7 @@ const UpdateImage = () => {
                   placeholder='Description'
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  required
+                  // required
                 />
               </div>
             </div>
