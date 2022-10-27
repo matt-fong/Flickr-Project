@@ -44,7 +44,7 @@ export const createImageThunk = (image) => async (dispatch) => {
   if (res.ok) {
     const image = await res.json()
     dispatch(createImageAC(image))
-    return res
+    return image
   }
 }
 

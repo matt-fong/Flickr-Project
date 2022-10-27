@@ -33,7 +33,7 @@ const CreateImage = () => {
       userId: user.id
     }
 
-    return dispatch(createImageThunk(data)).then(() => history.push(`/explore`))
+    return dispatch(createImageThunk(data)).then((res) => history.push(`/image/${res.id}`))
 
   }
 
@@ -63,7 +63,7 @@ const CreateImage = () => {
               <div className='create-image-navbar-logout' onClick={() => dispatch(logout()).then(history.push('/'))}>
                 Logout
               </div>
-              
+
             </div>
 
           </div>
