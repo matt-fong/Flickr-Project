@@ -34,6 +34,7 @@ const LoginForm = () => {
 
   return (
     <>
+    <div className='testing'>
       <div className='login-navbar'>
         <div className='login-navbar-inner-container'>
 
@@ -47,6 +48,7 @@ const LoginForm = () => {
 
         </div>
       </div>
+
       <div className='login-container'>
 
         <img className='login-background-image' src='https://identity.flickr.com/img/033120190455-by-Henry.26d9f56a.jpg'></img>
@@ -115,6 +117,8 @@ const LoginForm = () => {
         </div>
 
       </div>
+
+    </div>
     </>
   );
 };

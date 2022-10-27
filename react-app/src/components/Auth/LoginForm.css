@@ -6,8 +6,9 @@
   object-fit: cover;
   align-items: center;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
 }
+
 
 .login-navbar {
   display: flex;
@@ -16,6 +17,8 @@
   background-color: #212124;
   height: 48px;
   align-items: center;
+  position: absolute;
+  width: 100%;
 }
 
 .login-navbar-inner-container {
@@ -31,6 +34,7 @@
   align-items: center;
   cursor: pointer;
   height: 48px;
+  width: 138.5px;
 }
 
 .login-navbar-dot-container {
@@ -59,7 +63,7 @@
 }
 
 .login-background-image {
-  height: 94.9vh;
+  height: 100vh;
   width: 100%;
   object-fit: cover;
 }
@@ -81,6 +85,7 @@
   background-color: white;
   padding: 24px;
   box-sizing: border-box;
+  margin-top: 48px;
 }
 
 .login-form-dot-icon {
