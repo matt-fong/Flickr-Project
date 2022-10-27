@@ -6,10 +6,60 @@
   object-fit: cover;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.login-navbar {
+  display: flex;
+  font-size: 20px;
+  color: white;
+  background-color: #212124;
+  height: 48px;
+  align-items: center;
+}
+
+.login-navbar-inner-container {
+  height: 48px;
+  /* display: flex; */
+  margin: auto;
+  width: 80%;
+  /* align-items: center; */
+}
+
+.login-navbar-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 48px;
+}
+
+.login-navbar-dot-container {
+  display: flex;
+  width: 35px;
+  position: relative;
+}
+
+.login-navbar-bluedot {
+  color: #0063E0;
+  font-size: 50px;
+}
+
+.login-navbar-pinkdot {
+  position: absolute;
+  color: #FF0088;
+  font-size: 50px;
+  left: 13px;
+}
+
+.login-navbar-discovr {
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin-left: 2px;
 }
 
 .login-background-image {
-  height: 100vh;
+  height: 94.9vh;
   width: 100%;
   object-fit: cover;
 }
