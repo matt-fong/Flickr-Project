@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom';
 import { createImageThunk } from '../../store/image';
+import { logout } from '../../store/session';
 import './CreateImage.css'
 
 const CreateImage = () => {
@@ -43,15 +44,30 @@ const CreateImage = () => {
         <div className='create-image-navbar'>
           <div className='create-image-navbar-inner-container'>
 
-            <div className='create-image-navbar-logo' onClick={() => history.push(`/`)} exact={true}>
-              <div className="create-image-navbar-dot-container">
-                <div className="create-image-navbar-bluedot">•</div>
-                <div className="create-image-navbar-pinkdot">•</div>
+            <div className='create-image-navbar-left'>
+              <div className='create-image-navbar-logo' onClick={() => history.push(`/`)} exact={true}>
+                <div className="create-image-navbar-dot-container">
+                  <div className="create-image-navbar-bluedot">•</div>
+                  <div className="create-image-navbar-pinkdot">•</div>
+                </div>
+                <div className="create-image-navbar-discovr">discovr</div>
               </div>
-              <div className="create-image-navbar-discovr">discovr</div>
+
+              <div className='create-image-navbar-explore' onClick={() => history.push(`/explore`)}>
+                Explore
+              </div>
+            </div>
+
+            <div className='create-image-navbar-right'>
+
+              <div className='create-image-navbar-logout' onClick={() => dispatch(logout()).then(history.push('/'))}>
+                Logout
+              </div>
+              
             </div>
 
           </div>
+
         </div>
 
         <div className='create-image-form-container'>

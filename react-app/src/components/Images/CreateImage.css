@@ -1,27 +1,42 @@
 .create-image-navbar {
   display: flex;
-  font-size: 20px;
+  justify-content: space-between;
   color: white;
   background-color: rgba(21,21,23);
-  height: 48px;
+  height: 50px;
   align-items: center;
   position: absolute;
   width: 100%;
 }
 
 .create-image-navbar-inner-container {
-  height: 48px;
-  /* display: flex; */
+  /* height: 48px;
+  display: flex;
   margin: auto;
   width: 80%;
-  /* align-items: center; */
+  align-items: center; */
+
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.create-image-navbar-left {
+  display: flex;
+  width: 256.05px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .create-image-navbar-logo {
   display: flex;
   align-items: center;
   cursor: pointer;
-  height: 48px;
+  height: 50px;
   width: 138.5px;
 }
 
@@ -48,6 +63,31 @@
   font-weight: 700;
   color: white;
   margin-left: 2px;
+}
+
+.create-image-navbar-explore {
+  color: white;
+  margin-left: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-image-navbar-right {
+  display: flex;
+  width: 52px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.create-image-navbar-upload-photo {
+  color: white;
+  cursor: pointer;
+}
+
+.create-image-navbar-logout {
+  color: white;
+  cursor: pointer;
 }
 
 .create-image-form-container {
