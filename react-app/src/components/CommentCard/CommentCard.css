@@ -36,6 +36,7 @@
 
 .comment-card-delete-button {
   border: none;
+  margin-left: 5px;
 }
 
 .comment-card-edit-body {

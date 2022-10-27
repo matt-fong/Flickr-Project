@@ -17,6 +17,7 @@ const CreateComment = ({ imageId }) => {
   const currentUser = users[user.id]
 
   const [body, setBody] = useState("");
+  const [errors, setErrors] = useState([]);
 
   // const { imageId } = useParams()
 
@@ -30,7 +31,8 @@ const CreateComment = ({ imageId }) => {
 
   }, [])
 
-  const handleCreateComment = () => {
+  const handleCreateComment = (e) => {
+    e.preventDefault();
 
     const data = {
       body: body,
@@ -38,9 +40,18 @@ const CreateComment = ({ imageId }) => {
       imageId: imageId,
     }
 
-    setBody("");
+    let errors = [];
 
-    return dispatch(createCommentThunk(data))
+    if (body.length < 1 || body.length > 255) {
+      errors.push('Comment must be between 1 and 255 characters.')
+    }
+
+    setErrors(errors)
+
+    if (body.length > 0 && body.length < 256) {
+      return dispatch(createCommentThunk(data)).then(setBody(""))
+    }
+
   }
 
 
@@ -51,19 +62,26 @@ const CreateComment = ({ imageId }) => {
         {/* <div className='create-comment-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div> */}
 
 
-          <form>
-            <textarea
-              className='create-comment-body'
-              type='text'
-              value={body}
-              onChange={(e) => setBody(e.target.value)}
+        <form>
+          <textarea
+            className='create-comment-body'
+            type='text'
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
             />
 
-          </form>
+        </form>
 
-          <div className='create-comment-button-container'>
-            <button className='create-comment-button' onClick={handleCreateComment}>Comment</button>
+        <div className='create-comment-button-container'>
+
+          <div>
+            {errors.map((error) => (
+              <div className='create-comment-error'>{error}</div>
+            ))}
           </div>
+
+          <button className='create-comment-button' onClick={handleCreateComment}>Comment</button>
+        </div>
 
         {/* <div onClick={() => handleUpdateComment()}>UPDATE COMMENT</div> */}
       </div>
