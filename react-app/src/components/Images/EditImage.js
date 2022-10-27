@@ -27,6 +27,14 @@ const UpdateImage = () => {
     dispatch(getAllImagesThunk())
   }, [])
 
+  useEffect(() => {
+    if (currentImage) {
+      setTitle(currentImage.title)
+      setDescription(currentImage.description)
+      setImageUrl(currentImage.imageUrl)
+    }
+  }, [currentImage])
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
