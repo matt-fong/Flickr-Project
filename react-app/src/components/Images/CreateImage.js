@@ -38,7 +38,7 @@ const CreateImage = () => {
 
   return (
     <>
-      <div>
+      <div className='create-image-container'>
 
         <div className='create-image-navbar'>
           <div className='create-image-navbar-inner-container'>
@@ -54,46 +54,56 @@ const CreateImage = () => {
           </div>
         </div>
 
-        <div className='testinggg'>
-          <form className='test1' onSubmit={handleSubmit} >
+        <div className='create-image-form-container'>
+          <form className='create-image-form' onSubmit={handleSubmit} >
 
-            <div>Image URL</div>
-            <div>
-            {/* <label>ImageUrl</label> */}
-              <input
-                type="text"
-                placeholder='ImageUrl'
-                onChange={(e) => setImageUrl(e.target.value)}
-                required
-              />
+            <div className='create-image-input-container'>
+              <div className='create-image-input-header'>Image URL</div>
+              <div>
+                <input
+                  className='create-image-input'
+                  type="text"
+                  placeholder='ImageUrl'
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  required
+                />
+              </div>
             </div>
 
+            <div className='create-image-input-container'>
+              <div className='create-image-input-header'>Title</div>
+              <div>
+                <input
+                  className='create-image-input'
+                  type="text"
+                  placeholder="Title"
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                />
+              </div>
 
-            <div>Title</div>
-            <div>
-              {/* <label>Title</label> */}
-              <input
-                type="text"
-                placeholder="Title"
-                onChange={(e) => setTitle(e.target.value)}
-                required
-              />
             </div>
 
-            <div>Description</div>
-            <div>
-            {/* <label>Description</label> */}
-              <input
-                type="text"
-                placeholder='Description'
-                onChange={(e) => setDescription(e.target.value)}
-                required
-              />
+            <div className='create-image-input-container'>
+              <div className='create-image-input-header'>Description</div>
+              <div className='create-image-input-inner-container'>
+                <textarea
+                  className='create-image-input-description'
+                  type="text"
+                  placeholder='Description'
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                />
+              </div>
             </div>
 
-            <button name="submit" type="submit" >
-              Create Image
-            </button>
+            <div className='create-image-button-container'>
+              <button className='create-image-button' name="submit" type="submit" >
+                Upload Photo
+              </button>
+
+            </div>
+
 
           </form>
         </div>
