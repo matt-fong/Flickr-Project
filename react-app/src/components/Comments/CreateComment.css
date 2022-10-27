@@ -54,3 +54,8 @@
   border-radius: 3px;
   cursor: pointer;
 }
+
+.create-image-error {
+  /* color: white; */
+  color: red;
+}
