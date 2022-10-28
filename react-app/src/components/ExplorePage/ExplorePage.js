@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllImagesThunk } from "../../store/image";
 import { Link } from "react-router-dom";
 import './ExplorePage.css';
+import ImageCard from "../ImageCard/ImageCard";
 
 const ExplorePage = () => {
 
@@ -24,14 +25,7 @@ const ExplorePage = () => {
           {imagesArr.map((image) => {
             return (
               <>
-                <div className="image-container" key={''}>
-                  <Link to={`/image/${image.id}`}>
-                    <img className="image" src={image.imageUrl} alt=""></img>
-                    <div className="middle">
-                      <div className="text">{image.title}</div>
-                    </div>
-                  </Link>
-                </div>
+                <ImageCard image={image}/>
               </>
             );
           })}
