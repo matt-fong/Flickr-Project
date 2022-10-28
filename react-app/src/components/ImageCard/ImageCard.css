@@ -31,12 +31,11 @@
   /* top: 80%; */
   left: 25%;
   left: 120px;
-  top: 340px;
+  top: 265px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   display: flex;
   width: 200px;
-  height: 200px;
   flex-direction: column;
   justify-content: flex-start;
 }

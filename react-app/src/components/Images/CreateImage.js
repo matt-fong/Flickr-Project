@@ -51,7 +51,7 @@ const CreateImage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setSubmitted(true)
+    setSubmitted(true);
 
     const data = {
       title: title,

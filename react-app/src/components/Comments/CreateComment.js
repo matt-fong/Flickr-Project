@@ -12,20 +12,9 @@ const CreateComment = ({ imageId }) => {
 
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect((e) => {
-
-  }, [])
-
-  const handleCreateComment = (e) => {
-    e.preventDefault();
-
-    const data = {
-      body: body,
-      userId: user.id,
-      imageId: imageId,
-    }
-
     let errors = [];
 
     if (body.length < 1 || body.length > 255) {
@@ -34,8 +23,29 @@ const CreateComment = ({ imageId }) => {
 
     setErrors(errors)
 
+  }, [body])
+
+  const handleCreateComment = (e) => {
+    e.preventDefault();
+
+    setSubmitted(true);
+
+    const data = {
+      body: body,
+      userId: user.id,
+      imageId: imageId,
+    }
+
+    // let errors = [];
+
+    // if (body.length < 1 || body.length > 255) {
+    //   errors.push('Comment must be between 1 and 255 characters.')
+    // }
+
+    // setErrors(errors)
+
     if (body.length > 0 && body.length < 256) {
-      return dispatch(createCommentThunk(data)).then(setBody(""))
+      return dispatch(createCommentThunk(data)).then(setBody("")).then(setSubmitted(false))
     }
 
   }
@@ -61,7 +71,7 @@ const CreateComment = ({ imageId }) => {
         <div className='create-comment-button-container'>
 
           <div>
-            {errors.map((error) => (
+            {submitted && errors.map((error) => (
               <div className='create-comment-error'>{error}</div>
             ))}
           </div>
