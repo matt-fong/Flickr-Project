@@ -13,7 +13,7 @@ const ExplorePage = () => {
 
   useEffect(() => {
     dispatch(getAllImagesThunk())
-  }, [])
+  }, [dispatch])
 
 
   return (

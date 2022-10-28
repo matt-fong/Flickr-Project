@@ -1,4 +1,3 @@
-import { useHistory, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import './CreateComment.css'
@@ -7,13 +6,9 @@ import { createCommentThunk } from '../../store/comment';
 
 const CreateComment = ({ imageId }) => {
 
-  const history = useHistory()
   const dispatch = useDispatch()
 
   const user = useSelector((state) => state.session.user)
-  const users = useSelector((state) => state.users)
-
-  const currentUser = users[user.id]
 
   const [body, setBody] = useState("");
   const [errors, setErrors] = useState([]);
@@ -48,7 +43,7 @@ const CreateComment = ({ imageId }) => {
 
   return (
     <div className='create-comment-container'>
-      <img className='create-comment-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg'></img>
+      <img className='create-comment-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg' alt=''></img>
       <div className='create-comment-right-container'>
         {/* <div className='create-comment-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div> */}
 

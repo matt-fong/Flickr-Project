@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { deleteImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
 import { getAllCommentsThunk } from '../../store/comment';
-import { getImageCommentsThunk } from '../../store/comment';
+// import { getImageCommentsThunk } from '../../store/comment';
 
 
 import './ImageDetails.css'
@@ -38,7 +38,7 @@ const ImageDetails = () => {
     dispatch(getAllCommentsThunk())
     dispatch(getAllUsersThunk())
     // dispatch(getImageCommentsThunk(imageId.imageId)).then(() => setIsLoaded(true))
-  }, [])
+  }, [dispatch])
 
 
   return (
@@ -47,7 +47,7 @@ const ImageDetails = () => {
       <div className='image-detail-top'>
 
         <div className='image-detail-image-container'>
-          <img className='image-detail-image' src={currentImage?.imageUrl}></img>
+          <img className='image-detail-image' src={currentImage?.imageUrl} alt=''></img>
           {/* <div className='image-detail-title'>{currentImage?.title}</div> */}
         </div>
 
@@ -73,7 +73,7 @@ const ImageDetails = () => {
             <div className='image-detail-user-card'>
 
               <div className='image-detail-user-card-pic-container'>
-                <img className='image-detail-user-card-pic' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png'></img>
+                <img className='image-detail-user-card-pic' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
               </div>
 
               <div className='image-detail-user-card-right'>

@@ -28,7 +28,7 @@ const UpdateImage = () => {
 
   useEffect(() => {
     dispatch(getAllImagesThunk())
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (currentImage) {
@@ -81,8 +81,6 @@ const UpdateImage = () => {
       description.length > 0 && description.length < 256) {
       return dispatch(updateImageThunk(data, imageId.imageId)).then(() => history.push(`/image/${imageId.imageId}`))
     }
-
-    // return dispatch(updateImageThunk(data, imageId.imageId)).then(() => history.push(`/image/${imageId.imageId}`))
 
   }
 

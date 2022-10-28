@@ -1,4 +1,4 @@
-import { NavLink, useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import './CommentCard.css'
@@ -8,7 +8,6 @@ import { deleteCommentThunk } from '../../store/comment';
 
 const CommentCard = ({ comment }) => {
 
-  const history = useHistory()
   const dispatch = useDispatch()
 
   const user = useSelector((state) => state.session.user)
@@ -51,7 +50,7 @@ const CommentCard = ({ comment }) => {
 
   return (
     <div className='comment-card-container'>
-      <img className='comment-card-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg'></img>
+      <img className='comment-card-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg' alt=''></img>
       <div className='comment-card-right-container'>
         <div className='comment-card-name-container'>
           <div className='comment-card-first-last-name'>

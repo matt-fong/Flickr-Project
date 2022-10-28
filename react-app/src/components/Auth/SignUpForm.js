@@ -4,7 +4,6 @@ import { Redirect, useHistory } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
 const SignUpForm = () => {
-  const [errors, setErrors] = useState([]);
   const [first_name, setFirst_Name] = useState('');
   const [last_name, setLast_Name] = useState('');
   const [username, setUsername] = useState('');
@@ -14,6 +13,7 @@ const SignUpForm = () => {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [errors, setErrors] = useState([]);
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -70,7 +70,7 @@ const SignUpForm = () => {
       </div>
       <div className='login-container'>
 
-        <img className='login-background-image' src='https://identity.flickr.com/img/033120190455-by-Henry.26d9f56a.jpg'></img>
+        <img className='login-background-image' src='https://identity.flickr.com/img/033120190455-by-Henry.26d9f56a.jpg' alt=''></img>
 
         <div className='login-form-container'>
 

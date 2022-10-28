@@ -5,12 +5,12 @@ import { login } from '../../store/session';
 import './LoginForm.css'
 
 const LoginForm = () => {
-  const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const history = useHistory();
+  const [errors, setErrors] = useState([]);
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ const LoginForm = () => {
   return (
     <>
       <div className='testing'>
-        
+
         <div className='login-navbar'>
           <div className='login-navbar-inner-container'>
 
@@ -52,7 +52,7 @@ const LoginForm = () => {
 
         <div className='login-container'>
 
-          <img className='login-background-image' src='https://identity.flickr.com/img/033120190455-by-Henry.26d9f56a.jpg'></img>
+          <img className='login-background-image' src='https://identity.flickr.com/img/033120190455-by-Henry.26d9f56a.jpg' alt=''></img>
 
           <div className='login-form-container'>
 

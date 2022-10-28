@@ -1,5 +1,5 @@
-import { useHistory, NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from "react-router-dom";
+import { useSelector } from 'react-redux'
 import './HomePage.css';
 
 const HomePage = () => {
@@ -8,7 +8,6 @@ const HomePage = () => {
 
   const user = useSelector(state => (state.session.user))
 
-//
 
   return (
     <div className='homepage-container'>
@@ -41,7 +40,7 @@ const HomePage = () => {
       <div className="homepage-bottom-container">
 
         {/* <img className='homepage-image' src='https://wallpaperaccess.com/full/1369012.jpg'></img> */}
-        <img className='homepage-image' src='https://www.pixel4k.com/wp-content/uploads/2018/09/night-city-city-lights-metropolis-night-4k_1538067561.jpg'></img>
+        <img className='homepage-image' src='https://www.pixel4k.com/wp-content/uploads/2018/09/night-city-city-lights-metropolis-night-4k_1538067561.jpg' alt=''></img>
 
         <div className="homepage-middle-text">
           <div className="homepage-text-header">Find your inspiration.</div>
@@ -59,9 +58,9 @@ const HomePage = () => {
 
       <div className="homepage-footer-container">
         <div className="homepage-footer">
-          <a href='https://github.com/matt-fong' target="_blank">Github</a>
-          <a href='https://www.linkedin.com/in/matthewfongny/' target="_blank">LinkedIn</a>
-          <a href="mailto:matthewfong12@gmail.com">Email</a>
+          <a href='https://github.com/matt-fong' target="_blank" rel="noopener noreferrer">Github</a>
+          <a href='https://www.linkedin.com/in/matthewfongny/' target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:matthewfong12@gmail.com" rel="noopener noreferrer">Email</a>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { createImageThunk } from '../../store/image';
 import { logout } from '../../store/session';
 import './CreateImage.css'
@@ -59,26 +59,6 @@ const CreateImage = () => {
       imageUrl: imageUrl,
       userId: user.id
     }
-
-    // let imageUrlErrors = [];
-    // let titleErrors = [];
-    // let descriptionErrors = [];
-
-    // if (!isImage(imageUrl)) {
-    //   imageUrlErrors.push('Image URL is required')
-    // }
-
-    // if (title.length < 1 || title.length > 100) {
-    //   titleErrors.push('Comment must be between 1 and 100 characters.')
-    // }
-
-    // if (description.length < 1 || description.length > 255) {
-    //   descriptionErrors.push('Description must be between 1 and 255 characters.')
-    // }
-
-    // setImageUrlErrors(imageUrlErrors);
-    // setTitleErrors(titleErrors);
-    // setDescriptionErrors(descriptionErrors);
 
     if (isImage(imageUrl) &&
     title.length > 0 && title.length < 101 &&
