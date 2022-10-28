@@ -53,11 +53,13 @@
   transition: .5s ease;
   opacity: 0;
   position: absolute;
-  top: 90%;
-  left: 15%;
+  top: 295px;
+  left: 70px;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .text {
