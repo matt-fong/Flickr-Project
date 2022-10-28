@@ -10,6 +10,7 @@ const ExplorePage = () => {
 
   const images = useSelector(state => state.images)
   const imagesArr = Object.values(images)
+  const users = useSelector(state => state.users)
 
   useEffect(() => {
     dispatch(getAllImagesThunk())
@@ -26,6 +27,9 @@ const ExplorePage = () => {
                 <div className="image-container" key={''}>
                   <Link to={`/image/${image.id}`}>
                     <img className="image" src={image.imageUrl} alt=""></img>
+                    <div className="middle">
+                      <div className="text">{image.title}</div>
+                    </div>
                   </Link>
                 </div>
               </>
