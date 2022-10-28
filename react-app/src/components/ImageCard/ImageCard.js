@@ -21,12 +21,12 @@ const ImageCard = ({ image }) => {
 
 
   return (
-    <div className="image-container" key={''}>
+    <div className="image-card-container" key={''}>
       <Link to={`/image/${image.id}`}>
-        <img className="image" src={image.imageUrl} alt=""></img>
-        <div className="middle">
-          <div className="text">{image.title}</div>
-          <div className="text">{`by ${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
+        <img className="image-card-image" src={image.imageUrl} alt=""></img>
+        <div className="image-card-text-container">
+          <div className="image-card-text-title">{image.title}</div>
+          <div className="image-card-text-name">{`by ${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
         </div>
       </Link>
     </div>
