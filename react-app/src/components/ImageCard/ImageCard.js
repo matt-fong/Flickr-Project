@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllImagesThunk } from "../../store/image";
 import { getAllUsersThunk } from "../../store/user";
 import { Link } from "react-router-dom";
-// import './ImageCard.css';
+import './ImageCard.css';
 
 const ImageCard = ({ image }) => {
 
@@ -29,7 +29,7 @@ const ImageCard = ({ image }) => {
           <div className="text">{`by ${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
         </div>
       </Link>
-  </div>
+    </div>
   );
 };
 
