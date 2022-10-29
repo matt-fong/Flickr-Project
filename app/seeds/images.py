@@ -3,11 +3,11 @@ from app.models import db, Image
 
 def seed_images():
   one = Image(
-    title='Title1', description='Description1', imageUrl='https://ichef.bbci.co.uk/news/999/cpsprodpb/15951/production/_117310488_16.jpg', userId=1)
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=1)
   two = Image(
     title='Title1', description='Description1', imageUrl='https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg', userId=2)
   three = Image(
-    title='Title1', description='Description1', imageUrl='https://static.toiimg.com/thumb/msid-53891743,width-748,height-499,resizemode=4,imgsize-152022/Tour-Eiffel.jpg', userId=3)
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/723180/pexels-photo-723180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
   four = Image(
     title='Title1', description='Description1', imageUrl='https://www.pixel4k.com/wp-content/uploads/2019/03/desert-4k_1551644840.jpg', userId=3)
   five = Image(
@@ -32,6 +32,26 @@ def seed_images():
     title='Title1', description='Description1', imageUrl='https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8NGslMjBsYW5kc2NhcGV8ZW58MHx8MHx8&w=1000&q=80', userId=3)
   fifteen = Image(
     title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', userId=3)
+  sixteen = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/1028225/pexels-photo-1028225.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  seventeen = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/205001/pexels-photo-205001.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  eighteen = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/2619004/pexels-photo-2619004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  nineteen = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/900097/pexels-photo-900097.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  twenty = Image(
+    title='Title1', description='Description1', imageUrl='https://media.istockphoto.com/photos/kabukicho-shinjuku-at-night-picture-id1330558677?b=1&k=20&m=1330558677&s=170667a&w=0&h=10l4A6mZSQ2-LvaRTwzCjIi7D057rY7HDmwgkOiLoZo=', userId=3)
+  twentyone = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/2619004/pexels-photo-2619004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  twentytwo = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/2611465/pexels-photo-2611465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  twentythree = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/2425720/pexels-photo-2425720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  twentyfour = Image(
+    title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/2484848/pexels-photo-2484848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
+  twentyfive = Image(
+    title='Title1', description='Description1', imageUrl='https://images2.alphacoders.com/458/458495.jpg', userId=3)
 
   db.session.add(one)
   db.session.add(two)
