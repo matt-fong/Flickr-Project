@@ -1,24 +1,33 @@
 .explorepage-container {
-  display:flex;
+  background: white;
+  display: flex;
   justify-content: center;
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80%;
-  margin-top: 36px
+  margin-bottom: 10em;
+  margin-top: 36px;
 }
 
 .explorepage-inner-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: 100%;
+  max-width: 80%;
 }
 
 .explorepage-images-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 10px;
+  /* width: 1200px; */
   width: 100%;
+  max-width: 1440px;
+  box-sizing: content-box;
+  width: 100%;
+}
+
+.explorepage-images-container > * {
   /* flex: 1 1 auto; */
+  flex-grow: 1;
+  /* flex-shrink: 1; */
+  /* flex-basis: auto; */
 }
