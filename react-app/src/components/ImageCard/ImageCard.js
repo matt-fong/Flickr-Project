@@ -9,7 +9,6 @@ const ImageCard = ({ image }) => {
 
   const dispatch = useDispatch();
 
-  const images = useSelector(state => state.images)
   const users = useSelector(state => state.users)
 
   const imageOwner = users[image?.userId]

@@ -7,8 +7,8 @@ def seed_users():
         first_name='Demo', last_name='User', username='Demo', email='demo@aa.io', password='password')
     marnie = User(
         first_name='Marnie', last_name='Jones', username='Marnie', email='marnie@aa.io', password='password')
-    bobbie = User(
-        first_name='Bobbie', last_name='Shmurda', username='Bobby', email='bobbie@aa.io', password='password')
+    bobby = User(
+        first_name='Bobby', last_name='Shmurda', username='Bobby', email='bobby@aa.io', password='password')
     matt = User(
         first_name='Matt', last_name='Damon', username='Matt', email='matt@aa.io', password='password')
     josh = User(
@@ -19,7 +19,7 @@ def seed_users():
 
     db.session.add(demo)
     db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(bobby)
     db.session.add(matt)
     db.session.add(josh)
     db.session.add(jordan)
