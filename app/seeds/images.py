@@ -68,6 +68,16 @@ def seed_images():
   db.session.add(thirteen)
   db.session.add(fourteen)
   db.session.add(fifteen)
+  db.session.add(sixteen)
+  db.session.add(seventeen)
+  db.session.add(eighteen)
+  db.session.add(nineteen)
+  db.session.add(twenty)
+  db.session.add(twentyone)
+  db.session.add(twentytwo)
+  db.session.add(twentythree)
+  db.session.add(twentyfour)
+  db.session.add(twentyfive)
 
   db.session.commit()
 
