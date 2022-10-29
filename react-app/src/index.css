@@ -7,3 +7,16 @@
 textarea {
   resize: none;
 }
+
+.error-message-container {
+  display: flex;
+}
+
+.error-container {
+  color: red;
+}
+
+.exclamation-point {
+  margin-right: 5px;
+  margin-top: 2px
+}

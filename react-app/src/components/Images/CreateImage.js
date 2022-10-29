@@ -22,13 +22,21 @@ const CreateImage = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
+  function isImage(url) {
+    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url)
+  }
+
   useEffect(() => {
     let imageUrlErrors = [];
     let titleErrors = [];
     let descriptionErrors = [];
 
-    if (!isImage(imageUrl)) {
+    if (!imageUrl) {
       imageUrlErrors.push('Image URL is required')
+    }
+
+    if (imageUrl && !isImage(imageUrl)) {
+      imageUrlErrors.push('Must be valid image URL, Ex. .jpg, .png, .jpeg')
     }
 
     if (title.length < 1 || title.length > 100) {
@@ -44,9 +52,6 @@ const CreateImage = () => {
     setDescriptionErrors(descriptionErrors);
   }, [title, description, imageUrl])
 
-  function isImage(url) {
-    return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url)
-  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -74,7 +74,10 @@ const LoginForm = () => {
 
                 <div className='error-container'>
                   {errors.map((error, ind) => (
-                    <div key={ind}>{error}</div>
+                    <div className='error-message-container'>
+                      <i class="fa-solid fa-exclamation exclamation-point"></i>
+                      <div key={ind}>{error.slice(error.indexOf(':') + 1)}</div>
+                    </div>
                   ))}
                 </div>
 

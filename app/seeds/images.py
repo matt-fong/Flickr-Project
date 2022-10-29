@@ -5,7 +5,7 @@ def seed_images():
   one = Image(
     title='Title1', description='Description1', imageUrl='https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=1)
   two = Image(
-    title='Title2', description='Description1', imageUrl='https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg', userId=2)
+    title='Title2', description='Description1', imageUrl='https://free4kwallpapers.com/uploads/originals/2016/12/23/skyscrapers-in-night-city-wallpaper.jpg', userId=2)
   three = Image(
     title='Title3', description='Description1', imageUrl='https://images.pexels.com/photos/723180/pexels-photo-723180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
   four = Image(
@@ -15,13 +15,13 @@ def seed_images():
   six = Image(
     title='Title6', description='Description1', imageUrl='https://images.pexels.com/photos/2422588/pexels-photo-2422588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=3)
   seven = Image(
-    title='Title7', description='Description1', imageUrl='https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80', userId=3)
+    title='Title7', description='Description1', imageUrl='https://images.hdqwalls.com/wallpapers/hong-kong-city-neon-city-zm.jpg', userId=3)
   eight = Image(
     title='Title8', description='Description1', imageUrl='https://w0.peakpx.com/wallpaper/415/392/HD-wallpaper-drone-shot-day-lakes-mountains-road-village.jpg', userId=3)
   nine = Image(
     title='Title9', description='Description1', imageUrl='https://wallpapercave.com/wp/wp9524749.jpg', userId=3)
   ten = Image(
-    title='Title10', description='Description1', imageUrl='https://free4kwallpapers.com/uploads/originals/2016/12/23/skyscrapers-in-night-city-wallpaper.jpg', userId=3)
+    title='Title10', description='Description1', imageUrl='https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg', userId=3)
   eleven = Image(
     title='Title11', description='Description1', imageUrl='https://wallpaperaccess.com/full/1431610.jpg', userId=3)
   twelve = Image(
@@ -61,7 +61,7 @@ def seed_images():
   twentynine = Image(
     title='Title29', description='Description1', imageUrl='https://wallpaper.dog/large/5444717.jpg', userId=3)
   thirty = Image(
-    title='Title30', description='Description1', imageUrl='https://wallpaperaccess.com/full/691908.jpg', userId=3)
+    title='Title30', description='Description1', imageUrl='https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8&w=1000&q=80', userId=3)
 
   db.session.add(one)
   db.session.add(two)

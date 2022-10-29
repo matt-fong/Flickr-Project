@@ -43,8 +43,12 @@ const UpdateImage = () => {
     let titleErrors = [];
     let descriptionErrors = [];
 
-    if (!isImage(imageUrl)) {
+    if (!imageUrl) {
       imageUrlErrors.push('Image URL is required')
+    }
+
+    if (imageUrl && !isImage(imageUrl)) {
+      imageUrlErrors.push('Must be valid image URL, Ex. .jpg, .png, .jpeg')
     }
 
     if (title.length < 1 || title.length > 100) {
