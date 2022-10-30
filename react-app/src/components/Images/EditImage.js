@@ -23,11 +23,12 @@ const UpdateImage = () => {
   const [imageUrlErrors, setImageUrlErrors] = useState([])
   const [titleErrors, setTitleErrors] = useState([])
   const [descriptionErrors, setDescriptionErrors] = useState([])
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    dispatch(getAllImagesThunk())
+    dispatch(getAllImagesThunk()).then(setIsLoaded(true))
   }, [dispatch])
 
   useEffect(() => {
@@ -35,6 +36,7 @@ const UpdateImage = () => {
       setTitle(currentImage.title)
       setDescription(currentImage.description)
       setImageUrl(currentImage.imageUrl)
+      setIsLoaded(true)
     }
   }, [currentImage])
 
@@ -51,17 +53,18 @@ const UpdateImage = () => {
       imageUrlErrors.push('Must be valid image URL, Ex. .jpg, .png, .jpeg')
     }
 
-    if (title.length < 1 || title.length > 100) {
+    if (title?.length < 1 || title?.length > 100) {
       titleErrors.push('Comment must be between 1 and 100 characters.')
     }
 
-    if (description.length < 1 || description.length > 255) {
+    if (description?.length < 1 || description?.length > 255) {
       descriptionErrors.push('Description must be between 1 and 255 characters.')
     }
 
     setImageUrlErrors(imageUrlErrors);
     setTitleErrors(titleErrors);
     setDescriptionErrors(descriptionErrors);
+    setIsLoaded(true)
   }, [title, description, imageUrl])
 
   function isImage(url) {
@@ -80,15 +83,19 @@ const UpdateImage = () => {
       userId: user.id
     }
 
-    if (isImage(imageUrl) &&
-      title.length > 0 && title.length < 101 &&
-      description.length > 0 && description.length < 256) {
+    if (isLoaded && isImage(imageUrl) &&
+      title?.length > 0 && title?.length < 101 &&
+      description?.length > 0 && description?.length < 256) {
       return dispatch(updateImageThunk(data, imageId.imageId)).then(() => history.push(`/image/${imageId.imageId}`))
     }
 
   }
 
-  return (
+  if (!isLoaded) {
+    return null
+  }
+
+  return isLoaded && (
     <>
       <div className='create-image-container'>
 
