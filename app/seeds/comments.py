@@ -5,9 +5,9 @@ def seed_comments():
   one = Comment(
     body='Awesome photo!', userId=2, imageId=1)
   two = Comment(
-    body='Nice!', userId=2, imageId=2)
+    body='Nice!', userId=1, imageId=2)
   three = Comment(
-    body='Amazing!', userId=3, imageId=3)
+    body='Amazing!', userId=2, imageId=3)
   four = Comment(
     body='Beautiful!', userId=3, imageId=4)
   five = Comment(
@@ -179,10 +179,49 @@ def seed_comments():
   eightyeight = Comment (
     body='Cool!', userId=5, imageId=28)
   eightynine = Comment (
-    body='Cool!', userId=5, imageId=29)
+    body='Cool!', userId=6, imageId=29)
   ninety = Comment (
-    body='Cool!', userId=5, imageId=30)
-
+    body='Cool!', userId=7, imageId=30)
+  ninetyone = Comment (
+    body='Cool!', userId=8, imageId=31)
+  ninetytwo = Comment (
+    body='Cool!', userId=9, imageId=32)
+  ninetythree = Comment (
+    body='Cool!', userId=10, imageId=33)
+  ninetyfour = Comment (
+    body='Amazing photo!', userId=11, imageId=34)
+  ninetyfive = Comment (
+    body='Beautiful photo!', userId=12, imageId=35)
+  ninetysix = Comment (
+    body='Great photo!', userId=13, imageId=36)
+  ninetyseven = Comment (
+    body='Nice photo!', userId=14, imageId=37)
+  ninetyeight = Comment (
+    body='Awesome photo!', userId=15, imageId=38)
+  ninetynine = Comment (
+    body='Beautiful photo!', userId=16, imageId=39)
+  onehundred = Comment (
+    body='Great photo!', userId=17, imageId=40)
+  onehundredone = Comment (
+    body='Nice photo!', userId=18, imageId=41)
+  onehundredtwo = Comment (
+    body='Awesome photo!', userId=19, imageId=42)
+  onehundredthree = Comment (
+    body='Beautiful photo!', userId=20, imageId=43)
+  onehundredfour = Comment (
+    body='Great photo!', userId=21, imageId=44)
+  onehundredfive = Comment (
+    body='Nice photo!', userId=22, imageId=45)
+  onehundredsix = Comment (
+    body='Awesome photo!', userId=23, imageId=46)
+  onehundredseven = Comment (
+    body='Beautiful photo!', userId=24, imageId=47)
+  onehundredeight = Comment (
+    body='Great photo!', userId=25, imageId=48)
+  onehundrednine = Comment (
+    body='Nice photo!', userId=26, imageId=49)
+  onehundredten = Comment (
+    body='Awesome photo!', userId=27, imageId=50)
 
 
   db.session.add(one)
@@ -275,6 +314,26 @@ def seed_comments():
   db.session.add(eightyeight)
   db.session.add(eightynine)
   db.session.add(ninety)
+  db.session.add(ninetyone)
+  db.session.add(ninetytwo)
+  db.session.add(ninetythree)
+  db.session.add(ninetyfour)
+  db.session.add(ninetyfive)
+  db.session.add(ninetysix)
+  db.session.add(ninetyseven)
+  db.session.add(ninetyeight)
+  db.session.add(ninetynine)
+  db.session.add(onehundred)
+  db.session.add(onehundredone)
+  db.session.add(onehundredtwo)
+  db.session.add(onehundredthree)
+  db.session.add(onehundredfour)
+  db.session.add(onehundredfive)
+  db.session.add(onehundredsix)
+  db.session.add(onehundredseven)
+  db.session.add(onehundredeight)
+  db.session.add(onehundrednine)
+  db.session.add(onehundredten)
 
   db.session.commit()
 

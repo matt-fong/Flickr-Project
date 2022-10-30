@@ -23,9 +23,13 @@ def validate_username(form, field):
     if (len(field.data) < 6):
         raise ValidationError("Username must be at least 6 characters long")
 
+def validate_password(form, field):
+    if (len(field.data) < 6):
+        raise ValidationError("Password must be at least 6 characters long")
+
 class SignUpForm(FlaskForm):
     first_name = StringField('first_name', validators=[DataRequired()])
     last_name = StringField('last_name', validators=[DataRequired()])
     username = StringField('username', validators=[DataRequired(), username_exists, validate_username])
     email = StringField('email', validators=[DataRequired(), user_exists, Email()])
-    password = StringField('password', validators=[DataRequired()])
+    password = StringField('password', validators=[DataRequired(), validate_password])
