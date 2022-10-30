@@ -3,7 +3,7 @@ from app.models import db, Image
 
 def seed_images():
   one = Image(
-    title='Icy Mountains', description='Brrrr', imageUrl='https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=1)
+    title='Icy Mountains', description='Brrrr', imageUrl='https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=50)
   two = Image(
     title='City Life', description='Drone shot of a beautiful city at night', imageUrl='https://free4kwallpapers.com/uploads/originals/2016/12/23/skyscrapers-in-night-city-wallpaper.jpg', userId=2)
   three = Image(

@@ -53,7 +53,7 @@
 .image-detail-user-card {
   display: flex;
   width: 500px;
-  height: 86px;
+  /* height: 86px; */
   margin-top: 26px;
   margin-bottom: 26px;
 }
@@ -89,6 +89,8 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+  width: 415px;
+  word-wrap: break-word;
 }
 
 .image-detail-comment-card-container {
