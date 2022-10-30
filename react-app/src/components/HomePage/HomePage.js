@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import './HomePage.css';
 
@@ -8,6 +8,9 @@ const HomePage = () => {
 
   const user = useSelector(state => (state.session.user))
 
+  // if (user) {
+  //   return <Redirect to='/explore' />;
+  // }
 
   return (
     <div className='homepage-container'>
