@@ -104,7 +104,7 @@ const SignUpForm = () => {
               </div>
 
               <div className='login-form-input-container'>
-                {/* <label>First Name</label> */}
+                <label className='label'>First Name</label>
                 <input
                   className='login-input'
                   type='text'
@@ -116,15 +116,15 @@ const SignUpForm = () => {
               </div>
 
               <div className='login-form-input-container'>
-                {/* <label>First Name</label> */}
+                {/* <label className='label'>Last Name</label> */}
                 <input
                   className='login-input'
                   type='text'
                   placeholder='Last Name'
-                  // name='first name'
+                  // name='last name'
                   onChange={updateLastname}
                   value={last_name}
-                ></input>
+                  ></input>
               </div>
 
               <div className='login-form-input-container'>
