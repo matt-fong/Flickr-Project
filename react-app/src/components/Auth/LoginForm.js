@@ -69,7 +69,6 @@ const LoginForm = () => {
 
                 <div className='login-form-login-container'>
                   <div className='login-form-login'>Log in to Discovr</div>
-
                 </div>
 
                 <div className='error-container'>

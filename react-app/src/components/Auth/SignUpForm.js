@@ -104,7 +104,7 @@ const SignUpForm = () => {
               </div>
 
               <div className='login-form-input-container'>
-                <label className='label'>First Name</label>
+                {/* <label className='label'>First Name</label> */}
                 <input
                   className='login-input'
                   type='text'
