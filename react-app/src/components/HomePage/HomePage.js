@@ -1,4 +1,4 @@
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import './HomePage.css';
 

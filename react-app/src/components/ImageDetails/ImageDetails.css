@@ -78,11 +78,12 @@
 .image-detail-user-card-title {
   /* margin-top: 12px; */
   /* width: 450px; */
-  word-wrap: break-word;
   font-size: 16px;
   font-weight: 600;
   line-height: 18px;
   margin-bottom: 10px;
+  width: 410px;
+  word-wrap: break-word;
 }
 
 .image-detail-user-card-description {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect, useHistory } from 'react-router-dom';
 import { signUp } from '../../store/session';
@@ -14,10 +14,15 @@ const SignUpForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [errors, setErrors] = useState([]);
+  const [submitted, setSubmitted] = useState(false);
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword) {
+    if (password === repeatPassword &&
+      first_name.length >= 2 && last_name.length <= 50 &&
+      username.length >= 2 && username.length <= 50 &&
+      email.length >= 2 && email.length <= 50 &&
+      password.length >= 2 && password.length <= 50) {
       const data = await dispatch(signUp(first_name, last_name, username, email, password));
       if (data) {
         setErrors(data)
@@ -27,7 +32,31 @@ const SignUpForm = () => {
     if (password !== repeatPassword) {
       setErrors(['password: Passwords do not match'])
     }
+
+    setSubmitted(true);
   };
+
+  useEffect(() => {
+    let errors = [];
+
+    if (first_name.length < 2 || first_name.length > 50) {
+      errors.push("first name: First name must be between 2 and 50 characters.")
+    }
+    if (last_name.length < 2 || last_name.length > 50) {
+      errors.push("last name: Last name must be between 2 and 50 characters.")
+    }
+    if (email.length < 2 || email.length > 50) {
+      errors.push("email: Email must be between 2 and 50 characters.")
+    }
+    if (username.length < 2 || username.length > 50) {
+      errors.push("username: Username must be between 2 and 50 characters.")
+    }
+    if (password.length < 6 || password.length > 50) {
+      errors.push('password: Password must be between 6 and 50 characters.');
+    }
+
+    setErrors(errors);
+  }, [first_name, last_name, email, username, password, repeatPassword]);
 
   const updateFirstname = (e) => {
     setFirst_Name(e.target.value);
@@ -95,7 +124,7 @@ const SignUpForm = () => {
               </div>
 
               <div className='error-container'>
-                {errors.map((error, ind) => (
+                {submitted && errors.map((error, ind) => (
                   <div className='error-message-container'>
                     <i class="fa-solid fa-exclamation exclamation-point"></i>
                     <div key={ind}>{error.slice(error.indexOf(':') + 1)}</div>
