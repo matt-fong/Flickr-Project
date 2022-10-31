@@ -91,10 +91,6 @@
 
 .homepage-image {
   width: 100%;
-  /* max-height: 1193px; */
-  /* height: 100%; */
-  /* height: 900px; */
-  /* height: 96vh; */
   height: 100vh;
   object-fit: cover;
 }

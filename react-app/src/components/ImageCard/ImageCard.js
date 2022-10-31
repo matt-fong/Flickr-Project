@@ -22,7 +22,9 @@ const ImageCard = ({ image }) => {
   return (
     <div className="image-card-container" key={''}>
       <Link to={`/image/${image.id}`}>
-        <img className="image-card-image" src={image.imageUrl} alt=""></img>
+        <img className="image-card-image" src={image.imageUrl} alt=""
+        onError={e => { e.currentTarget.src = "https://demofree.sirv.com/nope-not-here.jpg"; }}
+        ></img>
         <div className="image-card-text-container">
           <div className="image-card-text-title">{image.title}</div>
           <div className="image-card-text-name">{`by ${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>

@@ -47,7 +47,9 @@ const ImageDetails = () => {
       <div className='image-detail-top'>
 
         <div className='image-detail-image-container'>
-          <img className='image-detail-image' src={currentImage?.imageUrl} alt=''></img>
+          <img className='image-detail-image' src={currentImage?.imageUrl} alt=''
+          onError={e => { e.currentTarget.src = "https://demofree.sirv.com/nope-not-here.jpg"; }}
+          ></img>
           {/* <div className='image-detail-title'>{currentImage?.title}</div> */}
         </div>
 
