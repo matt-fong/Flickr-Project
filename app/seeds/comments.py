@@ -222,6 +222,86 @@ def seed_comments():
     body='Nice photo!', userId=26, imageId=49)
   onehundredten = Comment (
     body='Awesome photo!', userId=27, imageId=50)
+  onehundredeleven = Comment (
+    body='Beautiful photo!', userId=28, imageId=31)
+  onehundredtwelve = Comment (
+    body='Great photo!', userId=29, imageId=32)
+  onehundredthirteen = Comment (
+    body='Nice photo!', userId=30, imageId=33)
+  onehundredfourteen = Comment (
+    body='Awesome photo!', userId=31, imageId=34)
+  onehundredfifteen = Comment (
+    body='Beautiful photo!', userId=32, imageId=35)
+  onehundredsixteen = Comment (
+    body='Great photo!', userId=33, imageId=36)
+  onehundredseventeen = Comment (
+    body='Nice photo!', userId=34, imageId=37)
+  onehundredeighteen = Comment (
+    body='Awesome photo!', userId=35, imageId=38)
+  onehundrednineteen = Comment (
+    body='Beautiful photo!', userId=36, imageId=39)
+  onehundredtwenty = Comment (
+    body='Great photo!', userId=37, imageId=40)
+  onehundredtwentyone = Comment (
+    body='Nice photo!', userId=38, imageId=41)
+  onehundredtwentytwo = Comment (
+    body='Awesome photo!', userId=39, imageId=42)
+  onehundredtwentythree = Comment (
+    body='Beautiful photo!', userId=40, imageId=43)
+  onehundredtwentyfour = Comment (
+    body='Great photo!', userId=41, imageId=44)
+  onehundredtwentyfive = Comment (
+    body='Nice photo!', userId=42, imageId=45)
+  onehundredtwentysix = Comment (
+    body='Awesome photo!', userId=43, imageId=46)
+  onehundredtwentyseven = Comment (
+    body='Beautiful photo!', userId=44, imageId=47)
+  onehundredtwentyeight = Comment (
+    body='Great photo!', userId=45, imageId=48)
+  onehundredtwentynine = Comment (
+    body='Nice photo!', userId=46, imageId=49)
+  onehundredthirty = Comment (
+    body='Awesome photo!', userId=47, imageId=50)
+  onehundredthirtyone = Comment (
+    body='Beautiful photo!', userId=48, imageId=31)
+  onehundredthirtytwo = Comment (
+    body='Great photo!', userId=49, imageId=32)
+  onehundredthirtythree = Comment (
+    body='Nice photo!', userId=50, imageId=33)
+  onehundredthirtyfour = Comment (
+    body='Awesome photo!', userId=51, imageId=34)
+  onehundredthirtyfive = Comment (
+    body='Beautiful photo!', userId=52, imageId=35)
+  onehundredthirtysix = Comment (
+    body='Great photo!', userId=53, imageId=36)
+  onehundredthirtyseven = Comment (
+    body='Nice photo!', userId=54, imageId=37)
+  onehundredthirtyeight = Comment (
+    body='Awesome photo!', userId=55, imageId=38)
+  onehundredthirtynine = Comment (
+    body='Beautiful photo!', userId=56, imageId=39)
+  onehundredforty = Comment (
+    body='Great photo!', userId=57, imageId=40)
+  onehundredfortyone = Comment (
+    body='Nice photo!', userId=58, imageId=41)
+  onehundredfortytwo = Comment (
+    body='Awesome photo!', userId=59, imageId=42)
+  onehundredfortythree = Comment (
+    body='Beautiful photo!', userId=60, imageId=43)
+  onehundredfortyfour = Comment (
+    body='Great photo!', userId=61, imageId=44)
+  onehundredfortyfive = Comment (
+    body='Nice photo!', userId=62, imageId=45)
+  onehundredfortysix = Comment (
+    body='Awesome photo!', userId=63, imageId=46)
+  onehundredfortyseven = Comment (
+    body='Beautiful photo!', userId=64, imageId=47)
+  onehundredfortyeight = Comment (
+    body='Great photo!', userId=65, imageId=48)
+  onehundredfortynine = Comment (
+    body='Nice photo!', userId=66, imageId=49)
+  onehundredfifty = Comment (
+    body='Awesome photo!', userId=67, imageId=50)
 
 
   db.session.add(one)
@@ -334,6 +414,46 @@ def seed_comments():
   db.session.add(onehundredeight)
   db.session.add(onehundrednine)
   db.session.add(onehundredten)
+  db.session.add(onehundredeleven)
+  db.session.add(onehundredtwelve)
+  db.session.add(onehundredthirteen)
+  db.session.add(onehundredfourteen)
+  db.session.add(onehundredfifteen)
+  db.session.add(onehundredsixteen)
+  db.session.add(onehundredseventeen)
+  db.session.add(onehundredeighteen)
+  db.session.add(onehundrednineteen)
+  db.session.add(onehundredtwenty)
+  db.session.add(onehundredtwentyone)
+  db.session.add(onehundredtwentytwo)
+  db.session.add(onehundredtwentythree)
+  db.session.add(onehundredtwentyfour)
+  db.session.add(onehundredtwentyfive)
+  db.session.add(onehundredtwentysix)
+  db.session.add(onehundredtwentyseven)
+  db.session.add(onehundredtwentyeight)
+  db.session.add(onehundredtwentynine)
+  db.session.add(onehundredthirty)
+  db.session.add(onehundredthirtyone)
+  db.session.add(onehundredthirtytwo)
+  db.session.add(onehundredthirtythree)
+  db.session.add(onehundredthirtyfour)
+  db.session.add(onehundredthirtyfive)
+  db.session.add(onehundredthirtysix)
+  db.session.add(onehundredthirtyseven)
+  db.session.add(onehundredthirtyeight)
+  db.session.add(onehundredthirtynine)
+  db.session.add(onehundredforty)
+  db.session.add(onehundredfortyone)
+  db.session.add(onehundredfortytwo)
+  db.session.add(onehundredfortythree)
+  db.session.add(onehundredfortyfour)
+  db.session.add(onehundredfortyfive)
+  db.session.add(onehundredfortysix)
+  db.session.add(onehundredfortyseven)
+  db.session.add(onehundredfortyeight)
+  db.session.add(onehundredfortynine)
+  db.session.add(onehundredfifty)
 
   db.session.commit()
 
