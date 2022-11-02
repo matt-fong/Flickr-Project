@@ -189,119 +189,119 @@ def seed_comments():
   ninetythree = Comment (
     body='Cool!', userId=10, imageId=33)
   ninetyfour = Comment (
-    body='Amazing photo!', userId=11, imageId=34)
+    body='Amazing photo!', userId=2, imageId=34)
   ninetyfive = Comment (
-    body='Beautiful photo!', userId=12, imageId=35)
+    body='Beautiful photo!', userId=2, imageId=35)
   ninetysix = Comment (
-    body='Great photo!', userId=13, imageId=36)
+    body='Great photo!', userId=3, imageId=36)
   ninetyseven = Comment (
-    body='Nice photo!', userId=14, imageId=37)
+    body='Nice photo!', userId=4, imageId=37)
   ninetyeight = Comment (
-    body='Awesome photo!', userId=15, imageId=38)
+    body='Awesome photo!', userId=5, imageId=38)
   ninetynine = Comment (
-    body='Beautiful photo!', userId=16, imageId=39)
+    body='Beautiful photo!', userId=6, imageId=39)
   onehundred = Comment (
-    body='Great photo!', userId=17, imageId=40)
+    body='Great photo!', userId=7, imageId=40)
   onehundredone = Comment (
-    body='Nice photo!', userId=18, imageId=41)
+    body='Nice photo!', userId=8, imageId=41)
   onehundredtwo = Comment (
-    body='Awesome photo!', userId=19, imageId=42)
+    body='Awesome photo!', userId=9, imageId=42)
   onehundredthree = Comment (
-    body='Beautiful photo!', userId=20, imageId=43)
+    body='Beautiful photo!', userId=2, imageId=43)
   onehundredfour = Comment (
-    body='Great photo!', userId=21, imageId=44)
+    body='Great photo!', userId=3, imageId=44)
   onehundredfive = Comment (
-    body='Nice photo!', userId=22, imageId=45)
+    body='Nice photo!', userId=4, imageId=45)
   onehundredsix = Comment (
-    body='Awesome photo!', userId=23, imageId=46)
+    body='Awesome photo!', userId=5, imageId=46)
   onehundredseven = Comment (
-    body='Beautiful photo!', userId=24, imageId=47)
+    body='Beautiful photo!', userId=6, imageId=47)
   onehundredeight = Comment (
-    body='Great photo!', userId=25, imageId=48)
+    body='Great photo!', userId=7, imageId=48)
   onehundrednine = Comment (
-    body='Nice photo!', userId=26, imageId=49)
+    body='Nice photo!', userId=8, imageId=49)
   onehundredten = Comment (
-    body='Awesome photo!', userId=27, imageId=50)
+    body='Awesome photo!', userId=9, imageId=50)
   onehundredeleven = Comment (
-    body='Beautiful photo!', userId=28, imageId=31)
+    body='Beautiful photo!', userId=10, imageId=31)
   onehundredtwelve = Comment (
-    body='Great photo!', userId=29, imageId=32)
+    body='Great photo!', userId=2, imageId=32)
   onehundredthirteen = Comment (
-    body='Nice photo!', userId=30, imageId=33)
+    body='Nice photo!', userId=3, imageId=33)
   onehundredfourteen = Comment (
-    body='Awesome photo!', userId=31, imageId=34)
+    body='Awesome photo!', userId=4, imageId=34)
   onehundredfifteen = Comment (
-    body='Beautiful photo!', userId=32, imageId=35)
+    body='Beautiful photo!', userId=5, imageId=35)
   onehundredsixteen = Comment (
-    body='Great photo!', userId=33, imageId=36)
+    body='Great photo!', userId=6, imageId=36)
   onehundredseventeen = Comment (
-    body='Nice photo!', userId=34, imageId=37)
+    body='Nice photo!', userId=7, imageId=37)
   onehundredeighteen = Comment (
-    body='Awesome photo!', userId=35, imageId=38)
+    body='Awesome photo!', userId=5, imageId=38)
   onehundrednineteen = Comment (
-    body='Beautiful photo!', userId=36, imageId=39)
+    body='Beautiful photo!', userId=8, imageId=39)
   onehundredtwenty = Comment (
-    body='Great photo!', userId=37, imageId=40)
+    body='Great photo!', userId=9, imageId=40)
   onehundredtwentyone = Comment (
-    body='Nice photo!', userId=38, imageId=41)
+    body='Nice photo!', userId=10, imageId=41)
   onehundredtwentytwo = Comment (
-    body='Awesome photo!', userId=39, imageId=42)
+    body='Awesome photo!', userId=12, imageId=42)
   onehundredtwentythree = Comment (
-    body='Beautiful photo!', userId=40, imageId=43)
+    body='Beautiful photo!', userId=11, imageId=43)
   onehundredtwentyfour = Comment (
-    body='Great photo!', userId=41, imageId=44)
+    body='Great photo!', userId=2, imageId=44)
   onehundredtwentyfive = Comment (
-    body='Nice photo!', userId=42, imageId=45)
+    body='Nice photo!', userId=3, imageId=45)
   onehundredtwentysix = Comment (
-    body='Awesome photo!', userId=43, imageId=46)
+    body='Awesome photo!', userId=4, imageId=46)
   onehundredtwentyseven = Comment (
-    body='Beautiful photo!', userId=44, imageId=47)
+    body='Beautiful photo!', userId=5, imageId=47)
   onehundredtwentyeight = Comment (
-    body='Great photo!', userId=45, imageId=48)
+    body='Great photo!', userId=5, imageId=48)
   onehundredtwentynine = Comment (
-    body='Nice photo!', userId=46, imageId=49)
+    body='Nice photo!', userId=6, imageId=49)
   onehundredthirty = Comment (
-    body='Awesome photo!', userId=47, imageId=50)
+    body='Awesome photo!', userId=7, imageId=50)
   onehundredthirtyone = Comment (
-    body='Beautiful photo!', userId=48, imageId=31)
+    body='Beautiful photo!', userId=8, imageId=31)
   onehundredthirtytwo = Comment (
-    body='Great photo!', userId=49, imageId=32)
+    body='Great photo!', userId=9, imageId=32)
   onehundredthirtythree = Comment (
-    body='Nice photo!', userId=50, imageId=33)
+    body='Nice photo!', userId=10, imageId=33)
   onehundredthirtyfour = Comment (
-    body='Awesome photo!', userId=51, imageId=34)
+    body='Awesome photo!', userId=2, imageId=34)
   onehundredthirtyfive = Comment (
-    body='Beautiful photo!', userId=52, imageId=35)
+    body='Beautiful photo!', userId=2, imageId=35)
   onehundredthirtysix = Comment (
-    body='Great photo!', userId=53, imageId=36)
+    body='Great photo!', userId=3, imageId=36)
   onehundredthirtyseven = Comment (
-    body='Nice photo!', userId=54, imageId=37)
+    body='Nice photo!', userId=4, imageId=37)
   onehundredthirtyeight = Comment (
-    body='Awesome photo!', userId=55, imageId=38)
+    body='Awesome photo!', userId=5, imageId=38)
   onehundredthirtynine = Comment (
-    body='Beautiful photo!', userId=56, imageId=39)
+    body='Beautiful photo!', userId=6, imageId=39)
   onehundredforty = Comment (
-    body='Great photo!', userId=57, imageId=40)
+    body='Great photo!', userId=7, imageId=40)
   onehundredfortyone = Comment (
-    body='Nice photo!', userId=58, imageId=41)
+    body='Nice photo!', userId=8, imageId=41)
   onehundredfortytwo = Comment (
-    body='Awesome photo!', userId=59, imageId=42)
+    body='Awesome photo!', userId=9, imageId=42)
   onehundredfortythree = Comment (
-    body='Beautiful photo!', userId=60, imageId=43)
+    body='Beautiful photo!', userId=6, imageId=43)
   onehundredfortyfour = Comment (
-    body='Great photo!', userId=61, imageId=44)
+    body='Great photo!', userId=3, imageId=44)
   onehundredfortyfive = Comment (
-    body='Nice photo!', userId=62, imageId=45)
+    body='Nice photo!', userId=2, imageId=45)
   onehundredfortysix = Comment (
-    body='Awesome photo!', userId=63, imageId=46)
+    body='Awesome photo!', userId=3, imageId=46)
   onehundredfortyseven = Comment (
-    body='Beautiful photo!', userId=64, imageId=47)
+    body='Beautiful photo!', userId=4, imageId=47)
   onehundredfortyeight = Comment (
-    body='Great photo!', userId=65, imageId=48)
+    body='Great photo!', userId=5, imageId=48)
   onehundredfortynine = Comment (
-    body='Nice photo!', userId=66, imageId=49)
+    body='Nice photo!', userId=6, imageId=49)
   onehundredfifty = Comment (
-    body='Awesome photo!', userId=67, imageId=50)
+    body='Awesome photo!', userId=7, imageId=50)
 
 
   db.session.add(one)
