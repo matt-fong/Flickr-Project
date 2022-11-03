@@ -11,19 +11,23 @@
 ## How to run Discovr Locally:
 
 * Clone the repository in your terminal: git clone https://github.com/matt-fong/Flickr-Project.git
-* cd into Flickr-Project folder and run pipenv install
-* Open two terminal paths for both Flickr-Project and react-app.
-* Under Flickr-Project run pipenv shell `` then flask run, for react-app run npm install```
 * Create a .env file under the root of the backend folder with the following contents:
 ```
 REACT_APP_BASE_URL=http://localhost:5000
 ```
-* In the terminal under Flickr-Project, migrate and seed files as follows:
+* Have 2 terminals open, one for Flickr-Project and other for react-app
+* In the first terminal, cd into Flickr-Project folder and run ```pipenv install -r requirements.txt```
+* In the second terminal, cd into react-app folder and run ```npm install```
+
+* In the first terminal under Flickr-Project, get into your pipenv, migrate and seed database, and run your Flask app:
 ```
+pipenv shell
+flask db migrate
 flask db upgrade
 flask seed all
+flask run
 ```
-* Now, run flask run under Flickr-Project and npm start under react-app
+* Now, go to the second terminal for react-app and run ```npm start```
 
 ### Your local host should be running with full functionality now!
 
