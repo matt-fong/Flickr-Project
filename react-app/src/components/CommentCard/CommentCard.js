@@ -43,14 +43,6 @@ const CommentCard = ({ comment }) => {
       imageId: imageId,
     }
 
-    // let errors = [];
-
-    // if (body.length < 1 || body.length > 255) {
-    //   errors.push('Comment must be between 1 and 255 characters.')
-    // }
-
-    // setErrors(errors)
-
     if (body.length > 0 && body.length < 256) {
       return dispatch(updateCommentThunk(data, comment?.id)).then(setEditing(false))
     }
