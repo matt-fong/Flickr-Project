@@ -41,19 +41,19 @@ const SignUpForm = () => {
     let errors = [];
 
     if (first_name.length < 2 || first_name.length > 25) {
-      errors.push("first name: First name must be between 2 and 50 characters.")
+      errors.push("first name: First name must be between 2 and 25 characters.")
     }
     if (last_name.length < 2 || last_name.length > 25) {
-      errors.push("last name: Last name must be between 2 and 50 characters.")
+      errors.push("last name: Last name must be between 2 and 25 characters.")
     }
     if (email.length < 2 || email.length > 25) {
-      errors.push("email: Email must be between 2 and 50 characters.")
+      errors.push("email: Email must be between 2 and 25 characters.")
     }
     if (username.length < 2 || username.length > 25) {
-      errors.push("username: Username must be between 2 and 50 characters.")
+      errors.push("username: Username must be between 2 and 25 characters.")
     }
     if (password.length < 6 || password.length > 25) {
-      errors.push('password: Password must be between 6 and 50 characters.');
+      errors.push('password: Password must be between 6 and 25 characters.');
     }
 
     setErrors(errors);
@@ -226,72 +226,6 @@ const SignUpForm = () => {
       </div>
     </>
   );
-
-  // return (
-  //   <form onSubmit={onSignUp}>
-  //     <div>
-  //       {errors.map((error, ind) => (
-  //         <div key={ind}>{error}</div>
-  //       ))}
-  //     </div>
-  //     <div>
-  //       <label>First Name</label>
-  //       <input
-  //         type='text'
-  //         name='first name'
-  //         onChange={updateFirstname}
-  //         value={first_name}
-  //       ></input>
-  //     </div>
-  //     <div>
-  //       <label>Last Name</label>
-  //       <input
-  //         type='text'
-  //         name='last name'
-  //         onChange={updateLastname}
-  //         value={last_name}
-  //       ></input>
-  //     </div>
-  //     <div>
-  //       <label>User Name</label>
-  //       <input
-  //         type='text'
-  //         name='username'
-  //         onChange={updateUsername}
-  //         value={username}
-  //       ></input>
-  //     </div>
-  //     <div>
-  //       <label>Email</label>
-  //       <input
-  //         type='text'
-  //         name='email'
-  //         onChange={updateEmail}
-  //         value={email}
-  //       ></input>
-  //     </div>
-  //     <div>
-  //       <label>Password</label>
-  //       <input
-  //         type='password'
-  //         name='password'
-  //         onChange={updatePassword}
-  //         value={password}
-  //       ></input>
-  //     </div>
-  //     <div>
-  //       <label>Repeat Password</label>
-  //       <input
-  //         type='password'
-  //         name='repeat_password'
-  //         onChange={updateRepeatPassword}
-  //         value={repeatPassword}
-  //         required={true}
-  //       ></input>
-  //     </div>
-  //     <button type='submit'>Sign Up</button>
-  //   </form>
-  // );
 };
 
 export default SignUpForm;
