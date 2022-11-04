@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { updateImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
 import { logout } from '../../store/session';
+import FourOFour from '../404Page/FourOFour';
 
 const UpdateImage = () => {
   const dispatch = useDispatch();
@@ -93,6 +94,10 @@ const UpdateImage = () => {
 
   if (!isLoaded) {
     return null
+  }
+
+  if (currentImage?.userId !== user?.id) {
+    return <FourOFour />
   }
 
   return isLoaded && (
