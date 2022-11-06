@@ -23,7 +23,7 @@ const SignUpForm = () => {
       last_name.length >= 2 && last_name.length <= 25 &&
       username.length >= 2 && username.length <= 25 &&
       email.length >= 2 && email.length <= 25 &&
-      password.length >= 2 && password.length <= 25) {
+      password.length >= 6 && password.length <= 25) {
       const data = await dispatch(signUp(first_name, last_name, username, email, password));
       if (data) {
         setErrors(data)
