@@ -10,6 +10,7 @@ class Image(db.Model):
   userId = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
 
   comments = db.relationship("Comment", back_populates='image', cascade='all, delete')
+  likes = db.relationship("Like", back_populates='image', cascade='all, delete')
 
   def to_dict(self):
     return {
