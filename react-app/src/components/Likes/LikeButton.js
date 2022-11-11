@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom';
 import { createLikeThunk, getAllLikesThunk } from '../../store/like';
 import { getAllImagesThunk } from '../../store/image';
 import { deleteLikeThunk } from '../../store/like';
-import './UserLikes.css'
+import './LikeButton.css'
 
-const UserLikes = ({ imageId }) => {
+const LikeButton = ({ imageId }) => {
 
   const dispatch = useDispatch();
 
@@ -83,4 +83,4 @@ const UserLikes = ({ imageId }) => {
 
 }
 
-export default UserLikes;
+export default LikeButton;

@@ -11,7 +11,6 @@ import UpdateImage from './components/Images/EditImage';
 import ImageDetails from './components/ImageDetails/ImageDetails';
 import HomePage from './components/HomePage/HomePage';
 import FourOFour from './components/404Page/FourOFour';
-import UserLikes from './components/Likes/UserLikes';
 // import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 function App() {
@@ -54,10 +53,6 @@ function App() {
         <Route path='/image/:imageId' exact={true}>
           <NavBar />
           <ImageDetails />
-        </Route>
-        <Route path='/testing' exact={true}>
-          <NavBar />
-          <UserLikes />
         </Route>
         <Route>
           <FourOFour />

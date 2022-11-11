@@ -10,7 +10,7 @@ import CommentCard from '../CommentCard/CommentCard';
 import { getAllUsersThunk } from '../../store/user';
 import CreateComment from '../Comments/CreateComment';
 import { getAllLikesThunk } from '../../store/like';
-import UserLikes from '../Likes/UserLikes';
+import LikeButton from '../Likes/LikeButton';
 
 const ImageDetails = () => {
 
@@ -104,7 +104,7 @@ const ImageDetails = () => {
           </div>
 
           <div className='image-detail-bottom-right'>
-            <UserLikes imageId={imageId?.imageId} />
+            <LikeButton imageId={imageId?.imageId} />
           </div>
 
 
