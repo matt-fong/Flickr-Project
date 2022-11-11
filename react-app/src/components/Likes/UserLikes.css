@@ -1,0 +1,87 @@
+.userlikes-top-container {
+  position: relative;
+  width: 100%;
+}
+
+.userlikes-inner-container {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  /* width: 80%; */
+  /* max-width: 80%; */
+}
+
+.userlikes-top {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.userlikes-test {
+  display: flex;
+  margin-top: 130px;
+  z-index: 1;
+}
+
+.userlikes-profile {
+  /* display: flex; */
+  /* justify-content: center; */
+  width: 100px;
+  height: 100px;
+  /* position: absolute; */
+  top: 126px;
+}
+
+.userlikes-info {
+  color: white;
+  margin-left: 12px;
+  margin-top: 24px;
+}
+
+.userlikes-name {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  z-index: 1;
+}
+
+.userlikes-username {
+  display: flex;
+  margin-top: 12px;
+  z-index: 1;
+}
+
+.userlikes-container {
+  background: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10em;
+  margin-top: 86px;
+}
+
+.userlikes-inner-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.userlikes-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 5px;
+  /* width: 1200px; */
+  width: 100%;
+  max-width: 1440px;
+  box-sizing: content-box;
+  width: 100%;
+}
+
+.userlikes-images-container > * {
+  /* flex: 1 1 auto; */
+  flex-grow: 1;
+  /* flex-shrink: 1; */
+  /* flex-basis: auto; */
+}
