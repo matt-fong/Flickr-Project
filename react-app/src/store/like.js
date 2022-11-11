@@ -43,7 +43,7 @@ export const createLikeThunk = (like) => async (dispatch) => {
 }
 
 export const deleteLikeThunk = (likeId) => async (dispatch) => {
-  const res = await fetch(`/api/likes/delete_like/${likeId}`, {
+  const res = await fetch(`/api/likes/${likeId}`, {
     method: 'DELETE',
   })
   if (res.ok) {

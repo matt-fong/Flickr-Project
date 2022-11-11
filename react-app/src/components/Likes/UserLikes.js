@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { createLikeThunk, getAllLikesThunk } from '../../store/like';
 import { getAllImagesThunk } from '../../store/image';
+import { deleteLikeThunk } from '../../store/like';
 import './UserLikes.css'
 
 const UserLikes = ({ imageId }) => {
@@ -50,6 +51,17 @@ const UserLikes = ({ imageId }) => {
     return dispatch(createLikeThunk(data))
   }
 
+  const handleDeleteLike = (e) => {
+    e.preventDefault();
+
+    for (let i = 0; i < likesarr.length; i++) {
+      if (likesarr[i]?.userId === user?.id && likesarr[i]?.imageId === Number(imageId)) {
+        return dispatch(deleteLikeThunk(likesarr[i]?.id))
+      }
+    }
+
+  }
+
   let conditional;
 
   for (let i = 0; i < likesarr.length; i++) {
@@ -69,7 +81,7 @@ const UserLikes = ({ imageId }) => {
   for (let i = 0; i < likesarr.length; i++) {
     if (likesarr[i]?.userId === user?.id && likesarr[i]?.imageId === Number(imageId)) {
       conditional = (
-        <div>
+        <div onClick={handleDeleteLike}>
           <i class="fa-solid fa-heart">DELETE</i>
         </div>
       )
