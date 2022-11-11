@@ -5,8 +5,6 @@ import { deleteImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
 import { getAllCommentsThunk } from '../../store/comment';
 // import { getImageCommentsThunk } from '../../store/comment';
-
-
 import './ImageDetails.css'
 import CommentCard from '../CommentCard/CommentCard';
 import { getAllUsersThunk } from '../../store/user';
