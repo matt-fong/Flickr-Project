@@ -11,6 +11,7 @@ import './ImageDetails.css'
 import CommentCard from '../CommentCard/CommentCard';
 import { getAllUsersThunk } from '../../store/user';
 import CreateComment from '../Comments/CreateComment';
+import { getAllLikesThunk } from '../../store/like';
 
 const ImageDetails = () => {
 
@@ -38,6 +39,7 @@ const ImageDetails = () => {
     dispatch(getAllCommentsThunk())
     dispatch(getAllUsersThunk())
     // dispatch(getImageCommentsThunk(imageId.imageId)).then(() => setIsLoaded(true))
+    dispatch(getAllLikesThunk())
   }, [dispatch])
 
 
