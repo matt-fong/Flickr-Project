@@ -3,12 +3,15 @@ import { useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { createLikeThunk, getAllLikesThunk } from '../../store/like';
 import { getAllImagesThunk } from '../../store/image';
+import './UserLikes.css'
 
-const UserLikes = () => {
+const UserLikes = ({ imageId }) => {
 
   const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
+
+  // console.log("THIS IS THE IMAGE ID", imageId)
 
   const likesarr = Object.values(likes)
   console.log('THIS IS LIKES', likesarr)
@@ -19,7 +22,7 @@ const UserLikes = () => {
     testarr.push(likesarr[i].imageId)
   }
 
-  console.log('THIS IS TESTARR', testarr)
+  // console.log('THIS IS TESTARR', testarr)
 
   const imagearr = Object.values(images)
 
@@ -31,7 +34,7 @@ const UserLikes = () => {
     }
   }
 
-  console.log('THIS IS NEWIMAGEARR', newimagearr)
+  // console.log('THIS IS FINALNEWIMAGEARR', newimagearr)
 
   const history = useHistory()
   const dispatch = useDispatch();
@@ -41,11 +44,42 @@ const UserLikes = () => {
 
     const data = {
       userId: user.id,
-      imageId: 15,
+      imageId: imageId,
     }
 
     return dispatch(createLikeThunk(data))
+  }
 
+  let conditional;
+
+  for (let i = 0; i < likesarr.length; i++) {
+    // console.log('THIS IS ITERATION', likesarr[i])
+    // console.log('THIS IS LIKES USERID', likesarr[i]?.userId)
+    // console.log('THIS IS USER ID', user?.id)
+    // console.log('THIS IS LIKES IMAGE ID', likesarr[i]?.imageId)
+    // console.log('THIS IS IMAGE ID', imageId)
+    if ((likesarr[i]?.userId === user?.id) && (likesarr[i]?.imageId === Number(imageId))) {
+      console.log('THIS IS TRUE')
+    } else {
+      console.log('THIS IS FALSE')
+    }
+  }
+
+
+  for (let i = 0; i < likesarr.length; i++) {
+    if (likesarr[i]?.userId === user?.id && likesarr[i]?.imageId === Number(imageId)) {
+      conditional = (
+        <div>
+          <i class="fa-solid fa-heart">DELETE</i>
+        </div>
+      )
+    } else {
+      conditional = (
+        <div onClick={handleCreateLike}>
+          <i class="fa-regular fa-heart fa-2xl yessir"></i>
+        </div>
+      )
+    }
   }
 
   useEffect(() => {
@@ -54,8 +88,8 @@ const UserLikes = () => {
   }, [dispatch])
 
   return (
-    <div onClick={handleCreateLike}>
-      CREATE LIKE
+    <div>
+      {conditional}
     </div>
   )
 
