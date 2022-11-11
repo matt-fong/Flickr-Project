@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
 import { createLikeThunk, getAllLikesThunk } from '../../store/like';
 import { getAllImagesThunk } from '../../store/image';
 import { deleteLikeThunk } from '../../store/like';
@@ -38,7 +37,7 @@ const LikeButton = ({ imageId }) => {
       imageId: imageId,
     }
 
-    return dispatch(createLikeThunk(data))
+    return dispatch(createLikeThunk(data)).then(dispatch(getAllLikesThunk()))
   }
 
   const handleDeleteLike = (e) => {
@@ -46,7 +45,7 @@ const LikeButton = ({ imageId }) => {
 
     for (let i = 0; i < likesArr.length; i++) {
       if (likesArr[i]?.userId === user?.id && likesArr[i]?.imageId === Number(imageId)) {
-        return dispatch(deleteLikeThunk(likesArr[i]?.id))
+        return dispatch(deleteLikeThunk(likesArr[i]?.id)).then(dispatch(getAllLikesThunk()))
       }
     }
 

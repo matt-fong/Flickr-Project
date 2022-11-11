@@ -45,6 +45,10 @@
   justify-content: center;
 }
 
+.image-detail-bottom-left {
+  margin-right: 60px;
+}
+
 .image-detail-inner-bottom {
   display: flex;
   max-width: 1060px;
@@ -124,4 +128,26 @@
   bottom: 0;
   margin-bottom: 24px;
   margin-right: 12px;
+}
+
+.image-detail-bottom-right {
+  margin-top: 26px;
+}
+
+.image-detail-stats {
+  display: flex;
+  width: 223px;
+  justify-content: space-between;
+}
+
+.image-detail-stats-top {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.image-detail-stats-bottom {
+  color: #898989;
+  font-size: 14px;
+  font-weight: 400;
 }

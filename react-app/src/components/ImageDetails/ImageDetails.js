@@ -22,6 +22,7 @@ const ImageDetails = () => {
   const user = useSelector(state => state.session.user)
   const comments = useSelector(state => state.comments)
   const users = useSelector(state => state.users)
+  const likes = useSelector(state => state.likes)
 
   const currentImage = images[imageId.imageId]
   const imageOwner = users[currentImage?.userId]
@@ -41,6 +42,9 @@ const ImageDetails = () => {
     dispatch(getAllLikesThunk())
   }, [dispatch])
 
+  console.log('THIS IS LIKES', likes)
+  const imageLikes = Object.values(likes).filter(like => like.imageId === Number(imageId.imageId))
+  console.log('THIS IS IMAGE LIKES', imageLikes)
 
   return (
     <div className='image-detail-container'>
@@ -104,7 +108,23 @@ const ImageDetails = () => {
           </div>
 
           <div className='image-detail-bottom-right'>
-            <LikeButton imageId={imageId?.imageId} />
+            <div className='image-detail-stats'>
+
+                <div className='image-detail-stats-likes'>
+                  <div className='image-detail-stats-top'>{`${imageLikes?.length}`}</div>
+                  <div className='image-detail-stats-bottom'>likes</div>
+                </div>
+
+                <div className='image-detail-stats-comments'>
+                  <div className='image-detail-stats-top'>{filteredComments?.length}</div>
+                  <div className='image-detail-stats-bottom'>comments</div>
+                </div>
+
+                <LikeButton imageId={imageId?.imageId} />
+
+            </div>
+            {/* <LikeButton imageId={imageId?.imageId} /> */}
+            {/* <div>TOTAL LIKES: {`${imageLikes?.length}`}</div> */}
           </div>
 
 
