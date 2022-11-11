@@ -4,4 +4,5 @@
 
 .delete-like-button {
   cursor: pointer;
+  color: red;
 }
