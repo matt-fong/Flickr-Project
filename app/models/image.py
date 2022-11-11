@@ -19,4 +19,5 @@ class Image(db.Model):
       "description" : self.description,
       "imageUrl" : self.imageUrl,
       "userId" : self.userId,
+      'likes': [like.to_dict() for like in self.likes],
     }
