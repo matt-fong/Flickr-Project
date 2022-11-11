@@ -11,23 +11,13 @@ const LikeButton = ({ imageId }) => {
 
   const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
-  const images = useSelector((state) => state.images)
 
   const likesArr = Object.values(likes)
 
-  let likesImageIdArr = [];
-  for (let i = 0; i < likesArr.length; i++) {
-    likesImageIdArr.push(likesArr[i].imageId)
-  }
-
-  const imagearr = Object.values(images)
-
-  const userLikedImages = [];
-  for (let i = 0; i < imagearr.length; i++) {
-    if (likesImageIdArr.includes(imagearr[i].id)) {
-      userLikedImages.push(imagearr[i])
-    }
-  }
+  useEffect(() => {
+    dispatch(getAllImagesThunk())
+    dispatch(getAllLikesThunk())
+  }, [dispatch])
 
   const handleCreateLike = (e) => {
     e.preventDefault();
@@ -51,28 +41,23 @@ const LikeButton = ({ imageId }) => {
 
   }
 
+  const userLiked = likesArr.filter(like => like?.userId === user?.id && like?.imageId === Number(imageId))
+
   let conditional;
 
-  for (let i = 0; i < likesArr.length; i++) {
-    if (likesArr[i]?.userId === user?.id && likesArr[i]?.imageId === Number(imageId)) {
-      conditional = (
-        <div onClick={handleDeleteLike}>
-          <i class="fa-solid fa-heart fa-2xl delete-like-button"></i>
-        </div>
-      )
-    } else {
-      conditional = (
-        <div onClick={handleCreateLike}>
-          <i class="fa-regular fa-heart fa-2xl create-like-button"></i>
-        </div>
-      )
-    }
+  if (userLiked.length > 0) {
+    conditional = (
+      <div onClick={handleDeleteLike}>
+        <i class="fa-solid fa-heart fa-2xl delete-like-button"></i>
+      </div>
+    )
+  } else {
+    conditional = (
+      <div onClick={handleCreateLike}>
+        <i class="fa-regular fa-heart fa-2xl create-like-button"></i>
+      </div>
+    )
   }
-
-  useEffect(() => {
-    dispatch(getAllImagesThunk())
-    dispatch(getAllLikesThunk())
-  }, [dispatch])
 
   return (
     <div>

@@ -42,9 +42,7 @@ const ImageDetails = () => {
     dispatch(getAllLikesThunk())
   }, [dispatch])
 
-  console.log('THIS IS LIKES', likes)
   const imageLikes = Object.values(likes).filter(like => like.imageId === Number(imageId.imageId))
-  console.log('THIS IS IMAGE LIKES', imageLikes)
 
   return (
     <div className='image-detail-container'>
