@@ -1,4 +1,10 @@
-.yessir {
+.create-like-button {
+  cursor: pointer;
+  margin-left: 40px;
+  margin-top: 50px;
+}
+
+.delete-like-button {
   cursor: pointer;
   margin-left: 40px;
   margin-top: 50px;
