@@ -151,7 +151,7 @@
   background: white;
   display: flex;
   justify-content: center;
-  margin-bottom: 10em;
+  /* margin-bottom: 10em; */
   margin-top: 50px;
   width: 100%;
 }
