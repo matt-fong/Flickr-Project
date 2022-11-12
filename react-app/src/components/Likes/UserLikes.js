@@ -13,18 +13,20 @@ const UserLikes = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const userId = useParams();
+  const username = useParams();
 
   const user = useSelector((state) => state.session.user)
+  const users = useSelector((state) => state.users)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
   const comments = useSelector(state => state.comments)
 
   const likesArr = Object.values(likes)
 
-  const currentUser = useSelector((state) => state.users[Number(userId?.userId)])
+  // const currentUser = useSelector((state) => state.users[Number(userId?.userId)])
 
-  const userLikes = likesArr.filter(like => like?.userId === Number(userId?.userId))
+  const currentUser = Object.values(users).filter(user => user.username === username.username)[0]
+  const userLikes = likesArr.filter(like => like?.userId === Number(currentUser?.id))
 
   let likesImageIdArr = [];
 
@@ -132,7 +134,7 @@ const UserLikes = () => {
 
       <div className='userlikes-middle-container'>
         <div className='userlikes-middle-text'>
-          <div className='userlikes-middle-photostream' onClick={() => history.push(`/you/${userId?.userId}`)}>Photostream</div>
+          <div className='userlikes-middle-photostream' onClick={() => history.push(`/you/${currentUser?.username}`)}>Photostream</div>
           <div className='userlikes-middle-likes'>Likes</div>
         </div>
       </div>

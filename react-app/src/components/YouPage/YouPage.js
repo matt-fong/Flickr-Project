@@ -6,24 +6,34 @@ import ImageCard from "../ImageCard/ImageCard";
 import './YouPage.css'
 import { getAllUsersThunk } from '../../store/user';
 import { useHistory, useParams } from 'react-router-dom';
+import { getAllCommentsThunk } from "../../store/comment";
 import image from './background.PNG'
 
 const YouPage = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const userId = useParams();
+  const username = useParams();
 
   const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
-  const currentUser = useSelector((state) => state.users[Number(userId?.userId)])
+  const users = useSelector((state) => state.users)
+  const comments = useSelector(state => state.comments)
+
+  // const currentUser = useSelector((state) => state.users[Number(userId?.userId)])
+
+  const currentUser = Object.values(users).filter(user => user.username === username.username)[0]
+
+  console.log('THIS IS CURRENT USER', currentUser)
+
+  console.log('THIS IS USERS', users)
 
   const likesArr = Object.values(likes)
   const imagesArr = Object.values(images)
 
-  const userLikes = likesArr.filter(like => like?.userId === Number(userId?.userId))
-  const userImages = imagesArr.filter(image => image?.userId === Number(userId?.userId))
+  const userLikes = likesArr.filter(like => like?.userId === Number(currentUser?.id))
+  const userImages = imagesArr.filter(image => image?.userId === Number(currentUser?.id))
 
   let likesImageIdArr = [];
 
@@ -51,7 +61,7 @@ const YouPage = () => {
             {userImages.map((image) => {
               return (
                 <>
-                  <ImageCard image={image}/>
+                  <ImageCard image={image} comments={comments}/>
                 </>
               );
             })}
@@ -59,7 +69,7 @@ const YouPage = () => {
         </div>
       </div>
     )
-  } else if ((userImages.length === 0) && (user?.id === Number(userId?.userId))) {
+  } else if ((userImages.length === 0) && (user?.id === Number(currentUser?.id))) {
     renderImages = (
       <div className='youPage-none-container'>
 
@@ -79,7 +89,7 @@ const YouPage = () => {
 
       </div>
     )
-  } else if ((userImages.length === 0) && (user?.id !== Number(userId?.userId))) {
+  } else if ((userImages.length === 0) && (user?.id !== Number(currentUser?.id))) {
     renderImages = (
       <div className='youPage-none-container'>
 
@@ -104,6 +114,7 @@ const YouPage = () => {
     dispatch(getAllImagesThunk())
     dispatch(getAllLikesThunk())
     dispatch(getAllUsersThunk())
+    dispatch(getAllCommentsThunk())
   }, [dispatch])
 
   return (
@@ -130,7 +141,7 @@ const YouPage = () => {
       <div className='youPage-middle-container'>
         <div className='youPage-middle-text'>
           <div className='youPage-middle-photostream'>Photostream</div>
-          <div className='youPage-middle-likes' onClick={() => history.push(`/you/${userId?.userId}/likes`)}>Likes</div>
+          <div className='youPage-middle-likes' onClick={() => history.push(`/you/${currentUser?.username}/likes`)}>Likes</div>
         </div>
       </div>
 

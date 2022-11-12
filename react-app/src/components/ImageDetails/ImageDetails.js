@@ -27,6 +27,8 @@ const ImageDetails = () => {
   const currentImage = images[imageId.imageId]
   const imageOwner = users[currentImage?.userId]
 
+  console.log('THIS IS IMAGE OWNER', imageOwner)
+
   const commentsArr = Object.values(comments)
   const filteredComments = commentsArr.filter(comment => comment.imageId === Number(imageId.imageId))
 
@@ -78,7 +80,7 @@ const ImageDetails = () => {
             <div className='image-detail-user-card'>
 
               <div className='image-detail-user-card-pic-container'>
-                <img className='image-detail-user-card-pic' onClick={() => history.push(`/you/${imageOwner?.id}`)}src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
+                <img className='image-detail-user-card-pic' onClick={() => history.push(`/you/${imageOwner?.username}`)}src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
               </div>
 
               <div className='image-detail-user-card-right'>

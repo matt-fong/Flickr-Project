@@ -56,11 +56,11 @@ function App() {
           <NavBar />
           <ImageDetails />
         </Route>
-        <Route path='/you/:userId/likes' exact={true}>
+        <Route path='/you/:username/likes' exact={true}>
           <NavBar />
           <UserLikes />
         </Route>
-        <Route path='/you/:userId' exact={true}>
+        <Route path='/you/:username' exact={true}>
           <NavBar />
           <YouPage />
         </Route>
