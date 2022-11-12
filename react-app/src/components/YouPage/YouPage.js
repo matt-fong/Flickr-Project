@@ -72,7 +72,7 @@ const YouPage = () => {
             <div className='youPage-button' onClick={() => history.push(`/photo/upload`)}>Upload Photo</div>
           </div>
           <div className='youPage-text-inner-container'>
-            <img className='youPage-background' src={image} />
+            <img className='youPage-background' src={image} alt=''/>
           </div>
         </div>
 
@@ -90,7 +90,7 @@ const YouPage = () => {
     <>
       <div className='youPage-top-container'>
         <div className='youPage-image-container'>
-          <img className='youPage-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} />
+          <img className='youPage-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} alt=''/>
 
         </div>
 

@@ -48,7 +48,7 @@ const UserLikes = () => {
     <>
       <div className='userlikes-top-container'>
         <div className='userlikes-image-container'>
-          <img className='userlikes-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} />
+          <img className='userlikes-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} alt=''/>
 
         </div>
 
