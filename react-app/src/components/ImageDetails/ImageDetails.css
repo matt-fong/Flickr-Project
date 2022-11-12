@@ -64,6 +64,7 @@
 }
 
 .image-detail-user-card-pic {
+  cursor: pointer;
   height: 60px;
   width: 60px;
 }

@@ -78,7 +78,7 @@ const ImageDetails = () => {
             <div className='image-detail-user-card'>
 
               <div className='image-detail-user-card-pic-container'>
-                <img className='image-detail-user-card-pic' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
+                <img className='image-detail-user-card-pic' onClick={() => history.push(`/you/${imageOwner?.id}`)}src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
               </div>
 
               <div className='image-detail-user-card-right'>
