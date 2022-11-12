@@ -11,6 +11,7 @@ class Image(db.Model):
 
   comments = db.relationship("Comment", back_populates='image', cascade='all, delete')
   likes = db.relationship("Like", back_populates='image', cascade='all, delete')
+  tags = db.relationship("Tag", back_populates='image', cascade='all, delete')
 
   def to_dict(self):
     return {
