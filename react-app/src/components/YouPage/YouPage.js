@@ -16,7 +16,7 @@ const YouPage = () => {
 
   console.log('THIS IS USER ID', Number(userId?.userId))
 
-  // const user = useSelector((state) => state.session.user)
+  const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
   const currentUser = useSelector((state) => state.users[Number(userId?.userId)])
@@ -61,7 +61,7 @@ const YouPage = () => {
         </div>
       </div>
     )
-  } else {
+  } else if ((userImages.length === 0) && (user?.id === Number(userId?.userId))) {
     renderImages = (
       <div className='youPage-none-container'>
 
@@ -73,6 +73,25 @@ const YouPage = () => {
           </div>
           <div className='youPage-text-inner-container'>
             <div className='youPage-button' onClick={() => history.push(`/photo/upload`)}>Upload Photo</div>
+          </div>
+          <div className='youPage-text-inner-container'>
+            <img className='youPage-background' src={image} alt=''/>
+          </div>
+        </div>
+
+      </div>
+    )
+  } else if ((userImages.length === 0) && (user?.id !== Number(userId?.userId))) {
+    renderImages = (
+      <div className='youPage-none-container'>
+
+        <div className='youPage-text-container'>
+          <div className='youPage-text-top'>{`${currentUser?.first_name} ${currentUser?.last_name} has no public photos.`}</div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently does not have a public-facing portfolio. Explore other photos uploaded by users in the explore page.`}</div>
+          </div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-button' onClick={() => history.push(`/explore`)}>Explore Photos</div>
           </div>
           <div className='youPage-text-inner-container'>
             <img className='youPage-background' src={image} alt=''/>
