@@ -1,9 +1,9 @@
-.userlikes-top-container {
+.youPage-top-container {
   position: relative;
   width: 100%;
 }
 
-.userlikes-inner-container {
+.youPage-inner-container {
   margin-left: auto;
   margin-right: auto;
   height: 100%;
@@ -11,7 +11,7 @@
   /* max-width: 80%; */
 }
 
-.userlikes-image-container::after {
+.youPage-image-container::after {
   background: linear-gradient(180deg, rgb(0,0,0,0), 70%, rgb(0,0,0));
   content: "";
   left: 0;
@@ -22,7 +22,7 @@
   height: 250px;
 }
 
-.userlikes-top {
+.youPage-top {
   height: 250px;
   width: 100%;
   object-fit: cover;
@@ -30,13 +30,13 @@
   background: linear-gradient(180deg, rgb(0,0,0,0), 50%, rgb(0,0,0));
 }
 
-.userlikes-inner-bottom {
+.youPage-inner-bottom {
   display: flex;
   margin-top: 130px;
   z-index: 1;
 }
 
-.userlikes-profile {
+.youPage-profile {
   /* display: flex; */
   /* justify-content: center; */
   width: 100px;
@@ -45,32 +45,32 @@
   top: 126px;
 }
 
-.userlikes-info {
+.youPage-info {
   color: white;
   margin-left: 12px;
   margin-top: 24px;
 }
 
-.userlikes-name {
+.youPage-name {
   display: flex;
   align-items: center;
   font-size: 36px;
   z-index: 1;
 }
 
-.userlikes-username {
+.youPage-username {
   display: flex;
   margin-top: 12px;
   z-index: 1;
 }
 
-.userlikes-middle-container {
+.youPage-middle-container {
   border-bottom: 1px solid hsla(0,0%,54%,.3);
   margin-top: 20px;
   height: 50px;
 }
 
-.userlikes-middle-text {
+.youPage-middle-text {
   display: flex;
   align-items: center;
   /* box-sizing: border-box; */
@@ -82,14 +82,14 @@
   font-weight: 400;
 }
 
-/* .userlikes-middle-item {
+/* .youPage-middle-item {
   padding: 12px 20px;
   line-height: 25px;
   cursor: pointer;
   margin-right: 10px;
 } */
 
-.userlikes-container {
+.youPage-container {
   background: white;
   display: flex;
   justify-content: center;
@@ -97,18 +97,26 @@
   margin-top: 50px;
 }
 
-.userlikes-middle-photostream {
+.youPage-middle-photostream {
   padding: 12px 20px;
   line-height: 25px;
   cursor: pointer;
   margin-right: 10px;
 }
 
-.userlikes-middle-photostream:hover {
+.youPage-middle-likes {
+  padding: 12px 20px;
+  line-height: 25px;
+  cursor: pointer;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.youPage-middle-likes:hover {
   border-bottom: 3px solid #0091dc;
 }
 
-.userlikes-middle-likes {
+.youPage-middle-photostream {
   padding: 12px 20px;
   line-height: 25px;
   cursor: pointer;
@@ -117,14 +125,14 @@
   border-bottom: 3px solid #0091dc;
 }
 
-.userlikes-inner-container {
+.youPage-inner-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
   max-width: 80%;
 }
 
-.userlikes-images-container {
+.youPage-images-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -136,7 +144,7 @@
   width: 100%;
 }
 
-.userlikes-images-container > * {
+.youPage-images-container > * {
   /* flex: 1 1 auto; */
   flex-grow: 1;
   /* flex-shrink: 1; */

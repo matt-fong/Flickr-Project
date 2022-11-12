@@ -12,6 +12,7 @@ import ImageDetails from './components/ImageDetails/ImageDetails';
 import HomePage from './components/HomePage/HomePage';
 import FourOFour from './components/404Page/FourOFour';
 import UserLikes from './components/Likes/UserLikes';
+import YouPage from './components/YouPage/YouPage';
 // import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 function App() {
@@ -58,6 +59,10 @@ function App() {
         <Route path='/you/likes' exact={true}>
           <NavBar />
           <UserLikes />
+        </Route>
+        <Route path='/you/' exact={true}>
+          <NavBar />
+          <YouPage />
         </Route>
         <Route>
           <FourOFour />

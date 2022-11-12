@@ -3,11 +3,11 @@ import { useEffect } from 'react'
 import { getAllLikesThunk } from '../../store/like';
 import { getAllImagesThunk } from '../../store/image';
 import ImageCard from "../ImageCard/ImageCard";
-import './UserLikes.css'
+import './YouPage.css'
 import { getAllUsersThunk } from '../../store/user';
 import { useHistory } from 'react-router-dom';
 
-const UserLikes = () => {
+const YouPage = () => {
 
   const dispatch = useDispatch();
   const history = useHistory()
@@ -51,35 +51,35 @@ const UserLikes = () => {
 
   return (
     <>
-      <div className='userlikes-top-container'>
-        <div className='userlikes-image-container'>
-          <img className='userlikes-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} />
+      <div className='youPage-top-container'>
+        <div className='youPage-image-container'>
+          <img className='youPage-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} />
 
         </div>
 
-        <div className='userlikes-inner-container'>
+        <div className='youPage-inner-container'>
 
-          <div className='userlikes-inner-bottom'>
-            <img className='userlikes-profile' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
-            <div className='userlikes-info'>
-              <div className='userlikes-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div>
-              <div className='userlikes-username'>{currentUser?.username}</div>
+          <div className='youPage-inner-bottom'>
+            <img className='youPage-profile' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
+            <div className='youPage-info'>
+              <div className='youPage-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div>
+              <div className='youPage-username'>{currentUser?.username}</div>
             </div>
           </div>
 
         </div>
       </div>
 
-      <div className='userlikes-middle-container'>
-        <div className='userlikes-middle-text'>
-          <div className='userlikes-middle-photostream' onClick={() => history.push(`/you`)}>Photostream</div>
-          <div className='userlikes-middle-likes'>Likes</div>
+      <div className='youPage-middle-container'>
+        <div className='youPage-middle-text'>
+          <div className='youPage-middle-photostream'>Photostream</div>
+          <div className='youPage-middle-likes' onClick={() => history.push(`/you/likes`)}>Likes</div>
         </div>
       </div>
 
-      <div className="userlikes-container">
-        <div className="userlikes-inner-container">
-          <div className="userlikes-images-container">
+      <div className="youPage-container">
+        <div className="youPage-inner-container">
+          <div className="youPage-images-container">
             {userLikedImages.map((image) => {
               return (
                 <>
@@ -95,4 +95,4 @@ const UserLikes = () => {
 
 }
 
-export default UserLikes;
+export default YouPage;
