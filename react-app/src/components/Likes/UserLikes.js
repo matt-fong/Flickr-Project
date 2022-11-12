@@ -6,6 +6,7 @@ import ImageCard from "../ImageCard/ImageCard";
 import './UserLikes.css'
 import { getAllUsersThunk } from '../../store/user';
 import { useHistory, useParams } from 'react-router-dom';
+import { getAllCommentsThunk } from "../../store/comment";
 import image from './background.PNG'
 
 const UserLikes = () => {
@@ -17,6 +18,7 @@ const UserLikes = () => {
   const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
+  const comments = useSelector(state => state.comments)
 
   const likesArr = Object.values(likes)
 
@@ -44,6 +46,7 @@ const UserLikes = () => {
     dispatch(getAllImagesThunk())
     dispatch(getAllLikesThunk())
     dispatch(getAllUsersThunk())
+    dispatch(getAllCommentsThunk())
   }, [dispatch])
 
   let renderImages;
@@ -56,7 +59,7 @@ const UserLikes = () => {
             {userLikedImages.map((image) => {
               return (
                 <>
-                  <ImageCard image={image}/>
+                  <ImageCard image={image} comments={comments}/>
                 </>
               );
             })}

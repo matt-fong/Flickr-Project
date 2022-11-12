@@ -5,16 +5,21 @@ import { getAllUsersThunk } from "../../store/user";
 import { getAllLikesThunk } from "../../store/like";
 import { deleteLikeThunk } from '../../store/like';
 import { createLikeThunk } from '../../store/like';
+// import { getAllCommentsThunk } from "../../store/comment";
 import { Link } from "react-router-dom";
 import './ImageCard.css';
 
-const ImageCard = ({ image }) => {
+const ImageCard = ({ image, comments }) => {
 
   const dispatch = useDispatch();
 
   const users = useSelector(state => state.users)
-
+  // const comments = useSelector(state => state.comments)
   const imageOwner = users[image?.userId]
+
+  const commentArr = Object.values(comments)
+
+  const photoComments = commentArr.filter(comment => comment?.imageId === image?.id)
 
   let title;
   let firstname;
@@ -48,6 +53,7 @@ const ImageCard = ({ image }) => {
     // dispatch(getAllImagesThunk())
     dispatch(getAllUsersThunk())
     dispatch(getAllLikesThunk())
+    // dispatch(getAllCommentsThunk())
   }, [dispatch])
 
   const user = useSelector((state) => state.session.user)
@@ -55,6 +61,7 @@ const ImageCard = ({ image }) => {
 
   const likesArr = Object.values(likes)
   const userLiked = likesArr.filter(like => like?.userId === user?.id && like?.imageId === Number(image.id))
+  const photoLikes = likesArr.filter(like => like?.imageId === Number(image.id))
 
   const handleCreateLike = (e) => {
     e.preventDefault();
@@ -97,9 +104,7 @@ const ImageCard = ({ image }) => {
   return (
     <div className="image-card-container" key={''}>
       <Link to={`/image/${image?.id}`}>
-        <img className="image-card-image" src={image?.imageUrl} alt=""
-        onError={e => { e.currentTarget.src = "https://demofree.sirv.com/nope-not-here.jpg"; }}
-        ></img>
+        <img className="image-card-image" src={image?.imageUrl} alt="" onError={e => { e.currentTarget.src = "https://demofree.sirv.com/nope-not-here.jpg"; }}></img>
         <div className="image-card-text-container">
           <div>
             <div className="image-card-text-title">{title}</div>
@@ -107,7 +112,35 @@ const ImageCard = ({ image }) => {
           </div>
         </div>
 
-        {conditional}
+
+        <div className='image-card-bottom-right-container'>
+
+          <div className='image-card-bottom-right'>
+
+            <div className="image-card-like">
+
+              {conditional}
+
+              <div className="image-card-length">
+                {photoLikes?.length}
+              </div>
+
+            </div>
+
+
+            <div className="image-card-comment">
+
+              <i class="fa-regular fa-comment imagecardtest"></i>
+
+              <div className="image-card-length">
+                {photoComments?.length}
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </Link>
     </div>
