@@ -13,6 +13,7 @@ import HomePage from './components/HomePage/HomePage';
 import FourOFour from './components/404Page/FourOFour';
 import UserLikes from './components/Likes/UserLikes';
 import YouPage from './components/YouPage/YouPage';
+import TagCard from './components/Tags/TagCard';
 // import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 function App() {
@@ -63,6 +64,10 @@ function App() {
         <Route path='/you/:username' exact={true}>
           <NavBar />
           <YouPage />
+        </Route>
+        <Route path='/testing' exact={true}>
+          <NavBar />
+          <TagCard />
         </Route>
         <Route>
           <FourOFour />
