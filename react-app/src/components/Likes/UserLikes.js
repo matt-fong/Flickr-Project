@@ -50,10 +50,14 @@ const UserLikes = () => {
   return (
     <>
       <div className='userlikes-top-container'>
-        <img className='userlikes-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} />
+        <div className='userlikes-image-container'>
+          <img className='userlikes-top' src={'https://combo.staticflickr.com/pw/images/coverphoto11_h.jpg.v3'} />
+
+        </div>
+
         <div className='userlikes-inner-container'>
 
-          <div className='userlikes-test'>
+          <div className='userlikes-inner-bottom'>
             <img className='userlikes-profile' src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
             <div className='userlikes-info'>
               <div className='userlikes-name'>{`${currentUser?.first_name} ${currentUser?.last_name}`}</div>
@@ -61,6 +65,12 @@ const UserLikes = () => {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      <div className='userlikes-middle-container'>
+        <div className='userlikes-middle-text'>
+          <div className='userlikes-middle-items'>Photostream</div>
         </div>
       </div>
 
