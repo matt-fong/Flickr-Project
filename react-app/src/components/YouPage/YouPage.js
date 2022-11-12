@@ -6,6 +6,7 @@ import ImageCard from "../ImageCard/ImageCard";
 import './YouPage.css'
 import { getAllUsersThunk } from '../../store/user';
 import { useHistory } from 'react-router-dom';
+import image from './background.PNG'
 
 const YouPage = () => {
 
@@ -67,7 +68,23 @@ const YouPage = () => {
     )
   } else {
     renderImages = (
-      <div>NOTHING HERE</div>
+      <div className='youPage-none-container'>
+
+        <div className='youPage-text-container'>
+          <div className='youPage-text-top'>You have no public photos.</div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-text-middle'>Your photostream is your public-facing portfolio. Set your photos to public using the Camera Roll to populate your photostream.</div>
+
+          </div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-button' onClick={() => history.push(`/photo/upload`)}>Upload Photo</div>
+          </div>
+          <div className='youPage-text-inner-container'>
+            <img className='youPage-background' src={image} />
+          </div>
+        </div>
+
+      </div>
     )
   }
 
