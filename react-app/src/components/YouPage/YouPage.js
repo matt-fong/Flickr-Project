@@ -91,7 +91,7 @@ const YouPage = () => {
             <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently does not have a public-facing portfolio. Explore other photos uploaded by users in the explore page.`}</div>
           </div>
           <div className='youPage-text-inner-container'>
-            <div className='youPage-button' onClick={() => history.push(`/explore`)}>Explore Photos</div>
+            <div className='youPage-button' onClick={() => history.push(`/explore`)}>Explore</div>
           </div>
           <div className='youPage-text-inner-container'>
             <img className='youPage-background' src={image} alt=''/>

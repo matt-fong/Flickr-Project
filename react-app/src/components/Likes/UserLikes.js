@@ -6,6 +6,7 @@ import ImageCard from "../ImageCard/ImageCard";
 import './UserLikes.css'
 import { getAllUsersThunk } from '../../store/user';
 import { useHistory, useParams } from 'react-router-dom';
+import image from './background.PNG'
 
 const UserLikes = () => {
 
@@ -13,7 +14,7 @@ const UserLikes = () => {
   const history = useHistory();
   const userId = useParams();
 
-  // const user = useSelector((state) => state.session.user)
+  const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
 
@@ -45,6 +46,70 @@ const UserLikes = () => {
     dispatch(getAllUsersThunk())
   }, [dispatch])
 
+  console.log('THIS IS USERLIKEDIMAGES', userLikedImages)
+
+  let renderImages;
+
+  if (userLikedImages.length > 0) {
+    renderImages = (
+      <div className="userlikes-container">
+        <div className="userlikes-inner-container">
+          <div className="userlikes-images-container">
+            {userLikedImages.map((image) => {
+              return (
+                <>
+                  <ImageCard image={image}/>
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    )
+  } else if ((userLikedImages.length) === 0 && (currentUser?.id === user?.id)) {
+    renderImages = (
+      <div className='youPage-none-container'>
+
+        <div className='youPage-text-container'>
+          <div className='youPage-text-top'>You have no liked photos.</div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-text-middle'>{`You currently have no liked photos. Explore other photos uploaded by users in the explore page.`}</div>
+
+          </div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-button' onClick={() => history.push(`/explore`)}>Explore</div>
+          </div>
+          <div className='youPage-text-inner-container'>
+            <img className='youPage-background' src={image} alt=''/>
+          </div>
+        </div>
+
+      </div>
+    )
+  } else if ((userLikedImages.length) === 0 && (currentUser?.id !== user?.id)) {
+    renderImages = (
+      <div className='youPage-none-container'>
+
+        <div className='youPage-text-container'>
+          <div className='youPage-text-top'>{`${currentUser?.first_name} ${currentUser?.last_name} does not have any liked photos.`}</div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently has no liked photos. Explore other photos uploaded by users in the explore page.`}</div>
+
+          </div>
+          <div className='youPage-text-inner-container'>
+            <div className='youPage-button' onClick={() => history.push(`/explore`)}>Explore</div>
+          </div>
+          <div className='youPage-text-inner-container'>
+            <img className='youPage-background' src={image} alt=''/>
+          </div>
+        </div>
+
+      </div>
+    )
+  }
+
+  console.log('THIS IS CURRENTUSER', currentUser)
+
   return (
     <>
       <div className='userlikes-top-container'>
@@ -73,7 +138,9 @@ const UserLikes = () => {
         </div>
       </div>
 
-      <div className="userlikes-container">
+      {renderImages}
+
+      {/* <div className="userlikes-container">
         <div className="userlikes-inner-container">
           <div className="userlikes-images-container">
             {userLikedImages.map((image) => {
@@ -85,7 +152,7 @@ const UserLikes = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 
