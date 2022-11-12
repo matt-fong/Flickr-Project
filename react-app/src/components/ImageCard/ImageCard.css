@@ -12,10 +12,10 @@
   object-fit: cover;
 }
 
-
 .image-card-text-container {
   transition: .5s ease;
   opacity: 0;
+  /* opacity: 1; */
   position: absolute;
   left: 108px;
   top: 248px;
@@ -25,6 +25,23 @@
   width: 200px;
   flex-direction: column;
   justify-content: flex-start;
+  flex-direction: row;
+}
+
+.image-card-like-container {
+  transition: .5s ease;
+  opacity: 0;
+  /* opacity: 1; */
+  position: absolute;
+  left: 108px;
+  top: 16px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 
 .image-card-text-title {
@@ -40,5 +57,9 @@
 }
 
 .image-card-container:hover .image-card-text-container {
+  opacity: 1;
+}
+
+.image-card-container:hover .image-card-like-container {
   opacity: 1;
 }

@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllImagesThunk } from "../../store/image";
+// import { getAllImagesThunk } from "../../store/image";
 import { getAllUsersThunk } from "../../store/user";
+import { getAllLikesThunk } from "../../store/like";
+import { deleteLikeThunk } from '../../store/like';
+import { createLikeThunk } from '../../store/like';
 import { Link } from "react-router-dom";
 import './ImageCard.css';
 
@@ -42,9 +45,53 @@ const ImageCard = ({ image }) => {
   }
 
   useEffect(() => {
-    dispatch(getAllImagesThunk())
+    // dispatch(getAllImagesThunk())
     dispatch(getAllUsersThunk())
+    dispatch(getAllLikesThunk())
   }, [dispatch])
+
+  const user = useSelector((state) => state.session.user)
+  const likes = useSelector((state) => state.likes)
+
+  const likesArr = Object.values(likes)
+  const userLiked = likesArr.filter(like => like?.userId === user?.id && like?.imageId === Number(image.id))
+
+  const handleCreateLike = (e) => {
+    e.preventDefault();
+
+    const data = {
+      userId: user.id,
+      imageId: image.id,
+    }
+
+    return dispatch(createLikeThunk(data)).then(dispatch(getAllLikesThunk()))
+  }
+
+  const handleDeleteLike = (e) => {
+    e.preventDefault();
+
+    for (let i = 0; i < likesArr.length; i++) {
+      if (likesArr[i]?.userId === user?.id && likesArr[i]?.imageId === Number(image.id)) {
+        return dispatch(deleteLikeThunk(likesArr[i]?.id)).then(dispatch(getAllLikesThunk()))
+      }
+    }
+  }
+
+  let conditional;
+
+  if (userLiked.length > 0) {
+    conditional = (
+      <div className='image-card-like-container' onClick={handleDeleteLike}>
+        <i class="fa-solid fa-heart image-card-unfilled"></i>
+      </div>
+    )
+  } else {
+    conditional = (
+      <div className='image-card-like-container' onClick={handleCreateLike}>
+        <i class="fa-regular fa-heart image-card-filled"></i>
+      </div>
+    )
+  }
 
 
   return (
@@ -54,9 +101,14 @@ const ImageCard = ({ image }) => {
         onError={e => { e.currentTarget.src = "https://demofree.sirv.com/nope-not-here.jpg"; }}
         ></img>
         <div className="image-card-text-container">
-          <div className="image-card-text-title">{title}</div>
-          <div className="image-card-text-name">{`by ${firstname} ${lastname}`}</div>
+          <div>
+            <div className="image-card-text-title">{title}</div>
+            <div className="image-card-text-name">{`by ${firstname} ${lastname}`}</div>
+          </div>
         </div>
+
+        {conditional}
+
       </Link>
     </div>
   );

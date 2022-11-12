@@ -14,8 +14,6 @@ const YouPage = () => {
   const history = useHistory();
   const userId = useParams();
 
-  console.log('THIS IS USER ID', Number(userId?.userId))
-
   const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)

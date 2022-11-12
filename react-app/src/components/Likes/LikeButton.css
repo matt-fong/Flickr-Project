@@ -6,3 +6,11 @@
   cursor: pointer;
   color: red;
 }
+
+.image-card-unfilled {
+  color: white;
+}
+
+.image-card-filled {
+  color: white;
+}

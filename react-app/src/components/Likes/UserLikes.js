@@ -46,8 +46,6 @@ const UserLikes = () => {
     dispatch(getAllUsersThunk())
   }, [dispatch])
 
-  console.log('THIS IS USERLIKEDIMAGES', userLikedImages)
-
   let renderImages;
 
   if (userLikedImages.length > 0) {
@@ -107,8 +105,6 @@ const UserLikes = () => {
       </div>
     )
   }
-
-  console.log('THIS IS CURRENTUSER', currentUser)
 
   return (
     <>
