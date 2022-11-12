@@ -15,13 +15,17 @@ const YouPage = () => {
   const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
+  const currentUser = useSelector((state) => state.users[user?.id])
 
   const likesArr = Object.values(likes)
+  const imagesArr = Object.values(images)
 
-  const currentUser = useSelector((state) => state.users[user?.id])
-  console.log('currentUser', currentUser)
+  // console.log('currentUser', currentUser)
 
   const userLikes = likesArr.filter(like => like?.userId === user?.id)
+  const userImages = imagesArr.filter(image => image?.userId === user?.id)
+
+  console.log('THIS IS USERIMAGES', userImages)
 
   let likesImageIdArr = [];
 
@@ -39,9 +43,34 @@ const YouPage = () => {
     }
   }
 
-  console.log('THIS IS LIKESARR', likesArr)
-  console.log('THIS IS USERLIKES', userLikes)
-  console.log('THIS IS USERLIKEDIMAGES', userLikedImages)
+  // console.log('THIS IS LIKESARR', likesArr)
+  // console.log('THIS IS USERLIKES', userLikes)
+  // console.log('THIS IS USERLIKEDIMAGES', userLikedImages)
+
+  let renderImages;
+
+  if (userImages.length > 0) {
+    renderImages = (
+      <div className="youPage-container">
+        <div className="youPage-inner-container">
+          <div className="youPage-images-container">
+            {userImages.map((image) => {
+              return (
+                <>
+                  <ImageCard image={image}/>
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    )
+  } else {
+    renderImages = (
+      <div>NOTHING HERE</div>
+    )
+  }
+
 
   useEffect(() => {
     dispatch(getAllImagesThunk())
@@ -77,7 +106,9 @@ const YouPage = () => {
         </div>
       </div>
 
-      <div className="youPage-container">
+      {renderImages}
+
+      {/* <div className="youPage-container">
         <div className="youPage-inner-container">
           <div className="youPage-images-container">
             {userLikedImages.map((image) => {
@@ -89,7 +120,7 @@ const YouPage = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 

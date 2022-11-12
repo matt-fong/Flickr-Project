@@ -82,13 +82,6 @@
   font-weight: 400;
 }
 
-/* .userlikes-middle-item {
-  padding: 12px 20px;
-  line-height: 25px;
-  cursor: pointer;
-  margin-right: 10px;
-} */
-
 .userlikes-container {
   background: white;
   display: flex;
@@ -102,10 +95,12 @@
   line-height: 25px;
   cursor: pointer;
   margin-right: 10px;
+  color: hsla(0,0%,54%);
 }
 
 .userlikes-middle-photostream:hover {
   border-bottom: 3px solid #0091dc;
+  color: black;
 }
 
 .userlikes-middle-likes {
