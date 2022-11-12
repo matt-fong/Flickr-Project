@@ -6,7 +6,7 @@
 .image-card-image {
   width: 100%;
   min-width: 200px;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   max-height: 270px;
   height: auto;
   object-fit: cover;
@@ -64,7 +64,7 @@
   -ms-transform: translate(-50%, -50%);
   /* display: flex; */
   /* width: 100%; */
-  width: 61px;
+  width: 58px;
   /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
