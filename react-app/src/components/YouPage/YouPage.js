@@ -5,24 +5,27 @@ import { getAllImagesThunk } from '../../store/image';
 import ImageCard from "../ImageCard/ImageCard";
 import './YouPage.css'
 import { getAllUsersThunk } from '../../store/user';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import image from './background.PNG'
 
 const YouPage = () => {
 
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
+  const userId = useParams();
 
-  const user = useSelector((state) => state.session.user)
+  console.log('THIS IS USER ID', Number(userId?.userId))
+
+  // const user = useSelector((state) => state.session.user)
   const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
-  const currentUser = useSelector((state) => state.users[user?.id])
+  const currentUser = useSelector((state) => state.users[Number(userId?.userId)])
 
   const likesArr = Object.values(likes)
   const imagesArr = Object.values(images)
 
-  const userLikes = likesArr.filter(like => like?.userId === user?.id)
-  const userImages = imagesArr.filter(image => image?.userId === user?.id)
+  const userLikes = likesArr.filter(like => like?.userId === Number(userId?.userId))
+  const userImages = imagesArr.filter(image => image?.userId === Number(userId?.userId))
 
   let likesImageIdArr = [];
 
@@ -110,7 +113,7 @@ const YouPage = () => {
       <div className='youPage-middle-container'>
         <div className='youPage-middle-text'>
           <div className='youPage-middle-photostream'>Photostream</div>
-          <div className='youPage-middle-likes' onClick={() => history.push(`/you/likes`)}>Likes</div>
+          <div className='youPage-middle-likes' onClick={() => history.push(`/you/${userId?.userId}/likes`)}>Likes</div>
         </div>
       </div>
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../store/session';
 import './NavBar.css';
 
 const NavBar = () => {
+  const user = useSelector((state) => state.session.user);
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -23,7 +24,7 @@ const NavBar = () => {
             <div className="navbar-discovr">discovr</div>
           </div>
 
-          <div className='navbar-you' onClick={() => history.push(`/you`)}>
+          <div className='navbar-you' onClick={() => history.push(`/you/${user?.id}`)}>
             You
           </div>
 
