@@ -6,7 +6,7 @@
 .image-card-image {
   width: 100%;
   min-width: 200px;
-  max-width: 725px;
+  max-width: 1000px;
   max-height: 270px;
   height: auto;
   object-fit: cover;
