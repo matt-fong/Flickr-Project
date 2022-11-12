@@ -19,7 +19,6 @@ const UserLikes = () => {
   const likesArr = Object.values(likes)
 
   const currentUser = useSelector((state) => state.users[user?.id])
-  console.log('currentUser', currentUser)
 
   const userLikes = likesArr.filter(like => like?.userId === user?.id)
 
@@ -38,10 +37,6 @@ const UserLikes = () => {
       userLikedImages.push(imagearr[i])
     }
   }
-
-  console.log('THIS IS LIKESARR', likesArr)
-  console.log('THIS IS USERLIKES', userLikes)
-  console.log('THIS IS USERLIKEDIMAGES', userLikedImages)
 
   useEffect(() => {
     dispatch(getAllImagesThunk())

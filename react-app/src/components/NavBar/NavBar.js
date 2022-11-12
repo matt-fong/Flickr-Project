@@ -23,6 +23,10 @@ const NavBar = () => {
             <div className="navbar-discovr">discovr</div>
           </div>
 
+          <div className='navbar-you' onClick={() => history.push(`/you`)}>
+            You
+          </div>
+
           <div className='navbar-explore' onClick={() => history.push(`/explore`)}>
             Explore
           </div>

@@ -21,12 +21,8 @@ const YouPage = () => {
   const likesArr = Object.values(likes)
   const imagesArr = Object.values(images)
 
-  // console.log('currentUser', currentUser)
-
   const userLikes = likesArr.filter(like => like?.userId === user?.id)
   const userImages = imagesArr.filter(image => image?.userId === user?.id)
-
-  console.log('THIS IS USERIMAGES', userImages)
 
   let likesImageIdArr = [];
 
@@ -43,10 +39,6 @@ const YouPage = () => {
       userLikedImages.push(imagearr[i])
     }
   }
-
-  // console.log('THIS IS LIKESARR', likesArr)
-  // console.log('THIS IS USERLIKES', userLikes)
-  // console.log('THIS IS USERLIKEDIMAGES', userLikedImages)
 
   let renderImages;
 
@@ -87,7 +79,6 @@ const YouPage = () => {
       </div>
     )
   }
-
 
   useEffect(() => {
     dispatch(getAllImagesThunk())
