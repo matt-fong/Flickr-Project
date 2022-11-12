@@ -55,7 +55,7 @@ function App() {
           <NavBar />
           <ImageDetails />
         </Route>
-        <Route path='/testing' exact={true}>
+        <Route path='/you/likes' exact={true}>
           <NavBar />
           <UserLikes />
         </Route>

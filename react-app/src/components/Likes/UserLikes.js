@@ -70,7 +70,8 @@ const UserLikes = () => {
 
       <div className='userlikes-middle-container'>
         <div className='userlikes-middle-text'>
-          <div className='userlikes-middle-items'>Photostream</div>
+          <div className='userlikes-middle-item photostream-item'>Photostream</div>
+          <div className='userlikes-middle-item likes-item'>Likes</div>
         </div>
       </div>
 
