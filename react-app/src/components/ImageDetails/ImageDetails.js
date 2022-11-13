@@ -108,23 +108,31 @@ const ImageDetails = () => {
           </div>
 
           <div className='image-detail-bottom-right'>
-            <div className='image-detail-stats'>
 
-                <div className='image-detail-stats-likes'>
-                  <div className='image-detail-stats-top'>{`${imageLikes?.length}`}</div>
-                  <div className='image-detail-stats-bottom'>likes</div>
-                </div>
+            <div className='image-detail-stats-container'>
+              <div className='image-detail-stats'>
 
-                <div className='image-detail-stats-comments'>
-                  <div className='image-detail-stats-top'>{filteredComments?.length}</div>
-                  <div className='image-detail-stats-bottom'>comments</div>
-                </div>
+                  <div className='image-detail-stats-likes'>
+                    <div className='image-detail-stats-top'>{`${imageLikes?.length}`}</div>
+                    <div className='image-detail-stats-bottom'>likes</div>
+                  </div>
 
-                <LikeButton imageId={imageId?.imageId} />
+                  <div className='image-detail-stats-comments'>
+                    <div className='image-detail-stats-top'>{filteredComments?.length}</div>
+                    <div className='image-detail-stats-bottom'>comments</div>
+                  </div>
+
+                  <LikeButton imageId={imageId?.imageId} />
+
+              </div>
 
             </div>
-            {/* <LikeButton imageId={imageId?.imageId} /> */}
-            {/* <div>TOTAL LIKES: {`${imageLikes?.length}`}</div> */}
+
+
+            <div className='image-detail-tags-container'>
+                <div className='image-detail-tag-header'>Tags</div>
+            </div>
+
           </div>
 
 

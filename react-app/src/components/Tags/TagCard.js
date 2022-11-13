@@ -10,8 +10,8 @@ const TagCard = () => {
   const history = useHistory()
   const dispatch = useDispatch();
 
-  const tags = useSelector((state) => state.tags)
   const user = useSelector((state) => state.session.user)
+  const tags = useSelector((state) => state.tags)
 
   console.log('THIS IS TAGS', tags)
 
