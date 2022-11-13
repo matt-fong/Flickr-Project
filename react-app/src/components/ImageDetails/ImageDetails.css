@@ -79,7 +79,14 @@
 .image-detail-user-card-name {
   font-size: 20px;
   font-weight: 600;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  display: inline-block
+}
+
+.image-detail-user-card-name:hover {
+  text-decoration: underline;
+  color: #006dac;
 }
 
 .image-detail-user-card-title {

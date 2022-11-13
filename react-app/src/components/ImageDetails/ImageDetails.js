@@ -80,11 +80,11 @@ const ImageDetails = () => {
             <div className='image-detail-user-card'>
 
               <div className='image-detail-user-card-pic-container'>
-                <img className='image-detail-user-card-pic' onClick={() => history.push(`/you/${imageOwner?.username}`)}src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
+                <img className='image-detail-user-card-pic' onClick={() => history.push(`/you/${imageOwner?.username}`)} src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
               </div>
 
               <div className='image-detail-user-card-right'>
-                <div className='image-detail-user-card-name'>{`${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
+                <div className='image-detail-user-card-name' onClick={() => history.push(`/you/${imageOwner?.username}`)}>{`${imageOwner?.first_name} ${imageOwner?.last_name}`}</div>
                 <div className='image-detail-user-card-title'>{currentImage?.title}</div>
                 <div className='image-detail-user-card-description'>{currentImage?.description}</div>
               </div>
