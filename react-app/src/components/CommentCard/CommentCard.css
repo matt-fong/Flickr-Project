@@ -12,6 +12,7 @@
   height: 32px;
   width: 32px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .comment-card-right-container {
@@ -27,6 +28,15 @@
   font-weight: 600;
   /* margin-top: 2px; */
   margin-bottom: 2px
+}
+
+.comment-card-first-last-name {
+  color: #006dac;
+  cursor: pointer;
+}
+
+.comment-card-first-last-name:hover {
+  text-decoration: underline;
 }
 
 .comment-card-icons {

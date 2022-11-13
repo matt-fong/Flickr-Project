@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import './CommentCard.css'
@@ -9,6 +9,7 @@ import { deleteCommentThunk } from '../../store/comment';
 const CommentCard = ({ comment }) => {
 
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const user = useSelector((state) => state.session.user)
   const users = useSelector((state) => state.users)
@@ -51,10 +52,10 @@ const CommentCard = ({ comment }) => {
 
   return (
     <div className='comment-card-container'>
-      <img className='comment-card-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg' alt=''></img>
+      <img className='comment-card-pic' src='https://icon-library.com/images/default-user-icon/default-user-icon-13.jpg' alt='' onClick={() => history.push(`/you/${currentUser?.username}`)}></img>
       <div className='comment-card-right-container'>
         <div className='comment-card-name-container'>
-          <div className='comment-card-first-last-name'>
+          <div className='comment-card-first-last-name' onClick={() => history.push(`/you/${currentUser?.username}`)}>
             {`${currentUser?.first_name} ${currentUser?.last_name}`}
           </div>
 

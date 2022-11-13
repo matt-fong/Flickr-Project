@@ -14,7 +14,7 @@ import LikeButton from '../Likes/LikeButton';
 
 const ImageDetails = () => {
 
-  const history = useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
   const imageId = useParams();
 
