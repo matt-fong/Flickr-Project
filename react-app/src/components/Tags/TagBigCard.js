@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import './TagBigCard.css'
 
-const TagBigCard = ({ tag }) => {
+const TagBigCard = ({ tagname }) => {
 
   const history = useHistory();
 
@@ -18,9 +18,9 @@ const TagBigCard = ({ tag }) => {
   const randomImage = images[randomNum]
 
   return (
-    <div className='tagbigcard-container' onClick={() => history.push(`/tag/${tag?.name}`)}>
+    <div className='tagbigcard-container' onClick={() => history.push(`/tag/${tagname}`)}>
       <img className='tagbigcard-pic' src={randomImage} alt=''></img>
-      <div className='tagbigcard-text'>{tag?.name}</div>
+      <div className='tagbigcard-text'>{tagname}</div>
     </div>
   )
 }

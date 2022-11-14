@@ -13,7 +13,20 @@ const TagsPage = () => {
   const tags = useSelector(state => state.tags)
 
   const tagsArr = Object.values(tags);
-  tagsArr.sort((a, b) => a.name.localeCompare(b.name))
+
+  console.log("THIS IS TAGS ARR", tagsArr)
+
+  // Filtering all tags to show unique tag names in a separate array
+  let tagNames = [];
+
+  for (let i = 0; i < tagsArr.length; i++) {
+    if (!tagNames.includes(tagsArr[i].name)) {
+      tagNames.push(tagsArr[i].name)
+    }
+  }
+
+  // Sorting the tagNames array alphabetically
+  tagNames.sort();
 
   useEffect(() => {
     dispatch(getAllTagsThunk())
@@ -32,10 +45,10 @@ const TagsPage = () => {
         <div className="tagspage-container">
           <div className="tagspage-inner-container">
             <div className="tagspage-images-container">
-              {tagsArr.map((tag) => {
+              {tagNames.map((tagname) => {
                 return (
-                  <div key={tag?.id}>
-                    <TagBigCard tag={tag}/>
+                  <div key={tagname}>
+                    <TagBigCard tagname={tagname}/>
                   </div>
                 );
               })}
