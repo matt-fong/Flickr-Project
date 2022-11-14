@@ -51,55 +51,64 @@ const YouPage = () => {
 
   if (userImages.length > 0) {
     renderImages = (
-      <div className="youPage-container">
-        <div className="youPage-inner-container">
-          <div className="youPage-images-container">
-            {userImages.map((image) => {
-              return (
-                <>
-                  <ImageCard image={image} comments={comments} likes={likes} users={users}/>
-                </>
-              );
-            })}
+      <div className='youPage-outer-container'>
+        <div className="youPage-container">
+          <div className="youPage-inner-container">
+            <div className="youPage-images-container">
+              {userImages.map((image) => {
+                return (
+                  <>
+                    <ImageCard image={image} comments={comments} likes={likes} users={users}/>
+                  </>
+                );
+              })}
+            </div>
           </div>
         </div>
+
       </div>
     )
   } else if ((userImages.length === 0) && (user?.id === Number(currentUser?.id))) {
     renderImages = (
-      <div className='youPage-none-container'>
+      <div className='youPage-outer-container'>
+        <div className='youPage-none-container'>
 
-        <div className='youPage-text-container'>
-          <div className='youPage-text-top'>You have no public photos.</div>
-          <div className='youPage-text-inner-container'>
-            <div className='youPage-text-middle'>Your photostream is your public-facing portfolio. Set your photos to public using the Camera Roll to populate your photostream.</div>
+          <div className='youPage-text-container'>
+            <div className='youPage-text-top'>You have no public photos.</div>
+            <div className='youPage-text-inner-container'>
+              <div className='youPage-text-middle'>Your photostream is your public-facing portfolio. Set your photos to public using the Camera Roll to populate your photostream.</div>
 
+            </div>
+            <div className='youPage-text-inner-container'>
+              <div className='youPage-button' onClick={() => history.push(`/photo/upload`)}>Upload Photo</div>
+            </div>
+            <div className='youPage-text-inner-container'>
+              <img className='youPage-background' src={image} alt=''/>
+            </div>
           </div>
-          <div className='youPage-text-inner-container'>
-            <div className='youPage-button' onClick={() => history.push(`/photo/upload`)}>Upload Photo</div>
-          </div>
-          <div className='youPage-text-inner-container'>
-            <img className='youPage-background' src={image} alt=''/>
-          </div>
+
         </div>
 
       </div>
     )
   } else if ((userImages.length === 0) && (user?.id !== Number(currentUser?.id))) {
     renderImages = (
-      <div className='youPage-none-container'>
+      <div className='youPage-outer-container'>
+        <div className='youPage-none-container'>
 
-        <div className='youPage-text-container'>
-          <div className='youPage-text-top'>{`${currentUser?.first_name} ${currentUser?.last_name} has no public photos.`}</div>
-          <div className='youPage-text-inner-container'>
-            <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently does not have a public-facing portfolio. Explore other photos uploaded by users in the explore page.`}</div>
+          <div className='youPage-text-container'>
+            <div className='youPage-text-top'>{`${currentUser?.first_name} ${currentUser?.last_name} has no public photos.`}</div>
+            <div className='youPage-text-inner-container'>
+              <div className='youPage-text-middle'>{`${currentUser?.first_name} ${currentUser?.last_name} currently does not have a public-facing portfolio. Explore other photos uploaded by users in the explore page.`}</div>
+            </div>
+            <div className='youPage-text-inner-container'>
+              <div className='youPage-button' onClick={() => history.push(`/explore`)}>Explore</div>
+            </div>
+            <div className='youPage-text-inner-container'>
+              <img className='youPage-background' src={image} alt=''/>
+            </div>
           </div>
-          <div className='youPage-text-inner-container'>
-            <div className='youPage-button' onClick={() => history.push(`/explore`)}>Explore</div>
-          </div>
-          <div className='youPage-text-inner-container'>
-            <img className='youPage-background' src={image} alt=''/>
-          </div>
+
         </div>
 
       </div>

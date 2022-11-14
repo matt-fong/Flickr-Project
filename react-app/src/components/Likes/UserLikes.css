@@ -83,11 +83,11 @@
 }
 
 .userlikes-container {
-  background: white;
+  background-color: #f3f5f6;
   display: flex;
   justify-content: center;
-  margin-bottom: 10em;
-  margin-top: 50px;
+  padding-bottom: 10em;
+  padding-top: 50px;
 }
 
 .userlikes-middle-photostream {

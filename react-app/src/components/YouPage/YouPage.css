@@ -82,12 +82,18 @@
   font-weight: 400;
 }
 
+.youPage-outer-container {
+  height: 100%;
+  min-height: 75vh;
+  background-color: #f3f5f6;
+}
+
 .youPage-container {
-  background: white;
+  background-color: #f3f5f6;
   display: flex;
   justify-content: center;
-  margin-bottom: 10em;
-  margin-top: 50px;
+  padding-bottom: 10em;
+  padding-top: 50px;
 }
 
 .youPage-middle-photostream {
@@ -148,11 +154,11 @@
 }
 
 .youPage-none-container {
-  background: white;
+  background-color: #f3f5f6;
   display: flex;
   justify-content: center;
   /* margin-bottom: 10em; */
-  margin-top: 50px;
+  padding-top: 50px;
   width: 100%;
 }
 
