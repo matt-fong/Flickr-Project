@@ -4,7 +4,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import { deleteImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
 import { getAllCommentsThunk } from '../../store/comment';
-// import { getImageCommentsThunk } from '../../store/comment';
 import './ImageDetails.css'
 import CommentCard from '../CommentCard/CommentCard';
 import { getAllUsersThunk } from '../../store/user';
@@ -12,6 +11,8 @@ import CreateComment from '../Comments/CreateComment';
 import { getAllLikesThunk } from '../../store/like';
 import LikeButton from '../Likes/LikeButton';
 import CreateTag from '../Tags/CreateTag';
+import { getAllTagsThunk } from '../../store/tag';
+import TagCard from '../Tags/TagCard';
 
 const ImageDetails = () => {
 
@@ -24,14 +25,18 @@ const ImageDetails = () => {
   const comments = useSelector(state => state.comments)
   const users = useSelector(state => state.users)
   const likes = useSelector(state => state.likes)
+  const tags = useSelector(state => state.tags)
 
   const currentImage = images[imageId.imageId]
   const imageOwner = users[currentImage?.userId]
 
-  console.log('THIS IS IMAGE OWNER', imageOwner)
-
   const commentsArr = Object.values(comments)
   const filteredComments = commentsArr.filter(comment => comment.imageId === Number(imageId.imageId))
+
+  const tagsArr = Object.values(tags)
+  const filteredTags = tagsArr.filter(tag => tag.imageId === Number(imageId.imageId))
+
+  console.log('THIS IS FILTERED TAGS', filteredTags)
 
   const handleDelete = (imageId) => {
     dispatch(deleteImageThunk(imageId)).then(() => history.push(`/explore`))
@@ -41,8 +46,8 @@ const ImageDetails = () => {
     dispatch(getAllImagesThunk())
     dispatch(getAllCommentsThunk())
     dispatch(getAllUsersThunk())
-    // dispatch(getImageCommentsThunk(imageId.imageId)).then(() => setIsLoaded(true))
     dispatch(getAllLikesThunk())
+    dispatch(getAllTagsThunk())
   }, [dispatch])
 
   const imageLikes = Object.values(likes).filter(like => like.imageId === Number(imageId.imageId))
@@ -138,8 +143,14 @@ const ImageDetails = () => {
                   <div className='image-detail-tag-add'>Add tags</div>
                 </div>
 
-                <div className='image-detail-tagcard-container'>
+                <div className='image-detail-create-tag'>
                   <CreateTag imageId={imageId?.imageId}/>
+                </div>
+
+                <div className='image-detail-tag-card-container'>
+                  {filteredTags.map((tag) => (
+                    <TagCard tag={tag}/>
+                  ))}
                 </div>
 
               </div>

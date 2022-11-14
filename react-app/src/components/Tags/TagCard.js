@@ -7,7 +7,7 @@ import { deleteTagThunk } from '../../store/tag';
 import './TagCard.css'
 import CreateTag from './CreateTag';
 
-const TagCard = () => {
+const TagCard = ({ tag }) => {
 
   const history = useHistory()
   const dispatch = useDispatch();
@@ -42,15 +42,7 @@ const TagCard = () => {
 
 
   return (
-    <div>
-      <div onClick={handleCreateTag}>Create Tag</div>
-      <div onClick={handleDeleteTag}>Delete Tag</div>
-      <div className='testing'>testttt</div>
-      <div>
-        <div>CREATE TAG</div>
-        <CreateTag />
-      </div>
-    </div>
+    <div className='tag-card-tag'>{tag?.name}</div>
   )
 }
 

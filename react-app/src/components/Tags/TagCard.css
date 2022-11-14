@@ -1,10 +1,15 @@
-.testing {
+.tag-card-tag {
   padding: 0 10px;
   background-color: #cfd6d9;
   border-radius: 5px;
-  width: 50px;
+  /* width: 100%; */
   color: #212124;
   font-weight: 400;
   line-height: 21px;
   overflow: hidden;
+  display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }

@@ -1,3 +1,7 @@
+.create-tag-inner-container {
+  margin-bottom: 5px;
+}
+
 .create-tag-input {
   padding: 6px 10px;
   height: 21px;
