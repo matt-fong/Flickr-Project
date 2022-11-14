@@ -172,9 +172,33 @@
   margin-top: 23px;
 }
 
+.image-detail-tags-inner-container {
+  margin-right: 30px;
+  width: 225px;
+}
+
 .image-detail-tag-header {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
+}
+
+.image-detail-tag {
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
+}
+
+.image-detail-tag-add {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+  color: #006dac;
+  cursor: pointer;
+  display: block;
+  height: 17px;
+}
+
+.image-detail-tag-add:hover {
+  text-decoration: underline;
 }

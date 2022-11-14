@@ -11,6 +11,7 @@ import { getAllUsersThunk } from '../../store/user';
 import CreateComment from '../Comments/CreateComment';
 import { getAllLikesThunk } from '../../store/like';
 import LikeButton from '../Likes/LikeButton';
+import CreateTag from '../Tags/CreateTag';
 
 const ImageDetails = () => {
 
@@ -130,7 +131,18 @@ const ImageDetails = () => {
 
 
             <div className='image-detail-tags-container'>
-                <div className='image-detail-tag-header'>Tags</div>
+              <div className='image-detail-tags-inner-container'>
+
+                <div className='image-detail-tag-header'>
+                  <div className='image-detail-tag'>Tags</div>
+                  <div className='image-detail-tag-add'>Add tags</div>
+                </div>
+
+                <div className='image-detail-tagcard-container'>
+                  <CreateTag imageId={imageId?.imageId}/>
+                </div>
+
+              </div>
             </div>
 
           </div>

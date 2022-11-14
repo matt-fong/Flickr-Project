@@ -1,0 +1,9 @@
+.create-tag-input {
+  padding: 6px 10px;
+  height: 21px;
+  line-height: 21px;
+  border-radius: 3px;
+  font-size: 14px;
+  width: 80%;
+  margin-bottom: 5px;
+}
