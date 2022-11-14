@@ -25,10 +25,6 @@ const YouPage = () => {
 
   const currentUser = Object.values(users).filter(user => user.username === username.username)[0]
 
-  console.log('THIS IS CURRENT USER', currentUser)
-
-  console.log('THIS IS USERS', users)
-
   const likesArr = Object.values(likes)
   const imagesArr = Object.values(images)
 

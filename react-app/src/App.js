@@ -14,7 +14,7 @@ import FourOFour from './components/404Page/FourOFour';
 import UserLikes from './components/Likes/UserLikes';
 import YouPage from './components/YouPage/YouPage';
 import TagsPage from './components/Tags/TagsPage';
-import TagBigCard from './components/Tags/TagBigCard';
+import TagSearch from './components/Tags/TagSearch';
 // import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 function App() {
@@ -70,9 +70,13 @@ function App() {
           <NavBar />
           <TagsPage />
         </Route>
+        <Route path='/tag/:tagname' exact={true}>
+          <NavBar />
+          <TagSearch />
+        </Route>
         <Route path='/testing' exact={true}>
           <NavBar />
-          <TagBigCard />
+          <TagSearch />
         </Route>
         <Route>
           <FourOFour />

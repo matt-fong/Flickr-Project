@@ -8,8 +8,8 @@ import { deleteCommentThunk } from '../../store/comment';
 
 const CommentCard = ({ comment }) => {
 
-  const dispatch = useDispatch()
-  const history = useHistory()
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const user = useSelector((state) => state.session.user)
   const users = useSelector((state) => state.users)
