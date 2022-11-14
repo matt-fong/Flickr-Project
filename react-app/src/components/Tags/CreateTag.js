@@ -74,10 +74,6 @@ const CreateTag = ({ imageId }) => {
           ))}
         </div>
 
-        <div className='create-tag-button-container'>
-          {/* <button className='create-tag-button' onClick={handleCreateTag}>Add Tag</button> */}
-        </div>
-
       </div>
     </div>
   );
