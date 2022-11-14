@@ -1,6 +1,6 @@
 import { useParams, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { getAllTagsThunk } from '../../store/tag';
 import { getAllImagesThunk } from '../../store/image';
 import ImageCard from "../ImageCard/ImageCard";
@@ -47,8 +47,6 @@ const TagSearch = () => {
   // Comining the two arrays of images (Tagged and Title) into a single array
   const finalFiltered = filteredByTag.concat(filteredByTitle)
 
-  console.log('THIS IS THE FINAL FILTERED ARRAY', finalFiltered)
-
   useEffect(() => {
     dispatch(getAllTagsThunk())
     dispatch(getAllImagesThunk())
@@ -58,21 +56,30 @@ const TagSearch = () => {
   }, [dispatch])
 
   return (
-    <div className='tagsearch-outer-container'>
-      <div className="tagsearch-container">
-        <div className="tagsearch-inner-container">
-          <div className="tagsearch-images-container">
-            {finalFiltered.map((image) => {
-              return (
-                <div key={image?.id}>
-                  <ImageCard image={image} comments={comments} likes={likes} users={users}/>
-                </div>
-              );
-            })}
+    <>
+      <div className="tagspage-tabs-container">
+        <div className="tagspage-tabs">
+          <div className="tagspage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
+          <div className="tagspage-tab-tags" onClick={() => history.push(`/tags`)}>Tags</div>
+        </div>
+      </div>
+
+      <div className='tagsearch-outer-container'>
+        <div className="tagsearch-container">
+          <div className="tagsearch-inner-container">
+            <div className="tagsearch-images-container">
+              {finalFiltered.map((image) => {
+                return (
+                  <div key={image?.id}>
+                    <ImageCard image={image} comments={comments} likes={likes} users={users}/>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 

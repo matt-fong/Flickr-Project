@@ -1,11 +1,7 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-// import { getAllImagesThunk } from "../../store/image";
-import { getAllUsersThunk } from "../../store/user";
 import { getAllLikesThunk } from "../../store/like";
 import { deleteLikeThunk } from '../../store/like';
 import { createLikeThunk } from '../../store/like';
-// import { getAllCommentsThunk } from "../../store/comment";
 import { Link } from "react-router-dom";
 import './ImageCard.css';
 
@@ -13,16 +9,18 @@ const ImageCard = ({ image, comments, likes, users }) => {
 
   const dispatch = useDispatch();
 
-  // const comments = useSelector(state => state.comments)
-  const imageOwner = users[image?.userId]
+
   const user = useSelector((state) => state.session.user)
 
-  // const users = useSelector(state => state.users)
-  // const likes = useSelector((state) => state.likes)
+  const imageOwner = users[image?.userId]
 
   const commentArr = Object.values(comments)
+  const likesArr = Object.values(likes)
 
   const photoComments = commentArr.filter(comment => comment?.imageId === image?.id)
+
+  const userLiked = likesArr.filter(like => like?.userId === user?.id && like?.imageId === Number(image.id))
+  const photoLikes = likesArr.filter(like => like?.imageId === Number(image.id))
 
   let title;
   let firstname;
@@ -51,11 +49,6 @@ const ImageCard = ({ image, comments, likes, users }) => {
   } else {
     lastname = (imageOwner?.last_name)
   }
-
-
-  const likesArr = Object.values(likes)
-  const userLiked = likesArr.filter(like => like?.userId === user?.id && like?.imageId === Number(image.id))
-  const photoLikes = likesArr.filter(like => like?.imageId === Number(image.id))
 
   const handleCreateLike = (e) => {
     e.preventDefault();
@@ -93,7 +86,6 @@ const ImageCard = ({ image, comments, likes, users }) => {
       </div>
     )
   }
-
 
   return (
     <div className="image-card-container" key={''}>

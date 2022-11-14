@@ -19,7 +19,7 @@ const TagBigCard = ({ tag }) => {
 
   return (
     <div className='tagbigcard-container' onClick={() => history.push(`/tag/${tag?.name}`)}>
-      <img className='tagbigcard-pic' src={randomImage}></img>
+      <img className='tagbigcard-pic' src={randomImage} alt=''></img>
       <div className='tagbigcard-text'>{tag?.name}</div>
     </div>
   )
