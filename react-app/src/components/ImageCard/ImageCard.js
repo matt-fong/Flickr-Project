@@ -9,11 +9,11 @@ import { createLikeThunk } from '../../store/like';
 import { Link } from "react-router-dom";
 import './ImageCard.css';
 
-const ImageCard = ({ image, comments, likes, users }) => {
+const ImageCard = ({ image, comments }) => {
 
   const dispatch = useDispatch();
 
-  // const users = useSelector(state => state.users)
+  const users = useSelector(state => state.users)
   // const comments = useSelector(state => state.comments)
   const imageOwner = users[image?.userId]
 
@@ -51,13 +51,13 @@ const ImageCard = ({ image, comments, likes, users }) => {
 
   useEffect(() => {
     // dispatch(getAllImagesThunk())
-    // dispatch(getAllUsersThunk())
-    // dispatch(getAllLikesThunk())
+    dispatch(getAllUsersThunk())
+    dispatch(getAllLikesThunk())
     // dispatch(getAllCommentsThunk())
   }, [dispatch])
 
   const user = useSelector((state) => state.session.user)
-  // const likes = useSelector((state) => state.likes)
+  const likes = useSelector((state) => state.likes)
 
   const likesArr = Object.values(likes)
   const userLiked = likesArr.filter(like => like?.userId === user?.id && like?.imageId === Number(image.id))

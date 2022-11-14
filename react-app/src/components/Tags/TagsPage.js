@@ -1,9 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllImagesThunk } from "../../store/image";
 import './TagsPage.css';
-import ImageCard from "../ImageCard/ImageCard";
-import { getAllCommentsThunk } from "../../store/comment";
 import { useHistory } from 'react-router-dom';
 import { getAllTagsThunk } from "../../store/tag";
 import TagBigCard from "./TagBigCard";
@@ -35,9 +32,9 @@ const TagsPage = () => {
           <div className="tagspage-images-container">
             {tagsArr.map((tag) => {
               return (
-                <>
+                <div key={tag?.id}>
                   <TagBigCard tag={tag}/>
-                </>
+                </div>
               );
             })}
           </div>
