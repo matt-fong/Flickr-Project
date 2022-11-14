@@ -5,6 +5,8 @@ import './ExplorePage.css';
 import ImageCard from "../ImageCard/ImageCard";
 import { getAllCommentsThunk } from "../../store/comment";
 import { useHistory } from 'react-router-dom';
+import { getAllLikesThunk } from "../../store/like";
+import { getAllUsersThunk } from "../../store/user";
 
 const ExplorePage = () => {
 
@@ -14,10 +16,14 @@ const ExplorePage = () => {
   const images = useSelector(state => state.images)
   const imagesArr = Object.values(images)
   const comments = useSelector(state => state.comments)
+  const likes = useSelector((state) => state.likes)
+  const users = useSelector(state => state.users)
 
   useEffect(() => {
     dispatch(getAllImagesThunk())
     dispatch(getAllCommentsThunk())
+    dispatch(getAllLikesThunk())
+    dispatch(getAllUsersThunk())
   }, [dispatch])
 
   return (
@@ -34,9 +40,9 @@ const ExplorePage = () => {
           <div className="explorepage-images-container">
             {imagesArr.map((image) => {
               return (
-                <>
-                  <ImageCard image={image} comments={comments}/>
-                </>
+                <div key={image?.id}>
+                  <ImageCard image={image} comments={comments} likes={likes} users={users}/>
+                </div>
               );
             })}
           </div>

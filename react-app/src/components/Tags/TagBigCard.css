@@ -1,0 +1,26 @@
+.tagbigcard-container {
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tagbigcard-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  opacity: .70;
+}
+
+.tagbigcard-text {
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  max-width: 200px;
+  word-wrap: break-word;
+  text-align: center;
+}

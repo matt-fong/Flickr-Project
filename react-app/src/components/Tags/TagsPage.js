@@ -5,19 +5,20 @@ import './TagsPage.css';
 import ImageCard from "../ImageCard/ImageCard";
 import { getAllCommentsThunk } from "../../store/comment";
 import { useHistory } from 'react-router-dom';
+import { getAllTagsThunk } from "../../store/tag";
+import TagBigCard from "./TagBigCard";
 
 const TagsPage = () => {
 
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const images = useSelector(state => state.images)
-  const imagesArr = Object.values(images)
-  const comments = useSelector(state => state.comments)
+  const tags = useSelector(state => state.tags)
+
+  const tagsArr = Object.values(tags);
 
   useEffect(() => {
-    dispatch(getAllImagesThunk())
-    dispatch(getAllCommentsThunk())
+    dispatch(getAllTagsThunk())
   }, [dispatch])
 
   return (
@@ -29,19 +30,19 @@ const TagsPage = () => {
         </div>
       </div>
 
-      {/* <div className="tagspage-container">
+      <div className="tagspage-container">
         <div className="tagspage-inner-container">
           <div className="tagspage-images-container">
-            {imagesArr.map((image) => {
+            {tagsArr.map((tag) => {
               return (
                 <>
-                  <ImageCard image={image} comments={comments}/>
+                  <TagBigCard tag={tag}/>
                 </>
               );
             })}
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

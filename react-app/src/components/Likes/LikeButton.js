@@ -48,13 +48,13 @@ const LikeButton = ({ imageId }) => {
   if (userLiked.length > 0) {
     conditional = (
       <div onClick={handleDeleteLike}>
-        <i class="fa-solid fa-heart fa-2xl delete-like-button"></i>
+        <i className="fa-solid fa-heart fa-2xl delete-like-button"></i>
       </div>
     )
   } else {
     conditional = (
       <div onClick={handleCreateLike}>
-        <i class="fa-regular fa-heart fa-2xl create-like-button"></i>
+        <i className="fa-regular fa-heart fa-2xl create-like-button"></i>
       </div>
     )
   }

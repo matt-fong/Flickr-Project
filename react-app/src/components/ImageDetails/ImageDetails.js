@@ -66,10 +66,10 @@ const ImageDetails = () => {
 
         { user?.id === currentImage?.userId && (
           <div>
-            <i class="image-detail-update-button fa-solid fa-pen-to-square fa-2xl"
+            <i className="image-detail-update-button fa-solid fa-pen-to-square fa-2xl"
               onClick={() => history.push(`/image/${imageId.imageId}/edit`)}></i>
 
-            <i class="image-detail-delete-button fa-solid fa-trash fa-2xl"
+            <i className="image-detail-delete-button fa-solid fa-trash fa-2xl"
               onClick={() => handleDelete(imageId.imageId)}></i>
           </div>
         )}
