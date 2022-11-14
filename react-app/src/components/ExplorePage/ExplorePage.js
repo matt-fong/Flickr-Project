@@ -23,7 +23,7 @@ const ExplorePage = () => {
     dispatch(getAllImagesThunk())
     dispatch(getAllCommentsThunk())
     dispatch(getAllLikesThunk())
-    // dispatch(getAllUsersThunk())
+    dispatch(getAllUsersThunk())
   }, [dispatch])
 
   return (
@@ -41,7 +41,7 @@ const ExplorePage = () => {
             {imagesArr.map((image) => {
               return (
                 <div key={image?.id}>
-                  <ImageCard image={image} comments={comments}/>
+                  <ImageCard image={image} comments={comments} likes={likes} users={users}/>
                 </div>
               );
             })}

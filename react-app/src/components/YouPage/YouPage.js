@@ -16,10 +16,10 @@ const YouPage = () => {
   const username = useParams();
 
   const user = useSelector((state) => state.session.user)
-  const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
-  const users = useSelector((state) => state.users)
   const comments = useSelector(state => state.comments)
+  const likes = useSelector((state) => state.likes)
+  const users = useSelector((state) => state.users)
 
   // const currentUser = useSelector((state) => state.users[Number(userId?.userId)])
 
@@ -57,7 +57,7 @@ const YouPage = () => {
             {userImages.map((image) => {
               return (
                 <>
-                  <ImageCard image={image} comments={comments}/>
+                  <ImageCard image={image} comments={comments} likes={likes} users={users}/>
                 </>
               );
             })}

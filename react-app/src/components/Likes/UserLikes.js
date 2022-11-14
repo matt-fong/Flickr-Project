@@ -16,10 +16,10 @@ const UserLikes = () => {
   const username = useParams();
 
   const user = useSelector((state) => state.session.user)
-  const users = useSelector((state) => state.users)
-  const likes = useSelector((state) => state.likes)
   const images = useSelector((state) => state.images)
   const comments = useSelector(state => state.comments)
+  const likes = useSelector((state) => state.likes)
+  const users = useSelector((state) => state.users)
 
   const likesArr = Object.values(likes)
 
@@ -61,7 +61,7 @@ const UserLikes = () => {
             {userLikedImages.map((image) => {
               return (
                 <>
-                  <ImageCard image={image} comments={comments}/>
+                  <ImageCard image={image} comments={comments} likes={likes} users={users}/>
                 </>
               );
             })}

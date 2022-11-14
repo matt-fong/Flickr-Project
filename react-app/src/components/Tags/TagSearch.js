@@ -5,6 +5,8 @@ import { getAllTagsThunk } from '../../store/tag';
 import { getAllImagesThunk } from '../../store/image';
 import ImageCard from "../ImageCard/ImageCard";
 import { getAllCommentsThunk } from "../../store/comment";
+import { getAllLikesThunk } from '../../store/like';
+import { getAllUsersThunk } from '../../store/user';
 import './TagSearch.css'
 
 const TagSearch = () => {
@@ -13,6 +15,8 @@ const TagSearch = () => {
   const history = useHistory();
 
   const comments = useSelector(state => state.comments)
+  const likes = useSelector((state) => state.likes)
+  const users = useSelector(state => state.users)
 
   const tagname = useParams().tagname;
 
@@ -49,6 +53,8 @@ const TagSearch = () => {
     dispatch(getAllTagsThunk())
     dispatch(getAllImagesThunk())
     dispatch(getAllCommentsThunk())
+    dispatch(getAllLikesThunk())
+    dispatch(getAllUsersThunk())
   }, [dispatch])
 
   return (
@@ -59,7 +65,7 @@ const TagSearch = () => {
             {finalFiltered.map((image) => {
               return (
                 <div key={image?.id}>
-                  <ImageCard image={image} comments={comments}/>
+                  <ImageCard image={image} comments={comments} likes={likes} users={users}/>
                 </div>
               );
             })}
