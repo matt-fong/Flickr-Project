@@ -13,6 +13,7 @@ const TagsPage = () => {
   const tags = useSelector(state => state.tags)
 
   const tagsArr = Object.values(tags);
+  tagsArr.sort((a, b) => a.name.localeCompare(b.name))
 
   useEffect(() => {
     dispatch(getAllTagsThunk())
