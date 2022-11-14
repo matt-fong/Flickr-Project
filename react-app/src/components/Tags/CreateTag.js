@@ -15,8 +15,6 @@ const CreateTag = ({ imageId }) => {
   const user = useSelector((state) => state.session.user);
   const tags = useSelector((state) => state.tags)
 
-  // console.log('THIS IS TAGS', tags)
-
   const handleCreateTag = (e) => {
     e.preventDefault();
 

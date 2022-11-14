@@ -36,8 +36,6 @@ const ImageDetails = () => {
   const tagsArr = Object.values(tags)
   const filteredTags = tagsArr.filter(tag => tag.imageId === Number(imageId.imageId))
 
-  console.log('THIS IS FILTERED TAGS', filteredTags)
-
   const handleDelete = (imageId) => {
     dispatch(deleteImageThunk(imageId)).then(() => history.push(`/explore`))
   }

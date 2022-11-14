@@ -1,8 +1,6 @@
 .tag-card-tag {
-  /* padding: 0 10px; */
   background-color: #cfd6d9;
   border-radius: 5px;
-  /* width: 100%; */
   color: #212124;
   font-weight: 400;
   line-height: 21px;
@@ -11,7 +9,6 @@
   max-width: 225px;
   box-sizing: border-box;
   padding-left: 10px;
-  /* padding-right: 24px; */
 }
 
 .tag-card-container {
@@ -21,16 +18,9 @@
   display: inline-block;
 }
 
-
 .tag-card-delete-button {
   position: absolute;
-  /* right: 0; */
-  /* top: 0; */
-  /* margin-right: 5px; */
-  /* margin-top: 5px; */
-  /* border: none; */
-  /* background-color: transparent; */
   top: 2px;
-  right: 5px;
+  right: 6px;
   cursor: pointer;
 }
