@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react';
 import { createTagThunk } from '../../store/tag';
-import { getAllTagsThunk } from '../../store/tag';
 import './CreateTag.css'
 
 const CreateTag = ({ imageId }) => {
@@ -13,7 +12,6 @@ const CreateTag = ({ imageId }) => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.session.user);
-  const tags = useSelector((state) => state.tags)
 
   const handleCreateTag = (e) => {
     e.preventDefault();
@@ -25,16 +23,22 @@ const CreateTag = ({ imageId }) => {
     }
 
     setSubmitted(true);
-    setName("")
 
     if (name.length > 0 && name.length < 21) {
-      return dispatch(createTagThunk(data))
+      return dispatch(createTagThunk(data)).then(setName("")).then(setSubmitted(false))
     }
   }
 
-  useEffect(() => {
-    dispatch(getAllTagsThunk())
-  }, [dispatch])
+  useEffect((e) => {
+    let errors = [];
+
+    if (name.length < 1 || name.length > 20) {
+      errors.push('Tag must be between 1 and 20 characters.')
+    }
+
+    setErrors(errors)
+
+  }, [name])
 
   return (
     <div className='create-tag-container'>
@@ -47,12 +51,19 @@ const CreateTag = ({ imageId }) => {
             type='text'
             value={name}
             placeholder='Add a tag'
+            onKeyPress={(e) => {if (e.key === "Enter") {handleCreateTag(e)}}}
             onChange={(e) => setName(e.target.value)}
             />
         </form>
 
+        <div className='create-tag-error-container'>
+          {submitted && errors.map((error) => (
+            <div className='create-comment-error'>{error}</div>
+          ))}
+        </div>
+
         <div className='create-tag-button-container'>
-          <button className='create-tag-button' onClick={handleCreateTag}>Create Tag</button>
+          {/* <button className='create-tag-button' onClick={handleCreateTag}>Add Tag</button> */}
         </div>
 
       </div>

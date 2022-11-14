@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import { deleteImageThunk } from '../../store/image';
 import { getAllImagesThunk } from '../../store/image';
@@ -19,6 +19,8 @@ const ImageDetails = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const imageId = useParams();
+
+  const [addTag, setAddTag] = useState(false)
 
   const images = useSelector(state => state.images)
   const user = useSelector(state => state.session.user)
@@ -138,12 +140,16 @@ const ImageDetails = () => {
 
                 <div className='image-detail-tag-header'>
                   <div className='image-detail-tag'>Tags</div>
-                  <div className='image-detail-tag-add'>Add tags</div>
+                  <div className='image-detail-tag-add' onClick={() => setAddTag(true)}>Add tags</div>
                 </div>
 
-                <div className='image-detail-create-tag'>
-                  <CreateTag imageId={imageId?.imageId}/>
-                </div>
+                {
+                  addTag && (
+                  <div className='image-detail-create-tag'>
+                    <CreateTag imageId={imageId?.imageId}/>
+                  </div>
+                  )
+                }
 
                 <div className='image-detail-tag-card-container'>
                   {filteredTags.map((tag) => (
