@@ -65,10 +65,6 @@ function App() {
           <NavBar />
           <YouPage />
         </Route>
-        <Route path='/testing' exact={true}>
-          <NavBar />
-          <TagCard />
-        </Route>
         <Route>
           <FourOFour />
         </Route>

@@ -4,6 +4,10 @@
   height: 50px;
   align-items: center;
   background-color: rgba(21,21,23);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
 }
 
 .navbar-inner-container {
