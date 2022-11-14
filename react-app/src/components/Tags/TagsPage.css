@@ -53,11 +53,17 @@
   opacity: 1;
 }
 
+.tagpage-outer-container {
+  height: 100%;
+  min-height: 100vh;
+  background-color: #f3f5f6;
+}
+
 .tagspage-container {
   background: white;
   display: flex;
   justify-content: center;
-  margin-bottom: 10em;
+  padding-bottom: 10em;
   padding-top: 36px;
   background-color: #f3f5f6;
 }

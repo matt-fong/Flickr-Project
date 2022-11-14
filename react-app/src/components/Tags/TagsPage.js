@@ -27,16 +27,18 @@ const TagsPage = () => {
         </div>
       </div>
 
-      <div className="tagspage-container">
-        <div className="tagspage-inner-container">
-          <div className="tagspage-images-container">
-            {tagsArr.map((tag) => {
-              return (
-                <div key={tag?.id}>
-                  <TagBigCard tag={tag}/>
-                </div>
-              );
-            })}
+      <div className="tagpage-outer-container">
+        <div className="tagspage-container">
+          <div className="tagspage-inner-container">
+            <div className="tagspage-images-container">
+              {tagsArr.map((tag) => {
+                return (
+                  <div key={tag?.id}>
+                    <TagBigCard tag={tag}/>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

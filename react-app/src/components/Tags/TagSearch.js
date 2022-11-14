@@ -52,7 +52,8 @@ const TagSearch = () => {
   }, [dispatch])
 
   return (
-    <div className="tagsearch-container">
+    <div className='tagsearch-outer-container'>
+      <div className="tagsearch-container">
         <div className="tagsearch-inner-container">
           <div className="tagsearch-images-container">
             {finalFiltered.map((image) => {
@@ -65,6 +66,7 @@ const TagSearch = () => {
           </div>
         </div>
       </div>
+    </div>
   )
 }
 
