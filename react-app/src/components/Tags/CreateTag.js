@@ -23,10 +23,15 @@ const CreateTag = ({ imageId }) => {
     const data = {
       userId: user.id,
       imageId: imageId,
-      name: name
+      name: name.toLowerCase()
     }
 
-    return dispatch(createTagThunk(data))
+    setSubmitted(true);
+    setName("")
+
+    if (name.length > 0 && name.length < 21) {
+      return dispatch(createTagThunk(data))
+    }
   }
 
   useEffect(() => {
