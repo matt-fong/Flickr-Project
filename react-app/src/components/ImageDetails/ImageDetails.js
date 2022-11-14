@@ -140,7 +140,11 @@ const ImageDetails = () => {
 
                 <div className='image-detail-tag-header'>
                   <div className='image-detail-tag'>Tags</div>
-                  <div className='image-detail-tag-add' onClick={() => setAddTag(true)}>Add tags</div>
+                  {
+                    user?.id === currentImage?.userId && (
+                      <div className='image-detail-tag-add' onClick={() => setAddTag(true)}>Add tags</div>
+                    )
+                  }
                 </div>
 
                 {
