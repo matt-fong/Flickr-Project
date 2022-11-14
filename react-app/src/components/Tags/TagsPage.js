@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllImagesThunk } from "../../store/image";
-import './ExplorePage.css';
+import './TagsPage.css';
 import ImageCard from "../ImageCard/ImageCard";
 import { getAllCommentsThunk } from "../../store/comment";
 import { useHistory } from 'react-router-dom';
 
-const ExplorePage = () => {
+const TagsPage = () => {
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -22,16 +22,16 @@ const ExplorePage = () => {
 
   return (
     <>
-      <div className="explorepage-tabs-container">
-        <div className="explorepage-tabs">
-          <div className="explorepage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
-          <div className="explorepage-tab-tags" onClick={() => history.push(`/tags`)}>Tags</div>
+      <div className="tagspage-tabs-container">
+        <div className="tagspage-tabs">
+          <div className="tagspage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
+          <div className="tagspage-tab-tags" onClick={() => history.push(`/tags`)}>Tags</div>
         </div>
       </div>
 
-      <div className="explorepage-container">
-        <div className="explorepage-inner-container">
-          <div className="explorepage-images-container">
+      {/* <div className="tagspage-container">
+        <div className="tagspage-inner-container">
+          <div className="tagspage-images-container">
             {imagesArr.map((image) => {
               return (
                 <>
@@ -41,9 +41,9 @@ const ExplorePage = () => {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
 
-export default ExplorePage;
+export default TagsPage;
