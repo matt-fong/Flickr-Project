@@ -4,6 +4,7 @@ import './TagsPage.css';
 import { useHistory } from 'react-router-dom';
 import { getAllTagsThunk } from "../../store/tag";
 import TagBigCard from "./TagBigCard";
+import { getAllImagesThunk } from "../../store/image";
 
 const TagsPage = () => {
 
@@ -11,10 +12,9 @@ const TagsPage = () => {
   const dispatch = useDispatch();
 
   const tags = useSelector(state => state.tags)
+  const images = useSelector(state => state.images);
 
   const tagsArr = Object.values(tags);
-
-  console.log("THIS IS TAGS ARR", tagsArr)
 
   // Filtering all tags to show unique tag names in a separate array
   let tagNames = [];
@@ -30,6 +30,7 @@ const TagsPage = () => {
 
   useEffect(() => {
     dispatch(getAllTagsThunk())
+    dispatch(getAllImagesThunk())
   }, [dispatch])
 
   return (
@@ -48,7 +49,7 @@ const TagsPage = () => {
               {tagNames.map((tagname) => {
                 return (
                   <div key={tagname}>
-                    <TagBigCard tagname={tagname}/>
+                    <TagBigCard tagname={tagname} images={images}/>
                   </div>
                 );
               })}

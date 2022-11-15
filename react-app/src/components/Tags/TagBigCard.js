@@ -1,15 +1,10 @@
-import { useParams, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import { getAllTagsThunk } from '../../store/tag';
-import { getAllImagesThunk } from '../../store/image';
-import ImageCard from "../ImageCard/ImageCard";
-import { getAllCommentsThunk } from "../../store/comment";
-import { getAllLikesThunk } from '../../store/like';
-import { getAllUsersThunk } from '../../store/user';
 import './TagBigCard.css'
 
-const TagBigCard = ({ tagname }) => {
+const TagBigCard = ({ tagname, images }) => {
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -17,7 +12,6 @@ const TagBigCard = ({ tagname }) => {
   const tags = useSelector(state => state.tags);
   const tagsArr = Object.values(tags);
 
-  const images = useSelector(state => state.images);
   const imagesArr = Object.values(images);
 
   // Filters all the tags that matches the tagname in url
@@ -47,7 +41,6 @@ const TagBigCard = ({ tagname }) => {
 
   useEffect(() => {
     dispatch(getAllTagsThunk())
-    dispatch(getAllImagesThunk())
   }, [dispatch])
 
   return (
