@@ -47,7 +47,7 @@ def seed_tags():
   thirtyseven = Tag(userId=49, imageId=8, name='lake')
   thirtyeight = Tag(userId=49, imageId=8, name='mountain')
   thirtynine = Tag(userId=49, imageId=8, name='bridge')
-  forty = Tag(userId=49, imageId=8, name='cloud')
+  forty = Tag(userId=49, imageId=8, name='clouds')
 
   fortyone = Tag(userId=49, imageId=9, name='city')
   fortytwo = Tag(userId=49, imageId=9, name='sunset')
@@ -61,19 +61,19 @@ def seed_tags():
   fortynine = Tag(userId=49, imageId=10, name='reflection')
   fifty = Tag(userId=49, imageId=10, name='sky')
 
-  fiftyone = Tag(userId=49, imageId=11, name='tree')
+  fiftyone = Tag(userId=49, imageId=11, name='trees')
   fiftytwo = Tag(userId=49, imageId=11, name='hike')
-  fiftythree = Tag(userId=49, imageId=11, name='cloud')
+  fiftythree = Tag(userId=49, imageId=11, name='clouds')
   fiftyfour = Tag(userId=49, imageId=11, name='mountain')
   fiftyfive = Tag(userId=49, imageId=11, name='person')
 
   fiftysix = Tag(userId=49, imageId=12, name='road')
   fiftyseven = Tag(userId=49, imageId=12, name='mountain')
-  fiftyeight = Tag(userId=49, imageId=12, name='cloud')
-  fiftynine = Tag(userId=49, imageId=12, name='tree')
+  fiftyeight = Tag(userId=49, imageId=12, name='clouds')
+  fiftynine = Tag(userId=49, imageId=12, name='trees')
   sixty = Tag(userId=49, imageId=12, name='empty')
 
-  sixtyone = Tag(userId=49, imageId=13, name='tree')
+  sixtyone = Tag(userId=49, imageId=13, name='trees')
   sixtytwo = Tag(userId=49, imageId=13, name='mountain')
   sixtythree = Tag(userId=49, imageId=13, name='free')
   sixtyfour = Tag(userId=49, imageId=13, name='grass')
@@ -86,7 +86,7 @@ def seed_tags():
   seventy = Tag(userId=49, imageId=14, name='lens')
 
   seventyone = Tag(userId=49, imageId=15, name='lake')
-  seventytwo = Tag(userId=49, imageId=15, name='tree')
+  seventytwo = Tag(userId=49, imageId=15, name='trees')
   seventythree = Tag(userId=49, imageId=15, name='mountain')
   seventyfour = Tag(userId=49, imageId=15, name='calm')
   seventyfive = Tag(userId=49, imageId=15, name='water')
@@ -99,19 +99,19 @@ def seed_tags():
 
   eightyone = Tag(userId=49, imageId=17, name='cow')
   eightytwo = Tag(userId=49, imageId=17, name='moo')
-  eightythree = Tag(userId=49, imageId=17, name='tree')
+  eightythree = Tag(userId=49, imageId=17, name='trees')
   eightyfour = Tag(userId=49, imageId=17, name='mountain')
   eightyfive = Tag(userId=49, imageId=17, name='grass')
 
   eightysix = Tag(userId=49, imageId=18, name='lake')
   eightyseven = Tag(userId=49, imageId=18, name='water')
   eightyeight = Tag(userId=49, imageId=18, name='mountain')
-  eightynine = Tag(userId=49, imageId=18, name='tree')
+  eightynine = Tag(userId=49, imageId=18, name='trees')
   ninety = Tag(userId=49, imageId=18, name='clear')
 
   ninetyone = Tag(userId=49, imageId=19, name='green')
   ninetytwo = Tag(userId=49, imageId=19, name='grass')
-  ninetythree = Tag(userId=49, imageId=19, name='tree')
+  ninetythree = Tag(userId=49, imageId=19, name='trees')
   ninetyfour = Tag(userId=49, imageId=19, name='house')
   ninetyfive = Tag(userId=49, imageId=19, name='hill')
 
@@ -146,7 +146,7 @@ def seed_tags():
   onehundredtwenty = Tag(userId=49, imageId=24, name='building')
 
   onehundredtwentyone = Tag(userId=49, imageId=25, name='water')
-  onehundredtwentytwo = Tag(userId=49, imageId=25, name='tree')
+  onehundredtwentytwo = Tag(userId=49, imageId=25, name='trees')
   onehundredtwentythree = Tag(userId=49, imageId=25, name='relax')
   onehundredtwentyfour = Tag(userId=49, imageId=25, name='chill')
   onehundredtwentyfive = Tag(userId=49, imageId=25, name='clouds')
@@ -167,7 +167,7 @@ def seed_tags():
   onehundredthirtyseven = Tag(userId=49, imageId=28, name='london')
   onehundredthirtyeight = Tag(userId=49, imageId=28, name='clock')
   onehundredthirtynine = Tag(userId=49, imageId=28, name='tower')
-  onehundredforty = Tag(userId=49, imageId=28, name='cloudy')
+  onehundredforty = Tag(userId=49, imageId=28, name='clouds')
 
   onehundredfortyone = Tag(userId=49, imageId=29, name='reflection')
   onehundredfortytwo = Tag(userId=49, imageId=29, name='city')
@@ -183,7 +183,7 @@ def seed_tags():
 
   onehundredfiftyone = Tag(userId=49, imageId=31, name='car')
   onehundredfiftytwo = Tag(userId=49, imageId=31, name='mountain')
-  onehundredfiftythree = Tag(userId=49, imageId=31, name='cloudy')
+  onehundredfiftythree = Tag(userId=49, imageId=31, name='clouds')
   onehundredfiftyfour = Tag(userId=49, imageId=31, name='dirt')
   onehundredfiftyfive = Tag(userId=49, imageId=31, name='white')
 
@@ -213,7 +213,7 @@ def seed_tags():
 
   onehundredseventysix = Tag(userId=49, imageId=36, name='village')
   onehundredseventyseven = Tag(userId=49, imageId=36, name='mountain')
-  onehundredseventyeight = Tag(userId=49, imageId=36, name='tree')
+  onehundredseventyeight = Tag(userId=49, imageId=36, name='trees')
   onehundredseventynine = Tag(userId=49, imageId=36, name='clouds')
   onehundredeighty = Tag(userId=49, imageId=36, name='sky')
 
@@ -223,13 +223,13 @@ def seed_tags():
   onehundredeightyfour = Tag(userId=49, imageId=37, name='night')
   onehundredeightyfive = Tag(userId=49, imageId=37, name='dark')
 
-  onehundredeightysix = Tag(userId=49, imageId=38, name='boats')
+  onehundredeightysix = Tag(userId=49, imageId=38, name='boat')
   onehundredeightyseven = Tag(userId=49, imageId=38, name='water')
   onehundredeightyeight = Tag(userId=49, imageId=38, name='harbor')
   onehundredeightynine = Tag(userId=49, imageId=38, name='dock')
 
 
-  onehundredninety = Tag(userId=49, imageId=39, name='tree')
+  onehundredninety = Tag(userId=49, imageId=39, name='trees')
   onehundredninetyone = Tag(userId=49, imageId=39, name='mountain')
   onehundredninetytwo = Tag(userId=49, imageId=39, name='clouds')
   onehundredninetythree = Tag(userId=49, imageId=39, name='volcano')
@@ -238,17 +238,17 @@ def seed_tags():
   onehundredninetyfive = Tag(userId=49, imageId=40, name='nyc')
   onehundredninetysix = Tag(userId=49, imageId=40, name='city')
   onehundredninetyseven = Tag(userId=49, imageId=40, name='traffic')
-  onehundredninetyeight = Tag(userId=49, imageId=40, name='cars')
-  onehundredninetynine = Tag(userId=49, imageId=40, name='cloudy')
+  onehundredninetyeight = Tag(userId=49, imageId=40, name='car')
+  onehundredninetynine = Tag(userId=49, imageId=40, name='clouds')
 
   twohundred = Tag(userId=49, imageId=41, name='river')
   twohundredone = Tag(userId=49, imageId=41, name='water')
   twohundredtwo = Tag(userId=49, imageId=41, name='clouds')
-  twohundredthree = Tag(userId=49, imageId=41, name='tree')
+  twohundredthree = Tag(userId=49, imageId=41, name='trees')
   twohundredfour = Tag(userId=49, imageId=41, name='clock')
 
   twohundredfive = Tag(userId=49, imageId=42, name='water')
-  twohundredsix = Tag(userId=49, imageId=42, name='tree')
+  twohundredsix = Tag(userId=49, imageId=42, name='trees')
   twohundredseven = Tag(userId=49, imageId=42, name='blue')
   twohundredeight = Tag(userId=49, imageId=42, name='sand')
   twohundrednine = Tag(userId=49, imageId=42, name='beach')
@@ -272,7 +272,7 @@ def seed_tags():
   twohundredtwentyfour = Tag(userId=49, imageId=45, name='solo')
 
   twohundredtwentyfive = Tag(userId=49, imageId=46, name='water')
-  twohundredtwentysix = Tag(userId=49, imageId=46, name='tree')
+  twohundredtwentysix = Tag(userId=49, imageId=46, name='trees')
   twohundredtwentyseven = Tag(userId=49, imageId=46, name='relax')
   twohundredtwentyeight = Tag(userId=49, imageId=46, name='beach')
   twohundredtwentynine = Tag(userId=49, imageId=46, name='sand')
@@ -280,7 +280,7 @@ def seed_tags():
   twohundredthirty = Tag(userId=49, imageId=47, name='water')
   twohundredthirtyone = Tag(userId=49, imageId=47, name='sunset')
   twohundredthirtytwo = Tag(userId=49, imageId=47, name='bridge')
-  twohundredthirtythree = Tag(userId=49, imageId=47, name='cloudy')
+  twohundredthirtythree = Tag(userId=49, imageId=47, name='clouds')
   twohundredthirtyfour = Tag(userId=49, imageId=47, name='sky')
 
   twohundredthirtyfive = Tag(userId=49, imageId=48, name='road')
@@ -299,7 +299,7 @@ def seed_tags():
   twohundredfortysix = Tag(userId=49, imageId=50, name='sun')
   twohundredfortyseven = Tag(userId=49, imageId=50, name='autumn')
   twohundredfortyeight = Tag(userId=49, imageId=50, name='fall')
-  twohundredfortynine = Tag(userId=49, imageId=50, name='tree')
+  twohundredfortynine = Tag(userId=49, imageId=50, name='trees')
 
   db.session.add(one)
   db.session.add(two)

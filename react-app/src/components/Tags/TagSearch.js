@@ -51,7 +51,6 @@ const TagSearch = () => {
   let finalFiltered = [];
 
   for (let i = 0; i < combinedFiltered.length; i++) {
-    console.log('THIS IS THE FINAL FILTERED', combinedFiltered[i])
     if (!finalFiltered.includes(combinedFiltered[i])) {
       finalFiltered.push(combinedFiltered[i])
     }
