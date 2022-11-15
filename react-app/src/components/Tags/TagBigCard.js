@@ -1,15 +1,10 @@
 import { useHistory } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react';
-import { getAllTagsThunk } from '../../store/tag';
 import './TagBigCard.css'
 
-const TagBigCard = ({ tagname, images }) => {
+const TagBigCard = ({ tagname, images, tags }) => {
 
-  const dispatch = useDispatch();
   const history = useHistory();
 
-  const tags = useSelector(state => state.tags);
   const tagsArr = Object.values(tags);
 
   const imagesArr = Object.values(images);
@@ -35,13 +30,12 @@ const TagBigCard = ({ tagname, images }) => {
   // Comining the two arrays of images (Tagged and Title) into a single array
   const finalFiltered = filteredByTag.concat(filteredByTitle)
 
+  // Creates a random number between 0 and the length of the finalFiltered array
   const randomNum = Math.floor(Math.random() * finalFiltered.length)
+  console.log('randomNum', randomNum)
 
+  // Picks a random image from the finalFiltered array
   const randomImage = finalFiltered[randomNum]
-
-  useEffect(() => {
-    dispatch(getAllTagsThunk())
-  }, [dispatch])
 
   return (
     <div className='tagbigcard-container' onClick={() => history.push(`/tags/${tagname}`)}>

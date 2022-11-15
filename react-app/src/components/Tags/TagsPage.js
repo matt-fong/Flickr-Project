@@ -49,7 +49,7 @@ const TagsPage = () => {
               {tagNames.map((tagname) => {
                 return (
                   <div key={tagname}>
-                    <TagBigCard tagname={tagname} images={images}/>
+                    <TagBigCard tagname={tagname} images={images} tags={tags}/>
                   </div>
                 );
               })}

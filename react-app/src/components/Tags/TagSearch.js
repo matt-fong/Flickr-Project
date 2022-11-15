@@ -47,6 +47,40 @@ const TagSearch = () => {
   // Comining the two arrays of images (Tagged and Title) into a single array
   const finalFiltered = filteredByTag.concat(filteredByTitle)
 
+  let results;
+
+  if (!finalFiltered.length) {
+    results = (
+      <div className='tagsearch-outer-container'>
+        <div className="tagsearch-container">
+          <div className="tagsearch-inner-container">
+            <div className="tagsearch-images-container">
+              <div className='tagsearch-noresults'>{`There are no matches for "${tagname}".`}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  } else {
+    results = (
+      <div className='tagsearch-outer-container'>
+        <div className="tagsearch-container">
+          <div className="tagsearch-inner-container">
+            <div className="tagsearch-images-container">
+              {finalFiltered.map((image) => {
+                return (
+                  <div key={image?.id}>
+                    <ImageCard image={image} comments={comments} likes={likes} users={users}/>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   useEffect(() => {
     dispatch(getAllTagsThunk())
     dispatch(getAllImagesThunk())
@@ -78,21 +112,7 @@ const TagSearch = () => {
         </div>
       </div>
 
-      <div className='tagsearch-outer-container'>
-        <div className="tagsearch-container">
-          <div className="tagsearch-inner-container">
-            <div className="tagsearch-images-container">
-              {finalFiltered.map((image) => {
-                return (
-                  <div key={image?.id}>
-                    <ImageCard image={image} comments={comments} likes={likes} users={users}/>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+      {results}
     </>
   )
 }
