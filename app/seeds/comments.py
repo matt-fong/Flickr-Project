@@ -458,7 +458,6 @@ def seed_comments():
   db.session.commit()
 
 
-
 def undo_comments():
   db.session.execute('TRUNCATE users RESTART IDENTITY CASCADE;')
   db.session.commit()
