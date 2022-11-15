@@ -58,7 +58,8 @@
   display: flex;
   justify-content: center;
   padding-bottom: 10em;
-  padding-top: 36px;
+  /* padding-top: 36px; */
+  padding-top: 10px;
   background-color: #f3f5f6;
 }
 
@@ -86,4 +87,13 @@
   flex-grow: 1;
   /* flex-shrink: 1; */
   /* flex-basis: auto; */
+}
+
+.explorepage-inner-header-container {
+  display: flex;
+}
+
+.explorepage-title {
+  font-size: 24px;
+  line-height: 30px;
 }

@@ -31,7 +31,20 @@ const ExplorePage = () => {
       <div className="explorepage-tabs-container">
         <div className="explorepage-tabs">
           <div className="explorepage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
-          <div className="explorepage-tab-tags" onClick={() => history.push(`/trending/tags`)}>Trending</div>
+          <div className="explorepage-tab-tags" onClick={() => history.push(`/trending`)}>Trending</div>
+          <div className="explorepage-tab-tags" onClick={() => history.push(`/alltags`)}>All Tags</div>
+        </div>
+      </div>
+
+      <div className='tagspage-test-container'>
+        <div className='tagspage-testing'>
+          <div className='explorepage-inner-header-container'>
+
+            <div className='explorepage-title'>Explore</div>
+
+            {/* <div className="tagspage-alltags" onClick={() => history.push(`/alltags`)}>View all tags</div> */}
+
+          </div>
         </div>
       </div>
 

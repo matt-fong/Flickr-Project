@@ -67,7 +67,7 @@ function App() {
           <NavBar />
           <YouPage />
         </Route>
-        <Route path='/trending/tags' exact={true}>
+        <Route path='/trending' exact={true}>
           <NavBar />
           <TagsPage />
         </Route>

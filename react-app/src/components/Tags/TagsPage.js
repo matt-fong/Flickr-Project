@@ -63,7 +63,8 @@ const TagsPage = () => {
       <div className="tagspage-tabs-container">
         <div className="tagspage-tabs">
           <div className="tagspage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
-          <div className="tagspage-tab-tags" onClick={() => history.push(`/trending/tags`)}>Trending</div>
+          <div className="tagspage-tab-tags" onClick={() => history.push(`/trending`)}>Trending</div>
+          <div className="tagspage-tab-explore" onClick={() => history.push(`/alltags`)}>All Tags</div>
         </div>
       </div>
 
