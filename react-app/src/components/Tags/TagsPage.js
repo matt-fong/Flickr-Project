@@ -28,6 +28,8 @@ const TagsPage = () => {
   // Sorting the tagNames array alphabetically
   tagNames.sort();
 
+  console.log('THIS IS TAGNAMES LENGTH', tagNames.length)
+
   useEffect(() => {
     dispatch(getAllTagsThunk())
     dispatch(getAllImagesThunk())

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { createTagThunk } from '../../store/tag';
 import './CreateTag.css'
 
-const CreateTag = ({ imageId }) => {
+const CreateTag = ({ imageId, filteredTags }) => {
 
   const [name, setName] = useState("");
   const [errors, setErrors] = useState([]);
@@ -12,6 +12,12 @@ const CreateTag = ({ imageId }) => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.session.user);
+
+  let tagNames = [];
+
+  for (let i = 0; i < filteredTags.length; i++) {
+    tagNames.push(filteredTags[i].name)
+  }
 
   const handleCreateTag = (e) => {
     e.preventDefault();
@@ -25,7 +31,7 @@ const CreateTag = ({ imageId }) => {
     setSubmitted(true);
 
     for (let i = 0; i < name.length; i++) {
-      if (name.length > 0 && name.length < 21 && errors.length === 0) {
+      if (name.length > 0 && name.length < 21 && (!tagNames.includes(name)) && errors.length === 0) {
         return dispatch(createTagThunk(data)).then(setName("")).then(setSubmitted(false))
       }
     }
@@ -39,6 +45,10 @@ const CreateTag = ({ imageId }) => {
 
     if (name.length < 1 || name.length > 20) {
       errors.push('Tag must be between 1 and 20 characters.')
+    }
+
+    if (tagNames.includes(name)) {
+      errors.push('Tag must be unique.')
     }
 
     for (let i = 0; i < name.length; i++) {

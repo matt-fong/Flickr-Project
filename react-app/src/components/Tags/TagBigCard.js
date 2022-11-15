@@ -32,7 +32,6 @@ const TagBigCard = ({ tagname, images, tags }) => {
 
   // Creates a random number between 0 and the length of the finalFiltered array
   const randomNum = Math.floor(Math.random() * finalFiltered.length)
-  console.log('randomNum', randomNum)
 
   // Picks a random image from the finalFiltered array
   const randomImage = finalFiltered[randomNum]
