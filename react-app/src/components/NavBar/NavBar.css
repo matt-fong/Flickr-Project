@@ -25,6 +25,7 @@
   width: 256.05px;
   justify-content: space-between;
   align-items: center;
+  margin-right: 48px;
 }
 
 .navbar-logo {
@@ -76,17 +77,48 @@
 
 .navbar-right {
   display: flex;
-  width: 213.59px;
+  /* width: 213.59px; */
+  /* width: 643.59px; */
+  justify-content: flex-end;
   justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.navbar-search {
+  width: 230px;
+  display: flex;
   align-items: center;
 }
 
-.navbar-upload-photo {
-  color: white;
+.navbar-glass {
+  padding: 8px 11px 7px 11px;
+  color: black;
+  border-radius: 3px 0 0 3px;
+  height: 33px;
+  box-sizing: border-box;
   cursor: pointer;
+  background-color: hsla(0,0%,100%,.8);
+}
+
+.navbar-search-input {
+  height: 33px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 0 3px 3px 0;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+  width: 200px;
+  background-color: hsla(0,0%,100%,.8);
+}
+
+.navbar-upload-photo {
+  cursor: pointer;
+  margin-left: 36px;
 }
 
 .navbar-logout {
-  color: white;
   cursor: pointer;
+  margin-left: 36px;
 }
