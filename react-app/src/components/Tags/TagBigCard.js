@@ -18,7 +18,7 @@ const TagBigCard = ({ tagname }) => {
   const randomImage = images[randomNum]
 
   return (
-    <div className='tagbigcard-container' onClick={() => history.push(`/tag/${tagname}`)}>
+    <div className='tagbigcard-container' onClick={() => history.push(`/tags/${tagname}`)}>
       <img className='tagbigcard-pic' src={randomImage} alt=''></img>
       <div className='tagbigcard-text'>{tagname}</div>
     </div>

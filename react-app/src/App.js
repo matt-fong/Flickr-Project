@@ -70,7 +70,7 @@ function App() {
           <NavBar />
           <TagsPage />
         </Route>
-        <Route path='/tag/:tagname' exact={true}>
+        <Route path='/tags/:tagname' exact={true}>
           <NavBar />
           <TagSearch />
         </Route>

@@ -64,6 +64,20 @@ const TagSearch = () => {
         </div>
       </div>
 
+      <div className='tagspage-test-container'>
+        <div className='tagspage-testing'>
+          <div className='tagspage-inner-test'>
+
+            <div className='tagspage-tag' onClick={() => history.push(`/tags/`)}>Tags</div>
+            <div className='tagspage-caret-container'>
+              <i class="tagspage-caret fa-solid fa-caret-right"></i>
+            </div>
+            <div className='tagspage-tagname'>{tagname}</div>
+
+          </div>
+        </div>
+      </div>
+
       <div className='tagsearch-outer-container'>
         <div className="tagsearch-container">
           <div className="tagsearch-inner-container">
