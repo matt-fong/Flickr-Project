@@ -6,7 +6,7 @@ import { getAllTagsThunk } from "../../store/tag";
 import TagBigCard from "./TagBigCard";
 import { getAllImagesThunk } from "../../store/image";
 
-const TagsPage = () => {
+const AllTags = () => {
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -28,31 +28,6 @@ const TagsPage = () => {
   // Sorting the tagNames array alphabetically
   tagNames.sort();
 
-  //------------------------------------------------------//
-
-  // Putting all tag names into one array, including duplicates
-  let totalTagNames = [];
-  for (let i = 0; i < tagsArr.length; i++) {
-    totalTagNames.push(tagsArr[i].name)
-  }
-
-  // Tallying the number of times each tag name appears in the totalTagNames array
-  const counts = {};
-  totalTagNames.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-
-
-  // Get an array of the keys:
-  let tagNameKeys = Object.keys(counts);
-
-  // Then sort by using the tag name keys by highest to lowest count
-  tagNameKeys.sort(function(a, b) { return counts[b] - counts[a] });
-
-  // Select only the top 25 tag names
-  let topTagNames = [];
-  for (let i = 0; i < 25; i++) {
-    topTagNames.push(tagNameKeys[i])
-  }
-
   useEffect(() => {
     dispatch(getAllTagsThunk())
     dispatch(getAllImagesThunk())
@@ -71,9 +46,9 @@ const TagsPage = () => {
         <div className='tagspage-testing'>
           <div className='tagspage-inner-header-container'>
 
-            <div className='tagspage-trending'>{`Trending Tags — Now`}</div>
+            <div className='tagspage-trending'>{`All Tags — Now`}</div>
 
-            <div className="tagspage-alltags" onClick={() => history.push(`/alltags`)}>View all tags</div>
+            {/* <div className="tagspage-alltags" onClick={() => history.push(`/alltags`)}>View all tags</div> */}
 
           </div>
         </div>
@@ -83,7 +58,7 @@ const TagsPage = () => {
         <div className="tagspage-container">
           <div className="tagspage-inner-container">
             <div className="tagspage-images-container">
-              {topTagNames.map((tagname) => {
+              {tagNames.map((tagname) => {
                 return (
                   <div key={tagname}>
                     <TagBigCard tagname={tagname} images={images} tags={tags}/>
@@ -98,4 +73,4 @@ const TagsPage = () => {
   );
 };
 
-export default TagsPage;
+export default AllTags;

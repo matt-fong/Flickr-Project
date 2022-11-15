@@ -96,3 +96,24 @@
   /* flex-shrink: 1; */
   /* flex-basis: auto; */
 }
+
+.tagspage-inner-header-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600
+}
+
+.tagspage-trending {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tagspage-alltags {
+  color: #0091dc;
+  cursor: pointer;
+}
+
+.tagspage-alltags:hover {
+  text-decoration: underline;
+}

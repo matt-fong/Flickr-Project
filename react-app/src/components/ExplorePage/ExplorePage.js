@@ -31,7 +31,7 @@ const ExplorePage = () => {
       <div className="explorepage-tabs-container">
         <div className="explorepage-tabs">
           <div className="explorepage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
-          <div className="explorepage-tab-tags" onClick={() => history.push(`/tags`)}>Tags</div>
+          <div className="explorepage-tab-tags" onClick={() => history.push(`/trending/tags`)}>Trending</div>
         </div>
       </div>
 

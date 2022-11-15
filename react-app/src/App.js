@@ -15,6 +15,7 @@ import UserLikes from './components/Likes/UserLikes';
 import YouPage from './components/YouPage/YouPage';
 import TagsPage from './components/Tags/TagsPage';
 import TagSearch from './components/Tags/TagSearch';
+import AllTags from './components/Tags/AllTags';
 // import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 function App() {
@@ -66,7 +67,7 @@ function App() {
           <NavBar />
           <YouPage />
         </Route>
-        <Route path='/tags' exact={true}>
+        <Route path='/trending/tags' exact={true}>
           <NavBar />
           <TagsPage />
         </Route>
@@ -74,9 +75,9 @@ function App() {
           <NavBar />
           <TagSearch />
         </Route>
-        <Route path='/testing' exact={true}>
+        <Route path='/alltags' exact={true}>
           <NavBar />
-          <TagSearch />
+          <AllTags />
         </Route>
         <Route>
           <FourOFour />
