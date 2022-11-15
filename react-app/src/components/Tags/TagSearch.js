@@ -45,7 +45,17 @@ const TagSearch = () => {
   const filteredByTitle = imagesArr.filter(image => image.title.toLowerCase().includes(tagname.toLowerCase()))
 
   // Comining the two arrays of images (Tagged and Title) into a single array
-  const finalFiltered = filteredByTag.concat(filteredByTitle)
+  const combinedFiltered = filteredByTag.concat(filteredByTitle)
+
+  // Loops thorugh combined filtered array and only pushes the unique images into a new array
+  let finalFiltered = [];
+
+  for (let i = 0; i < combinedFiltered.length; i++) {
+    console.log('THIS IS THE FINAL FILTERED', combinedFiltered[i])
+    if (!finalFiltered.includes(combinedFiltered[i])) {
+      finalFiltered.push(combinedFiltered[i])
+    }
+  }
 
   let results;
 
@@ -67,9 +77,9 @@ const TagSearch = () => {
         <div className="tagsearch-container">
           <div className="tagsearch-inner-container">
             <div className="tagsearch-images-container">
-              {finalFiltered.map((image) => {
+              {finalFiltered.map((image, i) => {
                 return (
-                  <div key={image?.id}>
+                  <div key={i}>
                     <ImageCard image={image} comments={comments} likes={likes} users={users}/>
                   </div>
                 );
