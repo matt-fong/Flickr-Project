@@ -2,6 +2,11 @@
   cursor: pointer;
 }
 
+.create-like-button:hover {
+  cursor: pointer;
+  color: red;
+}
+
 .delete-like-button {
   cursor: pointer;
   color: red;
