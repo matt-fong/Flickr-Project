@@ -98,7 +98,8 @@
   height: 33px;
   box-sizing: border-box;
   cursor: pointer;
-  background-color: hsla(0,0%,100%,.8);
+  /* background-color: hsla(0,0%,100%,.8); */
+  background-color: white;
 }
 
 .navbar-search-input {
@@ -110,7 +111,8 @@
   box-sizing: border-box;
   outline: none;
   width: 200px;
-  background-color: hsla(0,0%,100%,.8);
+  /* background-color: hsla(0,0%,100%,.8); */
+  background-color: white;
 }
 
 .navbar-upload-photo {

@@ -52,11 +52,10 @@ const NavBar = () => {
               <input
                 className='navbar-search-input'
                 type="text"
-                placeholder="Search photos and tags"
+                placeholder="Search photos or tags"
                 value={body}
                 onKeyPress={(e) => {if (e.key === "Enter") {handleSearch(e)}}}
                 onChange={(e) => setBody(e.target.value)}
-                // style={{ backgroundColor: "red" }}
                 />
             </form>
           </div>
