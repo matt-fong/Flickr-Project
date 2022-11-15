@@ -10,7 +10,7 @@ const TagBigCard = ({ tagname, images, tags }) => {
   const imagesArr = Object.values(images);
 
   // Filters all the tags that matches the tagname in url
-  const filteredTags = tagsArr.filter(tag => tag.name === tagname);
+  const filteredTags = tagsArr.filter(tag => tag?.name === tagname);
 
   // Loops through the filtered tags and pushes all the imageIds of those tags into an array
   let eventIdArr = [];
@@ -22,10 +22,10 @@ const TagBigCard = ({ tagname, images, tags }) => {
   }
 
   // Filters all the images that matches the imageIds in the eventIdArr (All the images that have the tagname in url)
-  const filteredByTag = imagesArr.filter(image => eventIdArr.includes(image.id))
+  const filteredByTag = imagesArr.filter(image => eventIdArr.includes(image?.id))
 
   // Filters all the images whose title matches the tagname in url
-  const filteredByTitle = imagesArr.filter(image => image.title.toLowerCase().includes(tagname.toLowerCase()))
+  const filteredByTitle = imagesArr.filter(image => image?.title.toLowerCase().includes(tagname?.toLowerCase()))
 
   // Comining the two arrays of images (Tagged and Title) into a single array
   const finalFiltered = filteredByTag.concat(filteredByTitle)

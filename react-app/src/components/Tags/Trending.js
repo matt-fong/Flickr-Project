@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
-import './TagsPage.css';
+import './Trending.css';
 import { useHistory } from 'react-router-dom';
 import { getAllTagsThunk } from "../../store/tag";
 import TagBigCard from "./TagBigCard";
 import { getAllImagesThunk } from "../../store/image";
 
-const TagsPage = () => {
+const Trending = () => {
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -99,4 +99,4 @@ const TagsPage = () => {
   );
 };
 
-export default TagsPage;
+export default Trending;

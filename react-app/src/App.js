@@ -13,9 +13,9 @@ import HomePage from './components/HomePage/HomePage';
 import FourOFour from './components/404Page/FourOFour';
 import UserLikes from './components/Likes/UserLikes';
 import YouPage from './components/YouPage/YouPage';
-import TagsPage from './components/Tags/TagsPage';
 import TagSearch from './components/Tags/TagSearch';
 import AllTags from './components/Tags/AllTags';
+import Trending from './components/Tags/Trending';
 // import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
         </Route>
         <Route path='/trending' exact={true}>
           <NavBar />
-          <TagsPage />
+          <Trending />
         </Route>
         <Route path='/tags/:tagname' exact={true}>
           <NavBar />
