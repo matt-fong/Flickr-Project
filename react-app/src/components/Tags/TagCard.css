@@ -18,6 +18,12 @@
   padding-left: 10px;
 }
 
+.tag-card-tag:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #7a7a7a;
+}
+
 .tag-card-delete-button {
   position: absolute;
   top: 2px;

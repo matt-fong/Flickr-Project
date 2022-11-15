@@ -1,9 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteTagThunk } from '../../store/tag';
+import { useHistory } from 'react-router-dom';
 import './TagCard.css'
 
 const TagCard = ({ tag }) => {
 
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.session.user)
@@ -29,7 +31,7 @@ const TagCard = ({ tag }) => {
   }
 
   return (
-    <div className='tag-card-container'>
+    <div className='tag-card-container' onClick={() => history.push(`/tags/${tag?.name}`)}>
       {/* <div className='tag-card-tag'>{tag?.name}<i className="tag-card-delete-button fa-solid fa-trash"></i></div> */}
       {tagCard}
     </div>
