@@ -1,14 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { deleteTagThunk } from '../../store/tag';
 import { useHistory } from 'react-router-dom';
 import './TagCard.css'
 
-const TagCard = ({ tag, editTag, setEditTag }) => {
+const TagCard = ({ tag, editTag }) => {
 
   const history = useHistory();
   const dispatch = useDispatch();
-
-  const user = useSelector((state) => state.session.user)
 
   const handleDeleteTag = (e) => {
     e.preventDefault();
@@ -29,7 +27,6 @@ const TagCard = ({ tag, editTag, setEditTag }) => {
       <div className='tag-card-tag-nouser' style={{ paddingRight: 10 }} onClick={() => history.push(`/tags/${tag?.name}`)}>{tag?.name}</div>
     )
   }
-
 
   return (
     <div className='tag-card-container'>

@@ -143,7 +143,7 @@ const ImageDetails = () => {
                   <div className='image-detail-tag-test-container'>
                     <div className='image-detail-tag'>Tags</div>
                     {
-                      !editTag &&
+                      !editTag && user?.id === currentImage?.userId &&
                       <i class="image-detail-tag-edit fa-solid fa-pencil" onClick={() => setEditTag(true)}></i>
                     }
                     {
@@ -174,7 +174,7 @@ const ImageDetails = () => {
 
                 <div className='image-detail-tag-card-container'>
                   {filteredTags.map((tag) => (
-                    <TagCard tag={tag} editTag={editTag} setEditTag={setEditTag}/>
+                    <TagCard tag={tag} editTag={editTag}/>
                   ))}
                 </div>
 
