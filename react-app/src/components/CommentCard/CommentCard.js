@@ -61,8 +61,18 @@ const CommentCard = ({ comment }) => {
 
           { user?.id === comment?.userId && (
             <div className='comment-card-icons'>
-            <i className="comment-card-edit-button fa-solid fa-pen-to-square" onClick={() => setEditing(true)}></i>
-            <i className="comment-card-delete-button fa-solid fa-trash" onClick={() => dispatch(deleteCommentThunk(comment?.id))}></i>
+              {!editing &&
+              <>
+                <i className="comment-card-edit-button fa-solid fa-pen-to-square" onClick={() => setEditing(true)}></i>
+                <i className="comment-card-delete-button fa-solid fa-trash" onClick={() => dispatch(deleteCommentThunk(comment?.id))}></i>
+              </>
+              }
+              {editing &&
+              <>
+                <i className="comment-card-edit-button fa-solid fa-pen-to-square" onClick={() => setEditing(false)}></i>
+                <i className="comment-card-delete-button fa-solid fa-trash" onClick={() => dispatch(deleteCommentThunk(comment?.id))}></i>
+              </>
+              }
           </div>
           )}
 
