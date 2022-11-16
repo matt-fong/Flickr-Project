@@ -11,24 +11,10 @@ const Trending = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const tags = useSelector(state => state.tags)
   const images = useSelector(state => state.images);
+  const tags = useSelector(state => state.tags)
 
   const tagsArr = Object.values(tags);
-
-  // Filtering all tags to show unique tag names in a separate array
-  let tagNames = [];
-
-  for (let i = 0; i < tagsArr.length; i++) {
-    if (!tagNames.includes(tagsArr[i].name)) {
-      tagNames.push(tagsArr[i].name)
-    }
-  }
-
-  // Sorting the tagNames array alphabetically
-  tagNames.sort();
-
-  //------------------------------------------------------//
 
   // Putting all tag names into one array, including duplicates
   let totalTagNames = [];
@@ -64,7 +50,7 @@ const Trending = () => {
         <div className="tagspage-tabs">
           <div className="tagspage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
           <div className="tagspage-tab-tags" onClick={() => history.push(`/trending`)}>Trending</div>
-          <div className="tagspage-tab-explore" onClick={() => history.push(`/alltags`)}>All Tags</div>
+          <div className="tagspage-tab-explore" onClick={() => history.push(`/alltags`)}>Tags</div>
         </div>
       </div>
 

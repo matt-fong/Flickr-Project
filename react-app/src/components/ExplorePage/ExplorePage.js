@@ -32,7 +32,7 @@ const ExplorePage = () => {
         <div className="explorepage-tabs">
           <div className="explorepage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
           <div className="explorepage-tab-tags" onClick={() => history.push(`/trending`)}>Trending</div>
-          <div className="explorepage-tab-tags" onClick={() => history.push(`/alltags`)}>All Tags</div>
+          <div className="explorepage-tab-tags" onClick={() => history.push(`/alltags`)}>Tags</div>
         </div>
       </div>
 

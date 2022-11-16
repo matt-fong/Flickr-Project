@@ -5,7 +5,7 @@
   display: inline-block;
 }
 
-.tag-card-tag {
+.tag-card-tag-user {
   background-color: #cfd6d9;
   border-radius: 5px;
   color: #212124;
@@ -18,7 +18,20 @@
   padding-left: 10px;
 }
 
-.tag-card-tag:hover {
+.tag-card-tag-nouser {
+  background-color: #cfd6d9;
+  border-radius: 5px;
+  color: #212124;
+  font-weight: 400;
+  line-height: 21px;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 225px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.tag-card-tag-nouser:hover {
   cursor: pointer;
   color: white;
   background-color: #7a7a7a;
@@ -26,7 +39,8 @@
 
 .tag-card-delete-button {
   position: absolute;
-  top: 2px;
+  top: 2.5px;
   right: 6px;
   cursor: pointer;
+
 }
