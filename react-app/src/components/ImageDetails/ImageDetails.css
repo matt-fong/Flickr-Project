@@ -183,10 +183,25 @@
   margin-bottom: 10px;
 }
 
+.image-detail-tag-test-container {
+  display: flex;
+  justify-content: space-between;
+  width: 58px;
+}
+
 .image-detail-tag {
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
+}
+
+.image-detail-tag-edit {
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.image-detail-tag-edit:hover {
+  color: #006dac;
 }
 
 .image-detail-tag-add {

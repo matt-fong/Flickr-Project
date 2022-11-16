@@ -20,7 +20,8 @@ const ImageDetails = () => {
   const dispatch = useDispatch();
   const imageId = useParams();
 
-  const [addTag, setAddTag] = useState(false)
+  const [ addTag, setAddTag ] = useState(false)
+  const [ editTag, setEditTag ] = useState(false)
 
   const images = useSelector(state => state.images)
   const user = useSelector(state => state.session.user)
@@ -139,12 +140,28 @@ const ImageDetails = () => {
               <div className='image-detail-tags-inner-container'>
 
                 <div className='image-detail-tag-header'>
-                  <div className='image-detail-tag'>Tags</div>
-                  {
-                    user?.id === currentImage?.userId && (
-                      <div className='image-detail-tag-add' onClick={() => setAddTag(true)}>Add tags</div>
-                    )
-                  }
+                  <div className='image-detail-tag-test-container'>
+                    <div className='image-detail-tag'>Tags</div>
+                    {
+                      !editTag &&
+                      <i class="image-detail-tag-edit fa-solid fa-pencil" onClick={() => setEditTag(true)}></i>
+                    }
+                    {
+                      editTag &&
+                      <i class="image-detail-tag-edit fa-solid fa-pencil" onClick={() => setEditTag(false)}></i>
+                    }
+
+                  </div>
+                    {!addTag &&
+                      user?.id === currentImage?.userId && (
+                        <div className='image-detail-tag-add' onClick={() => setAddTag(true)}>Add tags</div>
+                      )
+                    }
+                    {addTag &&
+                      user?.id === currentImage?.userId && (
+                        <div className='image-detail-tag-add' onClick={() => setAddTag(false)}>Add tags</div>
+                      )
+                    }
                 </div>
 
                 {
@@ -157,7 +174,7 @@ const ImageDetails = () => {
 
                 <div className='image-detail-tag-card-container'>
                   {filteredTags.map((tag) => (
-                    <TagCard tag={tag}/>
+                    <TagCard tag={tag} editTag={editTag} setEditTag={setEditTag}/>
                   ))}
                 </div>
 

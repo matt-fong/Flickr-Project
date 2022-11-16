@@ -3,7 +3,7 @@ import { deleteTagThunk } from '../../store/tag';
 import { useHistory } from 'react-router-dom';
 import './TagCard.css'
 
-const TagCard = ({ tag }) => {
+const TagCard = ({ tag, editTag, setEditTag }) => {
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const TagCard = ({ tag }) => {
 
   let tagCard;
 
-  if (tag?.userId === user?.id) {
+  if (editTag) {
     tagCard = (
       <div className='tag-card-tag-user' style={{ paddingRight: 26 }}>{tag?.name}
       <i className="tag-card-delete-button fa-solid fa-trash" onClick={handleDeleteTag}></i></div>
@@ -29,6 +29,7 @@ const TagCard = ({ tag }) => {
       <div className='tag-card-tag-nouser' style={{ paddingRight: 10 }} onClick={() => history.push(`/tags/${tag?.name}`)}>{tag?.name}</div>
     )
   }
+
 
   return (
     <div className='tag-card-container'>
