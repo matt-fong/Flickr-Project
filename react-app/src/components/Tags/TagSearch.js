@@ -103,7 +103,8 @@ const TagSearch = () => {
       <div className="tagspage-tabs-container">
         <div className="tagspage-tabs">
           <div className="tagspage-tab-explore" onClick={() => history.push(`/explore`)}>Explore</div>
-          <div className="tagspage-tab-tags" onClick={() => history.push(`/tags`)}>Tags</div>
+          <div className="tagspage-tab-explore" onClick={() => history.push(`/trending`)}>Trending</div>
+          <div className="tagspage-tab-tags" onClick={() => history.push(`/alltags`)}>Tags</div>
         </div>
       </div>
 
@@ -111,7 +112,7 @@ const TagSearch = () => {
         <div className='tagspage-testing'>
           <div className='tagspage-inner-test'>
 
-            <div className='tagspage-tag' onClick={() => history.push(`/tags/`)}>Tags</div>
+            <div className='tagspage-tag' onClick={() => history.push(`/alltags/`)}>Tags</div>
             <div className='tagspage-caret-container'>
               <i class="tagspage-caret fa-solid fa-caret-right"></i>
             </div>
