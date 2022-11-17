@@ -55,7 +55,7 @@ def seed_images():
   twentysix = Image(
     title='Skyline Vision', description='Viewing from above', imageUrl='https://r1.ilikewallpaper.net/iphone-wallpapers/download/74230/Bangkok--iphone-wallpaper-ilikewallpaper_com.jpg', userId=26)
   twentyseven = Image(
-    title='Island Exploration', description='Almost at shore', imageUrl='https://img.besthqwallpapers.com/Uploads/3-11-2017/26978/ko-samui-tropical-island-phuket-4k-boats.jpg', userId=27)
+    title='Island Exploration', description='Almost at shore', imageUrl='https://besthqwallpapers.com/Uploads/3-11-2017/26978/thumb2-ko-samui-tropical-island-phuket-4k-boats.jpg', userId=27)
   twentyeight = Image(
     title='Big Ben', description='Clock work', imageUrl='https://images.pexels.com/photos/77171/pexels-photo-77171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', userId=28)
   twentynine = Image(
