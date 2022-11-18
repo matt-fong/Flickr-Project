@@ -152,19 +152,6 @@ const YouPage = () => {
 
       {renderImages}
 
-      {/* <div className="youPage-container">
-        <div className="youPage-inner-container">
-          <div className="youPage-images-container">
-            {userLikedImages.map((image) => {
-              return (
-                <>
-                  <ImageCard image={image}/>
-                </>
-              );
-            })}
-          </div>
-        </div>
-      </div> */}
     </>
   )
 

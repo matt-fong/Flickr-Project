@@ -147,19 +147,6 @@ const UserLikes = () => {
 
       {renderImages}
 
-      {/* <div className="userlikes-container">
-        <div className="userlikes-inner-container">
-          <div className="userlikes-images-container">
-            {userLikedImages.map((image) => {
-              return (
-                <>
-                  <ImageCard image={image}/>
-                </>
-              );
-            })}
-          </div>
-        </div>
-      </div> */}
     </>
   )
 
