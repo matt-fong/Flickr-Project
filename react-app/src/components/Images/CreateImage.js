@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { createImageThunk } from '../../store/image';
 import { logout } from '../../store/session';
+import UploadPicture from './Upload';
 import './CreateImage.css'
 
 const CreateImage = () => {
@@ -26,26 +27,65 @@ const CreateImage = () => {
     return /\.(jpg|jpeg|png|webp|avif|gif|svg)$/.test(url)
   }
 
+    const [image, setImage] = useState(null);
+    const [imageLoading, setImageLoading] = useState(false);
+
+    console.log('image', image);
+
+    const handleSubmitImage = async (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("image", image);
+
+        // aws uploads can be a bit slow—displaying
+        // some sort of loading message is a good idea
+        setImageLoading(true);
+
+        const res = await fetch('/api/images', {
+            method: "POST",
+            body: formData,
+        });
+        if (res.ok) {
+            const imagedata = await res.json();
+            console.log('imagedata', imagedata);
+            setImageUrl(imagedata.url);
+            setImageLoading(false);
+            // history.push("/testing");
+            alert("Image uploaded successfully!");
+        }
+        else {
+            setImageLoading(false);
+            // a real app would probably use more advanced
+            // error handling
+            alert("An error occurred. Please try again.");
+        }
+    }
+
+    const updateImage = (e) => {
+        const file = e.target.files[0];
+        setImage(file);
+    }
+
   useEffect(() => {
     let imageUrlErrors = [];
     let titleErrors = [];
     let descriptionErrors = [];
 
-    if (!imageUrl) {
-      imageUrlErrors.push('Image URL is required')
-    }
+    // if (!imageUrl) {
+    //   imageUrlErrors.push('Image URL is required')
+    // }
 
-    if (imageUrl && !isImage(imageUrl)) {
-      imageUrlErrors.push('Must be valid image URL, Ex. .jpg, .png, .jpeg')
-    }
+    // if (imageUrl && !isImage(imageUrl)) {
+    //   imageUrlErrors.push('Must be valid image URL, Ex. .jpg, .png, .jpeg')
+    // }
 
-    if (title.length < 1 || title.length > 100) {
-      titleErrors.push('Comment must be between 1 and 100 characters.')
-    }
+    // if (title.length < 1 || title.length > 100) {
+    //   titleErrors.push('Comment must be between 1 and 100 characters.')
+    // }
 
-    if (description.length < 1 || description.length > 255) {
-      descriptionErrors.push('Description must be between 1 and 255 characters.')
-    }
+    // if (description.length < 1 || description.length > 255) {
+    //   descriptionErrors.push('Description must be between 1 and 255 characters.')
+    // }
 
     setImageUrlErrors(imageUrlErrors);
     setTitleErrors(titleErrors);
@@ -65,11 +105,12 @@ const CreateImage = () => {
       userId: user.id
     }
 
-    if (isImage(imageUrl) &&
-    title.length > 0 && title.length < 101 &&
-    description.length > 0 && description.length < 256) {
-      return dispatch(createImageThunk(data)).then((res) => history.push(`/image/${res.id}`))
-    }
+    // if (isImage(imageUrl) &&
+    // title.length > 0 && title.length < 101 &&
+    // description.length > 0 && description.length < 256) {
+      // return dispatch(createImageThunk(data)).then((res) => history.push(`/image/${res.id}`))
+      return dispatch(createImageThunk(data))
+    // }
 
   }
 
@@ -115,8 +156,8 @@ const CreateImage = () => {
                   <div className='create-image-error'>{error}</div>
                 ))}
               </div>
-              <div className='create-image-input-header'>Image URL</div>
-              <div>
+              {/* <div className='create-image-input-header'>Image URL</div> */}
+              {/* <div>
                 <input
                   className='create-image-input'
                   type="text"
@@ -124,7 +165,14 @@ const CreateImage = () => {
                   onChange={(e) => setImageUrl(e.target.value)}
                   // required
                 />
-              </div>
+              </div> */}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={updateImage}
+              />
+              <button type="submit" onClick={handleSubmitImage}>Submit</button>
+              {(imageLoading)&& <p>Loading...</p>}
             </div>
 
             <div className='create-image-input-container'>
