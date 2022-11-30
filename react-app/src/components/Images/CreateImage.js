@@ -29,15 +29,11 @@ const CreateImage = () => {
   const [image, setImage] = useState(null);
   const [imageLoading, setImageLoading] = useState(false);
 
-  console.log('image', image);
-
   const handleSubmitImage = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", image);
 
-    // aws uploads can be a bit slow—displaying
-    // some sort of loading message is a good idea
     setImageLoading(true);
 
     const res = await fetch('/api/images', {
@@ -46,7 +42,6 @@ const CreateImage = () => {
     });
     if (res.ok) {
       const imagedata = await res.json();
-      console.log('imagedata', imagedata);
       setImageUrl(imagedata.url);
       setImageLoading(false);
       alert("Image uploaded successfully!");
