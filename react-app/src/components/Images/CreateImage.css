@@ -98,12 +98,35 @@
   /* padding-top: 48px; */
 }
 
+.create-image-upload-error {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.create-image-input-upload-container {
+  display: flex;
+  justify-content: center;
+}
+
+.create-image-input-upload {
+  display: flex;
+  margin-bottom: 24px;
+  width: 320px;
+}
+
 .create-image-input-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.create-image-error-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
 }
 
 .create-image-input {

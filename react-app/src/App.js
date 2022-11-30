@@ -16,7 +16,6 @@ import YouPage from './components/YouPage/YouPage';
 import TagSearch from './components/Tags/TagSearch';
 import AllTags from './components/Tags/AllTags';
 import Trending from './components/Tags/Trending';
-import UploadPicture from './components/Images/Upload';
 // import ProtectedRoute from './components/Auth/ProtectedRoute';
 
 function App() {
@@ -79,10 +78,6 @@ function App() {
         <Route path='/alltags' exact={true}>
           <NavBar />
           <AllTags />
-        </Route>
-        <Route path='/testing' exact={true}>
-          <NavBar />
-          <UploadPicture />
         </Route>
         <Route>
           <FourOFour />
