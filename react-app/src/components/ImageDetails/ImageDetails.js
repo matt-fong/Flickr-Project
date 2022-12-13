@@ -13,6 +13,7 @@ import LikeButton from '../Likes/LikeButton';
 import CreateTag from '../Tags/CreateTag';
 import { getAllTagsThunk } from '../../store/tag';
 import TagCard from '../Tags/TagCard';
+import userimage from './userimage.png'
 
 const ImageDetails = () => {
 
@@ -87,7 +88,7 @@ const ImageDetails = () => {
             <div className='image-detail-user-card'>
 
               <div className='image-detail-user-card-pic-container'>
-                <img className='image-detail-user-card-pic' onClick={() => history.push(`/you/${imageOwner?.username}`)} src='https://www.seekpng.com/png/full/73-730482_existing-user-default-avatar.png' alt=''></img>
+                <img className='image-detail-user-card-pic' onClick={() => history.push(`/you/${imageOwner?.username}`)} src={userimage} alt=''></img>
               </div>
 
               <div className='image-detail-user-card-right'>
