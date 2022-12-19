@@ -133,7 +133,6 @@ const ImageDetails = () => {
                   <LikeButton imageId={imageId?.imageId} />
 
               </div>
-
             </div>
 
 
