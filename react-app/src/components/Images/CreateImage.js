@@ -134,7 +134,6 @@ const CreateImage = () => {
             </div>
 
           </div>
-
         </div>
 
         <div className='create-image-form-container'>
