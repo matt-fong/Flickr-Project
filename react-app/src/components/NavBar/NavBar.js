@@ -26,7 +26,7 @@ const NavBar = () => {
 
         <div className='navbar-left'>
 
-          <div className='navbar-logo' onClick={() => history.push(`/`)} exact={true}>
+          <div className='navbar-logo' onClick={() => history.push(`/explore`)} exact={true}>
             <div className="navbar-dot-container">
               <div className="navbar-bluedot">•</div>
               <div className="navbar-pinkdot">•</div>
