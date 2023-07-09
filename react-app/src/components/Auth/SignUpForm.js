@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect, useHistory } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import authbackground from './authbackground.jpg'
 
 const SignUpForm = () => {
   const [first_name, setFirst_Name] = useState('');
@@ -104,7 +105,7 @@ const SignUpForm = () => {
       </div>
       <div className='login-container'>
 
-        <img className='login-background-image' src='https://identity.flickr.com/img/033120190455-by-Henry.26d9f56a.jpg' alt=''></img>
+        <img className='login-background-image' src={authbackground} alt=''></img>
 
         <div className='login-form-container'>
 
